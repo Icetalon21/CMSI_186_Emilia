@@ -24,6 +24,7 @@
  *  @version 2.0.0  2019-01-25  Emilia Huerta Copied from CalandarStuffEmpty.java
  *  @version 2.0.1  2019-01-27  Emilia Huerta Changed name and added main
  *  @version 2.0.1  2019-01-28  Emilia Huerta Worked on the methods
+ *  @version 2.1.0  2019-01-30  Emilia Huerta Finished writing all methods
  */
 public class CalendarStuff {
 
@@ -194,8 +195,41 @@ public class CalendarStuff {
      * @return long   count of total number of days
      */
     public static long daysBetween ( long month1, long day1, long year1, long month2, long day2, long year2 ){
-        long dayCount = 0;
-        return dayCount;
+        /*long dayCount = 0;
+        return dayCount; */
+        long first = (year1 * 365 + day1);
+        //long i = (long) first;
+        for (int i = 0; i < month1 - 1; i++){
+            first += days[i];
+            /*first = first + daysInMonth(month1, year1);
+            if (isLeapYear(year1) == true){
+                return days[1] = 29;
+            }*/
+        }
+        //first = first + isLeapYear(year1);
+        first += totalLeapYears(month1, year1); // first = first + total();
+
+
+        long second = (year2 * 365 + day2);
+       // long j = (long) second;
+        for (int j = 0; j < month2 - 1; j++){
+            second += days[j];
+            /*second = ((int)second + daysInMonth(month2, year2));
+            if (isLeapYear(year2) == true){
+                return days[1] = 29;
+            }*/
+        }
+        second += totalLeapYears(month2, year2);
+        //second = second + isLeapYear(year2);
+        long dayCount = (second - first);
+        return Math.abs(dayCount);
+    }
+
+    public static long totalLeapYears(long month, long year) {
+        if(month <= 2)
+            year--;  //year-- => year -= 1 => year = year-1;
+            // 2008/4=502 2008/100
+        return year/4 - year/100 + year/400;
     }
 
 }
