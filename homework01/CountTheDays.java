@@ -16,15 +16,15 @@ public class CountTheDays{
         }
         catch(NumberFormatException nfe){System.out.println("Bad input");}
 
-    if(!CalendarStuff.isValidDate(month1, day1, year1)){
-        System.out.println("Bad date");
-    }
+        if(!CalendarStuff.isValidDate(month1, day1, year1)){
+            System.out.println("Bad date");
+        }
 
-    if(!CalendarStuff.isValidDate(month2, day2, year2)){
-        System.out.println("Bad date");
-    }
+        if(!CalendarStuff.isValidDate(month2, day2, year2)){
+            System.out.println("Bad date");
+        }
 
-    long total = CalendarStuff.daysBetween(month1, day1, year1, month2, day2, year2);
-        System.out.println(total);
+        long total = CalendarStuff.daysBetween(month1, day1, year1, month2, day2, year2);
+            System.out.println(total);
     }
 }
