@@ -119,11 +119,7 @@ public class CalendarStuff {
         }
         return false;
     }
-            /*if (month1 >= 1 && month1 <= 12 && day1 >= 1 && day1 <= daysInMonth(month1, year1) && month2 >= 1 && month2 <= 12 && day2 >= 1 && day2 <= daysInMonth(month2, year2)){
-                return true;
-            }
-            return false;
-        } */
+
     /**
      * A method to compare the ordering of two dates
      * @param    month1 long   containing month number, starting with "1" for "January"
@@ -198,7 +194,6 @@ public class CalendarStuff {
         /*long dayCount = 0;
         return dayCount; */
         long first = (year1 * 365 + day1);
-        //long i = (long) first;
         for (int i = 0; i < month1 - 1; i++){
             first += days[i];
             /*first = first + daysInMonth(month1, year1);
@@ -211,7 +206,6 @@ public class CalendarStuff {
 
 
         long second = (year2 * 365 + day2);
-       // long j = (long) second;
         for (int j = 0; j < month2 - 1; j++){
             second += days[j];
             /*second = ((int)second + daysInMonth(month2, year2));
