@@ -21,13 +21,18 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
+ *  Revision History
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
+ *  @version 2.0.0  2019-02-04  Emilia Huerta Copied from the Repo & changed class names
+ *  @version 2.1.0  2019-02-11  Emilia Huerta Wrote the first few classes
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-public class DiceSet {
+//import java.until.streak.*;
+import java.util.stream.IntStream;
+
+ public class DiceSet {
 
   /**
    * private instance data
@@ -40,19 +45,43 @@ public class DiceSet {
   /**
    * constructor
    * @param  count int value containing total dice count
-   * @param  sides int value containing the number of pips on each die
+   * @param  sides int value containing the number of sides on each die
    * @throws IllegalArgumentException if one or both arguments don't make sense
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
    public DiceSet( int count, int sides ) {
+      if ( sides < 4){
+         throw new IllegalArgumentException();
+      }
       ds = new Die[ count ];
+      //enter a loop
+      for (int i = 0; i < count; i ++){
+         ds[i] = new Die(sides);
+      }
    }
 
   /**
    * @return the sum of all the dice values in the set
    */
    public int sum() {
-      return 0;
+      //int sum = IntStream.of(ds).sum();
+      //System.out.println("inside of sum");
+      //System.out.println(ds);
+      //System.out.println(ds.length);
+      //System.out.println()
+      int sumOfRollDice = 0;
+      //int bob = 0;
+       for (int i = 0; i < ds.length; i++){
+         //System.out.println(ds[i].getClass());
+         sumOfRollDice += ds[i].roll();
+      //    bob = ds[i];
+      // }
+      // for (int i : ds){
+      //    sum = sum + i;
+      // }
+      // return sum;
+      }
+      return sumOfRollDice;
    }
 
   /**
@@ -61,25 +90,39 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
+      //roll();
+      for(int i = 0; i < ds.length; i++){
+         ds[i].roll();
+      }
+      //int dice = (int)(Math.random() * 6) + 1;
+      //ds.roll();
    }
 
   /**
    * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
    * @return the integer value of the newly rolled die
-   * @trhows IllegalArgumentException if the index is out of range
+   * @throws IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-      return 0;
+      //ds[dieIndex] = (int)(Math.random() * 6) + 1;
+      //ds[dieIndex].roll();
+      //return 0;
+      if (dieIndex < 0 || dieIndex > ds.length){
+         throw new IllegalArgumentException();
+      }
+      int randomOne = ds[dieIndex].roll();
+         return randomOne;
+      //return 0;
    }
 
   /**
    * Gets the value of the die in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
-   * @trhows IllegalArgumentException if the index is out of range
+   * @throws IllegalArgumentException if the index is out of range
    */
    public int getIndividual( int dieIndex ) {
-      return -999;
+      return ds[dieIndex].getValue();
    }
 
   /**
@@ -87,6 +130,9 @@ public class DiceSet {
    */
    public String toString() {
       String result = "";
+      for (int i = 0; i < count; i ++){
+         result = result + ds[i];
+      }
       return result;
    }
 
@@ -94,7 +140,8 @@ public class DiceSet {
    * @return Class-wide version of the preceding instance method
    */
    public static String toString( DiceSet ds ) {
-      return "";
+      return ds.toString();
+      //return "";
    }
 
   /**
