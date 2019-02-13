@@ -26,13 +26,16 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
+ *  Revision History
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-06  B.J. Johnson  Initial writing and release
  *  @version 1.1.0  2017-02-17  B.J. Johnson  Filled in method code
  *  @version 2.0.0  2019-02-04  Emilia Huerta Coped from the Repo & changed class names
+ *  @version 2.1.0  2019-02-11  Emilia Huerta Finished writing methods
+ *  @version 2.1.1  2019-02-12  Emilia Huerta Added this.
+ *  @version 2.1.2  2019-02-13  Emilia Huerta Finalized Code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class Die {
 
@@ -55,6 +58,7 @@ public class Die {
          throw new IllegalArgumentException();
       }
       sides = nSides;
+      this.pips = pips; // added with help from TA
    }
 
   /**
@@ -62,8 +66,8 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-      sides = (int)(Math.random() * 6) + 1;
-      return sides;
+      pips = (int)(Math.random() * sides) + 1;
+      return pips;
    }
 
   /**
@@ -74,7 +78,7 @@ public class Die {
    * @return the pip count of THIS die instance
    */
    public int getValue() {
-      return sides;
+      return pips;
    }
 
   /**
@@ -83,6 +87,9 @@ public class Die {
    * @throws      IllegalArgumentException
    */
    public void setSides( int sides ) {
+      if(sides < 4){
+         throw new IllegalArgumentException();
+      }
    }
 
   /**
@@ -90,7 +97,8 @@ public class Die {
    * @return String representation of this Die
    */
    public String toString() {
-      return "";
+      //String result = Integer.toString(sides)
+      return "[" + pips + "]";
    }
 
   /**
@@ -98,7 +106,9 @@ public class Die {
    * @return String representation of this Die
    */
    public static String toString( Die d ) {
-      return "";
+      //String result = Integer.toString(i)
+      //return result;
+      return d.toString();
    }
 
   /**
