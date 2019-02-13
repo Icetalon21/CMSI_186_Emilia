@@ -28,6 +28,8 @@
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2019-02-04  Emilia Huerta Copied from the Repo & changed class names
  *  @version 2.1.0  2019-02-11  Emilia Huerta Wrote the first few classes
+ *  @version 2.1.1  2019-02-12  Emilia Huerta Added this.
+ *  @version 2.1.2  2019-02-13  Emilia Huerta Finalized Code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 //import java.until.streak.*;
 import java.util.stream.IntStream;
@@ -58,6 +60,8 @@ import java.util.stream.IntStream;
       for (int i = 0; i < count; i ++){
          ds[i] = new Die(sides);
       }
+      this.count = count; //added with help from TA
+      this.sides = sides; //My toString did not work without it
    }
 
   /**
@@ -73,7 +77,7 @@ import java.util.stream.IntStream;
       //int bob = 0;
        for (int i = 0; i < ds.length; i++){
          //System.out.println(ds[i].getClass());
-         sumOfRollDice += ds[i].roll();
+         sumOfRollDice += ds[i].getValue();
       //    bob = ds[i];
       // }
       // for (int i : ds){
@@ -130,7 +134,7 @@ import java.util.stream.IntStream;
    */
    public String toString() {
       String result = "";
-      for (int i = 0; i < count; i ++){
+      for (int i = 0; i < count; i++){
          result = result + ds[i];
       }
       return result;
@@ -141,13 +145,20 @@ import java.util.stream.IntStream;
    */
    public static String toString( DiceSet ds ) {
       return ds.toString();
-      //return "";
    }
 
   /**
    * @return  tru iff this set is identical to the set passed as an argument
    */
-   public boolean isIdentical( DiceSet ds ) {
+   public boolean isIdentical( DiceSet secondSet ) {
+      if(ds.length != secondSet.ds.length){
+         return false;
+      }
+      for(int i = 0; i < secondSet.ds.length; i++){
+         if (secondSet.ds[i].getValue() != ds[i].getValue()){
+            return false;
+         }
+      }
       return true;
    }
   /**
