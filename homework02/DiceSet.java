@@ -31,7 +31,6 @@
  *  @version 2.1.1  2019-02-12  Emilia Huerta Added this.
  *  @version 2.1.2  2019-02-13  Emilia Huerta Finalized Code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-//import java.until.streak.*;
 import java.util.stream.IntStream;
 
  public class DiceSet {
@@ -68,24 +67,19 @@ import java.util.stream.IntStream;
    * @return the sum of all the dice values in the set
    */
    public int sum() {
-      //int sum = IntStream.of(ds).sum();
       //System.out.println("inside of sum");
       //System.out.println(ds);
       //System.out.println(ds.length);
-      //System.out.println()
       int sumOfRollDice = 0;
-      //int bob = 0;
        for (int i = 0; i < ds.length; i++){
          //System.out.println(ds[i].getClass());
          sumOfRollDice += ds[i].getValue();
-      //    bob = ds[i];
-      // }
       // for (int i : ds){
       //    sum = sum + i;
       // }
       // return sum;
       }
-      return sumOfRollDice;
+      return sumOfRollDice; //Keeping comments so I can see my thought process
    }
 
   /**
@@ -94,12 +88,9 @@ import java.util.stream.IntStream;
    *  the values of the dice in the set
    */
    public void roll() {
-      //roll();
       for(int i = 0; i < ds.length; i++){
          ds[i].roll();
       }
-      //int dice = (int)(Math.random() * 6) + 1;
-      //ds.roll();
    }
 
   /**
@@ -109,15 +100,11 @@ import java.util.stream.IntStream;
    * @throws IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-      //ds[dieIndex] = (int)(Math.random() * 6) + 1;
-      //ds[dieIndex].roll();
-      //return 0;
       if (dieIndex < 0 || dieIndex > ds.length){
          throw new IllegalArgumentException();
       }
       int randomOne = ds[dieIndex].roll();
          return randomOne;
-      //return 0;
    }
 
   /**
