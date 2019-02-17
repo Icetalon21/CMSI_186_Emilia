@@ -16,23 +16,29 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2019-02-13  Emilia Huerta Copied from the repo
+ *  @version 2.0.1  2019-02-16  Emilia Huerta Attempted tick() & realized that minutes may not ne used
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
   /**
    *  Class field definintions go here
    */
-   private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
-   private static final double INVALID_ARGUMENT_VALUE = -1.0;
-   private static final double MAXIMUM_DEGREE_VALUE = 360.0;
-   private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
-   private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
+   //private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
+   //private static final double INVALID_ARGUMENT_VALUE = -1.0;
+   //private static final double MAXIMUM_DEGREE_VALUE = 360.0;
+   //private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
+   //private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
+   private double hours;
+   private double minutes;
+   private double seconds;
 
   /**
    *  Constructor goes here
    */
    public Clock() {
-
+      this.hours = 0.0;
+      this.minutes = 0.0;
+      this.seconds = 0.0;
    }
 
   /**
@@ -41,8 +47,15 @@ public class Clock {
    *  Method to calculate the next tick from the time increment
    *  @return double-precision value of the current clock tick
    */
-   public double tick() {
-      return 0.0;
+   public double tick(double timeSlice) {
+       //if (timeSlice < 0 || timeSlice > 1800){ //1800 is max time slice
+         
+       //}
+      //for (int i = 0; i < 10 ; i++) {
+
+      //return 0.0;
+      seconds = seconds + timeSlice
+
    }
 
   /**
@@ -51,8 +64,9 @@ public class Clock {
    *  @return  double-precision value of the argument
    *  @throws  NumberFormatException
    */
-   public double validateAngleArg( String argValue ) throws NumberFormatException {
-      return 0.0;
+   public static double validateAngleArg( String argValue ) throws NumberFormatException {
+      if(argValue)
+      //return 0.0;
    }
 
   /**
@@ -66,7 +80,7 @@ public class Clock {
    *  note: remember that the time slice, if it is small will cause the simulation
    *         to take a VERY LONG TIME to complete!
    */
-   public double validateTimeSliceArg( String argValue ) {
+   public static double validateTimeSliceArg( String argValue ) {
       return 0.0;
    }
 
@@ -75,7 +89,8 @@ public class Clock {
    *  @return double-precision value of the hour hand location
    */
    public double getHourHandAngle() {
-      return 0.0;
+      //return 0.0;
+      double getHandAngle = ((this.getTotalSeconds()))
    }
 
   /**
@@ -100,7 +115,7 @@ public class Clock {
    *  @return double-precision value the total seconds private variable
    */
    public double getTotalSeconds() {
-      return 0.0;
+      return this.seconds;
    }
 
   /**
