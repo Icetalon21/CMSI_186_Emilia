@@ -49,7 +49,7 @@ public class Clock {
    */
    public double tick(double timeSlice) {
        //if (timeSlice < 0 || timeSlice > 1800){ //1800 is max time slice
-         
+
        //}
       //for (int i = 0; i < 10 ; i++) {
 
@@ -98,7 +98,9 @@ public class Clock {
    *  @return double-precision value of the minute hand location
    */
    public double getMinuteHandAngle() {
-      return 0.0;
+      //return 0.0;
+      double minuteAngle = ((this.getMinuteHandAngle() + (this.getTotalSeconds() / 60)) * 6);
+      return minuteAngle;
    }
 
   /**
@@ -106,7 +108,8 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-      return 0.0;
+      //return 0.0;
+      double handAngle = (this.getMinuteHandAngle() > this.getHourHandAngle() ? 
    }
 
   /**
