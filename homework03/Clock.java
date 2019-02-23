@@ -17,6 +17,8 @@
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2019-02-13  Emilia Huerta Copied from the repo
  *  @version 2.0.1  2019-02-16  Emilia Huerta Attempted tick() & realized that minutes may not ne used
+ *  @version 2.0.2  2019-02-18  Emilia Huerta Worked on getting the angles for minutes and hours
+ *  @version 2.0.2  2019-02-20  Emilia Huerta Valitated timeSlice
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
@@ -26,8 +28,8 @@ public class Clock {
    //private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
    //private static final double INVALID_ARGUMENT_VALUE = -1.0;
    //private static final double MAXIMUM_DEGREE_VALUE = 360.0;
-   //private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
-   //private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
+   private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
+   private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
    private double hours;
    private double minutes;
    private double seconds;
@@ -81,7 +83,11 @@ public class Clock {
    *         to take a VERY LONG TIME to complete!
    */
    public static double validateTimeSliceArg( String argValue ) {
-      return 0.0;
+      //return 0.0;
+      if (Integer.parseInt(argValue) < 0 || Integer.parseInt(argValue) > 1800){
+         throw new IllegalArgumentException();
+      }
+      return Double.parseDouble(argValue);
    }
 
   /**
@@ -89,8 +95,8 @@ public class Clock {
    *  @return double-precision value of the hour hand location
    */
    public double getHourHandAngle() {
-      //return 0.0;
-      double getHandAngle = ((this.getTotalSeconds()))
+      double hourAngle = (this.getTotalSeconds() * HOUR_HAND_DEGREES_PER_SECOND);
+      return hourAngle;
    }
 
   /**
@@ -98,8 +104,7 @@ public class Clock {
    *  @return double-precision value of the minute hand location
    */
    public double getMinuteHandAngle() {
-      //return 0.0;
-      double minuteAngle = ((this.getMinuteHandAngle() + (this.getTotalSeconds() / 60)) * 6);
+      double minuteAngle = (this.getTotalSeconds() * MINUTE_HAND_DEGREES_PER_SECOND);
       return minuteAngle;
    }
 
@@ -108,8 +113,9 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-      //return 0.0;
-      double handAngle = (this.getMinuteHandAngle() > this.getHourHandAngle() ? 
+      double handAngle = Math.abs(this.getHourHandAngle() - this.getMinuteHandAngle());
+      //double delta = Math.abs(handAngle);
+      return handAngle;
    }
 
   /**
