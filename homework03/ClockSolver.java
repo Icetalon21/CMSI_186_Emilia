@@ -17,6 +17,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2019-02-13  Emilia Huerta Copied from repo
+ *  @version 2.0.1  2019-02-25  Emilia Huerta Validated arguments and called methods in the main
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class ClockSolver {
@@ -25,7 +26,7 @@ public class ClockSolver {
    */
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-   private final double EPSILON_VALUE              = 0.1;      // small value for double-precision comparisons
+   private static final double EPSILON_VALUE              = 0.1;      // small value for double-precision comparisons
 
   /**
    *  Constructor
@@ -52,9 +53,18 @@ public class ClockSolver {
                              "   Please try again..........." );
          System.exit( 1 );
       }
-      Clock clock = new Clock();
+      if( args.length >= 1){
+         double oneArg = Double.parseDouble(args[0]);
+         //360
+         if(Double.parseDouble(args[0]) > 360){
+            System.out.println("Value is too large");
+            System.exit(0);
+         }
+         if(2 <= args.length){
+            double twoArg = Double.parseDouble(args[1]);
+         }
+      }
    }
-
   /**
    *  The main program starts here
    *  remember the constraints from the project description
@@ -65,11 +75,33 @@ public class ClockSolver {
    */
    public static void main( String args[] ) {
       ClockSolver cse = new ClockSolver();
-      Clock clock    = new Clock();
-      double[] timeValues = new double[3];
+      //Clock clock    = new Clock();
+      // double[] timeValues = new double[3];
       cse.handleInitialArguments( args );
-      while( true ) {
-         break;
+      double argOne = 0.0;
+      double argTwo = 0.0;
+      if(1 == args.length){
+         argOne = Double.parseDouble(args[0]);
+         argTwo = 60.0;
+      }
+      if(2 >= args.length){
+         argOne = Double.parseDouble(args [0]);
+         argTwo = Double.parseDouble(args [1]);
+      }
+      //    assign argOne
+      //    assign argTwo Default
+      // if 2 or more:
+      //    assign argOne
+      //    assign argTwo
+      //  asssign default angle window/epsilon
+      Clock clock = new Clock(argTwo);
+      while(clock.getTotalSeconds() <= 43200 ) {
+         clock.tick();
+         if (Math.abs(clock.getHandAngle() - argOne) <= EPSILON_VALUE) {
+            System.out.println(clock.toString()); //time (hour, minute, second)
+         }
+         // clock.validateAngleArg();
+         // clock.validateTimeSlice();
       }
       System.exit( 0 );
    }
