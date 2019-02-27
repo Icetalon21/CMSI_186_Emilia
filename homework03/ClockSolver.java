@@ -18,6 +18,7 @@
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  *  @version 2.0.0  2019-02-13  Emilia Huerta Copied from repo
  *  @version 2.0.1  2019-02-25  Emilia Huerta Validated arguments and called methods in the main
+ *  @version 2.0.2  2019-02-26  Emilia Huerta Cleaned up code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class ClockSolver {
@@ -75,8 +76,6 @@ public class ClockSolver {
    */
    public static void main( String args[] ) {
       ClockSolver cse = new ClockSolver();
-      //Clock clock    = new Clock();
-      // double[] timeValues = new double[3];
       cse.handleInitialArguments( args );
       double argOne = 0.0;
       double argTwo = 0.0;
@@ -84,24 +83,20 @@ public class ClockSolver {
          argOne = Double.parseDouble(args[0]);
          argTwo = 60.0;
       }
-      if(2 >= args.length){
+      if(2 == args.length){
          argOne = Double.parseDouble(args [0]);
          argTwo = Double.parseDouble(args [1]);
       }
-      //    assign argOne
-      //    assign argTwo Default
-      // if 2 or more:
-      //    assign argOne
-      //    assign argTwo
-      //  asssign default angle window/epsilon
+
       Clock clock = new Clock(argTwo);
-      while(clock.getTotalSeconds() <= 43200 ) {
+      while(clock.getTotalSeconds() < 43200 ) {
+         // System.out.println(clock.toString());
          clock.tick();
+         //System.out.println(Math.abs(clock.getHandAngle() - argOne));
+         // System.out.println(clock.getHandAngle() + " /// " + Math.abs(clock.getHandAngle() - argOne) + " <= " + EPSILON_VALUE);
          if (Math.abs(clock.getHandAngle() - argOne) <= EPSILON_VALUE) {
-            System.out.println(clock.toString()); //time (hour, minute, second)
+            System.out.println(clock.toString());
          }
-         // clock.validateAngleArg();
-         // clock.validateTimeSlice();
       }
       System.exit( 0 );
    }
