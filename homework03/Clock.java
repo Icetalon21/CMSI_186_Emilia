@@ -166,21 +166,45 @@ public class Clock {
       double roughMinutes = ((roughHours - hours) * 3600) / 60;
       double minutes = Math.floor(roughMinutes);
       double seconds = ((roughMinutes - minutes) * 60);
-   //    if (hours < 10) {
-   //       hours = "0" + hours;
-   //   } else if (hours == 0) {
-   //       hours = "12";
+      // int hoursInt = (int)hours;
+      // int minutesInt = (int)minutes;
+      // int secondsInt = (int)seconds;
+      // String hoursInt = String.valueOf(hours);
+      // String minutesInt = String.valueOf(minutes);
+      // String secondsInt = String.valueOf(seconds);
+      String hoursInt = Integer.toString((int)hours);
+      String minutesInt = Integer.toString((int)minutes);
+      String secondsInt = Integer.toString((int)seconds);
+      // String zero = "0";
+      // String twelve = "12";
+   //    if (hoursInt < 10) {
+   //       hoursInt = Integer.parseInt(zero) + hoursInt;
+   //   } else if (hoursInt == 0) {
+   //       hoursInt = Integer.parseInt(twelve);
    //   }
-     
-   //   if (minutes < 10) {
-   //       minutes = "0" + minutes;
+
+   //   if (minutesInt < 10) {
+   //       minutesInt = Integer.parseInt(zero) + minutesInt;
    //   }
-     
-   //   if (seconds < 10) {
-   //       seconds = "0" + seconds;
+
+   //   if (secondsInt < 10) {
+   //       secondsInt = Integer.parseInt(zero) + secondsInt;
    //   }
+      if (hours < 10) {
+         hoursInt = "0" + hoursInt;
+     } else if (hours == 0) {
+         hoursInt = "12";
+     }
+
+     if (minutes < 10) {
+         minutesInt = "0" + minutesInt;
+     }
+
+     if (seconds < 10) {
+         secondsInt = "0" + secondsInt;
+     }
    //String clockString = h + ":" + m + ":" + s;
-   String clockString = hours + ":" + minutes + ":" + seconds;
+   String clockString = hoursInt + ":" + minutesInt + ":" + secondsInt;
       return clockString;
       //return "Clock string, dangit!";
    }
