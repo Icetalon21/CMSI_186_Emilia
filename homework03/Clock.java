@@ -18,9 +18,10 @@
  *  @version 2.0.0  2019-02-13  Emilia Huerta Copied from the repo
  *  @version 2.0.1  2019-02-16  Emilia Huerta Attempted tick() & realized that minutes may not ne used
  *  @version 2.0.2  2019-02-18  Emilia Huerta Worked on getting the angles for minutes and hours
- *  @version 2.0.2  2019-02-20  Emilia Huerta Valitated timeSlice
- *  @version 2.0.3  2019-02-25  Emilia Huerta Changed location of timeSlice
- *  @version 2.0.4  2019-02-26  Emilia Huerta Major rework to the toString method
+ *  @version 2.0.3  2019-02-20  Emilia Huerta Valitated timeSlice
+ *  @version 2.0.4  2019-02-25  Emilia Huerta Changed location of timeSlice
+ *  @version 2.0.5  2019-02-26  Emilia Huerta Major rework to the toString method
+ *  @version 2.0.6  2019-02-27  Emilia Huerta 03:00:00 was not printing - fixed
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
@@ -36,7 +37,6 @@ public class Clock {
    private double minutes;
    private double seconds;
    private double timeSlice;
-   //private double elapsedTime = 0.0;
   /**
    *  Constructor goes here
    */
@@ -53,29 +53,12 @@ public class Clock {
    *  Method to calculate the next tick from the time increment
    *  @return double-precision value of the current clock tick
    */
-   //public void tick() {
      public Double tick(){
         this.seconds = this.seconds + timeSlice;
         getHourHandAngle();
         getMinuteHandAngle();
         getHandAngle();
         return this.seconds;
-
-      //changed from public double to public void because I could not return a double
-      // this.seconds = this.seconds + timeSlice;
-
-      // while(this.seconds >=60){
-      //    this.minutes = this.minutes + 1;
-      //    this.seconds = this.seconds -60;
-      // }
-      // while(this.minutes >= 60){
-      //    this.hours = this.hours + 1;
-      //    this.minutes = this.minutes - 60;
-      // }
-      // while(this.hours > 12){
-      //    this.hours = this.hours - 12;
-      // }
-
    }
 
   /**
@@ -86,7 +69,7 @@ public class Clock {
    */
    public static double validateAngleArg( String argValue ) throws NumberFormatException {
       if(Double.isNaN(Integer.parseInt(argValue))){
-         throw new NumberFormatException(); //try catch
+         throw new NumberFormatException();
       }
       return Double.parseDouble(argValue);
    }
@@ -116,7 +99,6 @@ public class Clock {
    */
    public double getHourHandAngle() {
       double hourAngle = (this.getTotalSeconds() * HOUR_HAND_DEGREES_PER_SECOND);
-      //System.out.println("meow" + hourAngle);
       return hourAngle;
    }
 
@@ -126,10 +108,10 @@ public class Clock {
    */
    public double getMinuteHandAngle() {
       double minuteAngle = (this.getTotalSeconds() * MINUTE_HAND_DEGREES_PER_SECOND);
-      while(minuteAngle > 360){
+      // minuteAngle = minuteAngle % 360;
+      while(minuteAngle >= 360){
          minuteAngle -= 360;
       }
-      //System.out.println("meow" + MINUTE_HAND_DEGREES_PER_SECOND);
       return minuteAngle;
    }
 
@@ -139,7 +121,6 @@ public class Clock {
    */
    public double getHandAngle() {
       double handAngle = Math.abs(this.getHourHandAngle() - this.getMinuteHandAngle());
-      //double delta = Math.abs(handAngle);
       return handAngle;
    }
 
@@ -149,7 +130,6 @@ public class Clock {
    *  @return double-precision value the total seconds private variable
    */
    public double getTotalSeconds() {
-      //System.out.println("meow" + this.seconds);
       return this.seconds;
    }
 
@@ -158,55 +138,33 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      // String h = Integer.toString((int)this.hours);
-      // String m = Integer.toString((int)this.minutes);
-      // String s = Integer.toString((int)this.seconds);
-      double roughHours = this.seconds/3600;
-      double hours = Math.floor(roughHours);
-      double roughMinutes = ((roughHours - hours) * 3600) / 60;
-      double minutes = Math.floor(roughMinutes);
-      double seconds = ((roughMinutes - minutes) * 60);
-      // int hoursInt = (int)hours;
-      // int minutesInt = (int)minutes;
-      // int secondsInt = (int)seconds;
-      // String hoursInt = String.valueOf(hours);
-      // String minutesInt = String.valueOf(minutes);
-      // String secondsInt = String.valueOf(seconds);
-      String hoursInt = Integer.toString((int)hours);
-      String minutesInt = Integer.toString((int)minutes);
-      String secondsInt = Integer.toString((int)seconds);
-      // String zero = "0";
-      // String twelve = "12";
-   //    if (hoursInt < 10) {
-   //       hoursInt = Integer.parseInt(zero) + hoursInt;
-   //   } else if (hoursInt == 0) {
-   //       hoursInt = Integer.parseInt(twelve);
-   //   }
+      int currSeconds = (int) this.seconds;
+      int newHours = (int) Math.floor(currSeconds / 3600);
+      currSeconds = currSeconds % 3600;
+      int newMinutes = (int) Math.floor(currSeconds / 60);
+      currSeconds = currSeconds % 60;
 
-   //   if (minutesInt < 10) {
-   //       minutesInt = Integer.parseInt(zero) + minutesInt;
-   //   }
+      String hoursInt = Integer.toString(newHours);
+      String minutesInt = Integer.toString(newMinutes);
+      String secondsInt = Integer.toString(currSeconds);
 
-   //   if (secondsInt < 10) {
-   //       secondsInt = Integer.parseInt(zero) + secondsInt;
-   //   }
-      if (hours < 10) {
+      if (newHours < 10) {
          hoursInt = "0" + hoursInt;
-     } else if (hours == 0) {
+     } else if (newHours == 0) {
          hoursInt = "12";
      }
 
-     if (minutes < 10) {
+     if (newMinutes < 10) {
          minutesInt = "0" + minutesInt;
      }
 
-     if (seconds < 10) {
+     if (currSeconds < 10) {
          secondsInt = "0" + secondsInt;
      }
-   //String clockString = h + ":" + m + ":" + s;
+
    String clockString = hoursInt + ":" + minutesInt + ":" + secondsInt;
       return clockString;
-      //return "Clock string, dangit!";
+
    }
 
   /**
