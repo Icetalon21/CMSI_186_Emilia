@@ -1,0 +1,180 @@
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+    New clock created: 00:00:00
+    Testing validateAngleArg()....
+      sending '  0 degrees', expecting double value   0.0 - Exception thrown: java.lang.NumberFormatException: For input string: "0.0"
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter at least one argument
+   Usage: java ClockSolver <angle> [timeSlice]
+   Please try again...........
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+01:00:00
+
+   Hello world, from the ClockSolver program!!
+
+
+01:00:00
+03:21:50
+05:21:50
+07:43:40
+09:43:40
+
+   Hello world, from the ClockSolver program!!
+
+
+00:05:27
+00:05:28
+01:00:00
+01:00:01
+01:10:54
+01:10:55
+02:05:27
+02:05:28
+02:16:22
+02:16:23
+03:10:55
+03:10:56
+03:21:49
+03:21:50
+03:21:51
+04:16:22
+04:16:23
+04:16:24
+04:27:17
+04:27:18
+05:21:50
+05:21:51
+05:32:44
+05:32:45
+05:32:46
+06:27:17
+06:27:18
+06:27:19
+06:38:12
+06:38:13
+07:32:45
+07:32:46
+07:43:40
+07:43:41
+08:38:13
+08:38:14
+08:49:07
+08:49:08
+09:43:40
+09:43:41
+09:54:35
+09:54:36
+10:49:08
+10:49:09
+11:54:35
+11:54:36
+
+   Hello world, from the ClockSolver program!!
+
+
+08:30:00
+
+   Hello world, from the ClockSolver program!!
+
+
+03:02:42
+04:08:09
+05:13:36
+08:57:22
+
+   Hello world, from the ClockSolver program!!
+
+
+00:13:40
+00:13:41
+01:19:07
+01:19:08
+02:24:34
+02:24:36
+03:02:41
+03:02:42
+03:30:03
+04:08:08
+04:08:10
+04:35:30
+05:13:36
+05:13:37
+05:40:58
+05:40:59
+06:19:04
+06:46:25
+06:46:26
+07:24:32
+07:51:52
+07:51:53
+08:29:59
+08:30:00
+08:57:21
+09:35:26
+09:35:27
+10:40:53
+10:40:55
+11:46:22
+
+   Hello world, from the ClockSolver program!!
+
+
+00:16:22
+01:21:50
+02:27:17
+03:00:00
+03:32:45
+04:05:27
+04:38:12
+05:10:55
+05:43:40
+06:16:22
+06:49:07
+07:21:50
+07:54:35
+08:27:17
+
+   Hello world, from the ClockSolver program!!
+
+
+00:32:43
+01:38:11
+02:43:38
+03:49:06
+04:54:34
+06:00:01
+07:05:29
+08:10:56
+09:16:24
+10:21:52
+11:27:19
+
+   Hello world, from the ClockSolver program!!
+
+
+03:00:00
