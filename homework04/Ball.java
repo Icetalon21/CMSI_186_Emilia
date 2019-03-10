@@ -15,6 +15,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2019-03-05  Emilia Huerta Created basic constructor
  *  @version 1.0.1  2019-03-06  Emilia Huerta Tried Point and Point2D - failed
+ *  @version 1.0.2  2019-03-10  Emilia Huerta Wrote methods to validate x & y
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 //import java.awt.Point;
 // import java.awt.*;
@@ -71,6 +72,12 @@ public class Ball{
         return Double.parseDouble(argOne);
     }
 
+    public static double isYInBounds(String argTwo){
+        if(Double.parseDouble(argTwo) < -500 || Double.parseDouble(argTwo) > 500){
+           throw new IllegalArgumentException("Ball is not in Bounds");
+        }
+        return Double.parseDouble(argTwo);
+    }
 
     //  public static double isXInBounds(argOne){
     //     if( -500 < (Integer.parseInt(x) || Integer.parseInt(y) > 500){
