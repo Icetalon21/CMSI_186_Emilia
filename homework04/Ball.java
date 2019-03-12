@@ -16,6 +16,7 @@
  *  @version 1.0.0  2019-03-05  Emilia Huerta Created basic constructor
  *  @version 1.0.1  2019-03-06  Emilia Huerta Tried Point and Point2D - failed
  *  @version 1.0.2  2019-03-10  Emilia Huerta Wrote methods to validate x & y
+ *  @version 1.0.2  2019-03-12  Emilia Huerta Wrote method to return current speed of the ball
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 //import java.awt.Point;
 // import java.awt.*;
@@ -58,13 +59,19 @@ public class Ball{
 
 
     public double getX(){
-        return x;
+        return this.x;
     }
 
     public double getY(){
-        return y;
+        return this.y;
     }
 
+    /**
+    *  Method to validate the X argument
+    @param   argOne String from the main programs args[0] input
+    @return  double-precision value of the argument
+    @throws  IllegalArgumentException
+   */
     public static double isXInBounds(String argOne){
         if(Double.parseDouble(argOne) < -500 || Double.parseDouble(argOne) > 500){
            throw new IllegalArgumentException("Ball is not in Bounds");
@@ -79,6 +86,10 @@ public class Ball{
         return Double.parseDouble(argTwo);
     }
 
+    public String getCurrentSpeed(){
+        return "(" + this.xVel + "," + this.yVel + ")";
+    }
+
     //  public static double isXInBounds(argOne){
     //     if( -500 < (Integer.parseInt(x) || Integer.parseInt(y) > 500){
     //        throw new IllegalArgumentException("Ball is not in Bounds");
@@ -86,7 +97,7 @@ public class Ball{
     //  }
 
     public String locationToString(){
-        return "(" + x + "," + y + ")";
+        return "(" + this.x + "," + this.y + ")";
     }
 
     // public double getLocation(){
