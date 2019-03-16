@@ -16,7 +16,9 @@
  *  @version 1.0.0  2019-03-05  Emilia Huerta Created basic constructor
  *  @version 1.0.1  2019-03-06  Emilia Huerta Tried Point and Point2D - failed
  *  @version 1.0.2  2019-03-10  Emilia Huerta Wrote methods to validate x & y
- *  @version 1.0.2  2019-03-12  Emilia Huerta Wrote method to return current speed of the ball
+ *  @version 1.0.3  2019-03-12  Emilia Huerta Wrote method to return current speed of the ball
+ *  @version 1.0.4  2019-03-14  Emilia Huerta Tested the location return strings - worked
+ *  @version 1.0.5  2019-03-15  Emilia Huerta Tried to incorporate friction for speed after tick - failed
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 //import java.awt.Point;
 // import java.awt.*;
@@ -34,7 +36,7 @@ public class Ball{
     //public constructor
     public Ball(double x, double y, double xVel, double yVel){
         double radius = 4.45;
-        double weight = 1;
+        double weight = 1.0;
         this.x = x;
         this.y = y;
         this.xVel = xVel;
@@ -99,6 +101,26 @@ public class Ball{
     public String locationToString(){
         return "(" + this.x + "," + this.y + ")";
     }
+
+    //https://stackoverflow.com/questions/15990209/game-physics-friction
+    // public double getXSpeedAfterTick(){
+    //     double newX = 0.99 * this.xVel;
+    //     return newX;
+    // }
+
+    // public double getYSpeedAfterTick(){
+    //     double newY = 0.99 * this.yVel;
+    //     return newY;
+    // }
+
+    public String speedAfterTick(double b){ //was lcoation??
+        double newX = this.x * 0.99;
+        double newY = this.y * 0.99;
+        return "(" + newX + "," + newY + ")";
+    }
+
+
+
 
     // public double getLocation(){
     //     return (this.x, this.y);
