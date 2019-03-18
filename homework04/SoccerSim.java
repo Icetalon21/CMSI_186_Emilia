@@ -16,7 +16,8 @@
  *  @version 1.0.0  2019-03-05  Emilia Huerta Created main
  *  @version 1.0.1  2019-03-06  Emilia Huerta Added documentation
  *  @version 1.0.2  2019-03-12  Emilia Huerta Added an array for the soccerballs
- *  @version 1.0.2  2019-03-17  Emilia Huerta Wrote booleans for if a ball was touching/not
+ *  @version 1.0.3  2019-03-17  Emilia Huerta Wrote booleans for if a collsion/not
+ *  @version 1.0.4  2019-03-18  Emilia Huerta Wrote tick(), timeSliceUpdate(), and fixed Clock
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -27,14 +28,35 @@ public class SoccerSim{
    private double fieldWidth = 500.0;
    private double fieldHight = 500.0;
    private boolean stillMoving = true;
-   private Clock clock = new Clock(0);
+   private static Clock clock = null;
    private double timeSlice = 1.0; // for one second
+   private double poleX = 50.0;
+   private double poleY = 50.0;
 
+   public SoccerSim(){
+
+   }
    public static void main( String args[] ) {
       System.out.println( "\n   Hello world, from the SoccerSim program!!\n\n" );
+      SoccerSim soccerSim = new SoccerSim();
       int ballCount = (args.length/4);
       Ball[] balls = new Ball[ballCount];
       int j = 0;
+      // double last = SoccerSim.lastArg(stringArray);
+      double last = 1.0;
+      if (args.length % 4 == 1) {
+         try{
+            last = Double.parseDouble(args[args.length -1]);
+         }
+         catch (Exception exception){
+            throw new IllegalArgumentException();
+         }
+      if (last <= 0.0){
+         throw new IllegalArgumentException();
+         }
+      }
+      clock = new Clock(last); // if
+      //double.parse double if not use one second
       for(int i = 0; i < args.length; i +=4){
          try{
             double ballX = Double.parseDouble( args[i] );
@@ -45,15 +67,25 @@ public class SoccerSim{
             j++;
          }
          catch (Exception exception){
-            throw new IllegalArgumentException("Please enter valid input");
+            throw new IllegalArgumentException("Please enter a valid input");
          }
       }
+
       do {
-         Clock.tick(0.0, 0.0, 0.0, soccerSim.timeSlice);
-         SoccerSim.timeSiceUpdate();
+         soccerSim.clock.tick();
+         // Clock clock = new Clock(this.timeSlice);
+         // clock.tick();
+         soccerSim.timeSiceUpdate();
+         if(soccerSim.collision(balls) == true){
+            System.out.println("A collision occurred");
+            break;
+         }
+         if(!soccerSim.aBallMoving()){
+            System.out.print("All of the balls have stopped moveing. No collsions occurred.");
+         }
 
       } while (true);
-      System.out.println("derp");
+      System.out.println("derp. End of program.");
       // Clock clock = new Clock (0, 0, 0.0, SoccerSim.timeSlice); //hours, minutes, & seconds
       // double BallX = 0;
       // double BallY = 0;
@@ -77,7 +109,7 @@ public class SoccerSim{
             }
          }
 
-         static boolean touching(Ball[] ballArray){
+         static boolean collision(Ball[] ballArray){
             for(int i = 0; i < ballArray.length -1; ++i){
                for(int j = i +1; j < ballArray.length; ++j){
                   double ballX;
@@ -89,8 +121,8 @@ public class SoccerSim{
             return false;
          }
 
-         static boolean notTouching(Ball[] ballArray){
-            return !SoccerSim.touching(ballArray);
+         static boolean notCollision(Ball[] ballArray){
+            return !SoccerSim.collision(ballArray);
          }
 
          public boolean aBallMoving(){
@@ -106,6 +138,32 @@ public class SoccerSim{
                this.soccerBalls[i].move(this.timeSlice);
             }
          }
+
+         public String initialReport(){
+            String string = "";
+            string = string + "\n The field is " + fieldWidth + "by " + fieldHight;
+            string = string + "\n The pole is located at " + poleX + "," + poleY;
+            string = string + "\n The timeSlice is " + this.timeSlice;
+            string = string + "\n The intial report is at 00:00:00.00";
+            return string;
+         }
+
+         // static double lastArg(String[] stringArray){
+         //    double last = 1.0;
+         //    if (stringArray.length % 4 ==1) {
+         //       try{
+         //          last = Double.parseDouble(stringArray[stringArray.length -1]);
+         //    }
+         //       catch (Exception exception){
+         //          throw new IllegalArgumentException();
+         //    }
+         //    if (last <= 0.0){
+         //       throw new IllegalArgumentException();
+         //    }
+         //    }
+         //    return last;
+         // }
+
 
          // public int[] isTouching(){
          //    int t;
