@@ -21,6 +21,7 @@
  *  @version 1.0.5  2019-03-19  Emilia Huerta Created getBalls() method & fixed main
  *  @version 1.0.6  2019-03-19  Emilia Huerta Cleaned up code
  *  @version 1.0.7  2019-03-19  Emilia Huerta Fixed timeSlice
+ *  @version 1.0.8  2019-03-19  Emilia Huerta Cleaned up code again
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -66,11 +67,6 @@ public class SoccerSim{
       }
    }
 
-   // public void validateArgs(String[] args){
-   //    if(1 == args.length % 4){
-   //       this.timeSlice = this.clock.validateTimeSliceArg(args[args.length - 1]);
-   //    }
-   // }
    public void validateTimeSlice(){
       if(this.timeSlice < 1.0){
          System.out.print("TimeSlice is too small. Ending program");
@@ -166,16 +162,7 @@ public class SoccerSim{
             throw new IllegalArgumentException();
          }
       }
-      clock = new Clock(last); // if
-      //double.parse double if not use one second
-      // if(last < 1){
-      //    last = 1.0;
-      //    System.out.println("TimeSlice too small. Defaulting to 1 second");
-      // }
-      // if(last > 1800){
-      //    last = 1.0;
-      //    System.out.println("TimeSlice too large. Defaulting to 1 second");
-      // }
+      clock = new Clock(last);
       for(int i = 0; i < args.length; i +=4){
          try{
             double ballX = Double.parseDouble( args[i] );
