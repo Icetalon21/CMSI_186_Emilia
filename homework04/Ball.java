@@ -20,13 +20,15 @@
  *  @version 1.0.4  2019-03-14  Emilia Huerta Tested the location return strings - worked
  *  @version 1.0.5  2019-03-15  Emilia Huerta Tried to incorporate friction for speed after tick - failed
  *  @version 1.0.6  2019-03-17  Emilia Huerta Wrote methods to see if ball is still moving/at rest
+ *  @version 1.0.7  2019-03-18  Emilia Huerta Added a hasCollided method
+ *  @version 1.0.8  2019-03-19  Emilia Huerta Added an isInBounds method
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 //import java.awt.Point;
 // import java.awt.*;
 // import java.awt.geom.Point2D;
 
 public class Ball{
-    private double radius = 4.45;
+    private double radius = 4.45; // radius * 2 = 8.9
     private double weight = 1.0;
     private double x;
     private double y;
@@ -89,18 +91,28 @@ public class Ball{
     @return  double-precision value of the argument
     @throws  IllegalArgumentException
    */
-    public static double isXInBounds(String argOne){
-        if(Double.parseDouble(argOne) < -500 || Double.parseDouble(argOne) > 500){
-           throw new IllegalArgumentException("Ball is not in Bounds");
-        }
-        return Double.parseDouble(argOne);
-    }
+    // public static double isXInBounds(String argOne){
+    //     if(Double.parseDouble(argOne) < -500 || Double.parseDouble(argOne) > 500){
+    //        throw new IllegalArgumentException("Ball is not in Bounds");
+    //     }
+    //     return Double.parseDouble(argOne);
+    // }
 
-    public static double isYInBounds(String argTwo){
-        if(Double.parseDouble(argTwo) < -500 || Double.parseDouble(argTwo) > 500){
-           throw new IllegalArgumentException("Ball is not in Bounds");
+    // public static double isYInBounds(String argTwo){
+    //     if(Double.parseDouble(argTwo) < -500 || Double.parseDouble(argTwo) > 500){
+    //        throw new IllegalArgumentException("Ball is not in Bounds");
+    //     }
+    //     return Double.parseDouble(argTwo);
+    // }
+
+    public boolean isInBounds(){
+        if(this.x < -250 || this.x > 250){
+            return false;
         }
-        return Double.parseDouble(argTwo);
+        if(this.y < -250 || this.y > 250){
+            return false;
+        }
+        return true;
     }
 
     public boolean atRest(){
@@ -111,24 +123,34 @@ public class Ball{
         return !this.atRest;
     }
 
-    public void move(double b){  //got help from TA. Honestly dont understand this movement formula yet.
+    public void move(double timeSlice){  //got help from TA.
         if(!this.atRest){
-            while(b >= 1.0){
+            while(timeSlice >= 1.0){
                 this.x += this.xVel;
                 this.y += this.yVel;
-                this.xVel -= 0.01 * this.xVel;
-                this.yVel -= 0.01 * this.yVel;
-                b -= 1.0;
-
-            if(b > 0.0){
-                this.x += this.xVel * b;
-                this.y += this.yVel * b;
-                this.xVel -= 0.01 * this.xVel * b;
-                this.yVel -= 0.01 * this.yVel * b;
+                this.xVel -= 0.01 * this.xVel; //Subtracting 0.01 from the velocity
+                this.yVel -= 0.01 * this.yVel; //Due to friction
+                timeSlice -= 1.0;
             }
-            this.atRest = Math.sqrt(this.xVel * this.xVel + this.yVel * this.yVel) < 0.0833333;
+                if(timeSlice > 0.0){
+                    this.x += this.xVel * timeSlice;
+                    this.y += this.yVel * timeSlice;
+                    this.xVel -= 0.01 * this.xVel * timeSlice;
+                    this.yVel -= 0.01 * this.yVel * timeSlice;
+                    System.out.println(this.xVel);
+                    System.out.println(this.atRest);
+                }
+                this.atRest = Math.sqrt(this.xVel * this.xVel + this.yVel * this.yVel) < 0.0833333;
             }
         }
+
+
+    public boolean hasCollided(Ball b){
+        // System.out.print(b.x)
+        if(Math.hypot(Math.abs(b.getX() - this.x), Math.abs(b.getY() - this.y)) < 8.9){
+            return true;
+        }
+        return false;
     }
 
     // public String getCurrentSpeed(){
@@ -141,7 +163,7 @@ public class Ball{
     //     }
     //  }
 
-    public String locationToString(){
+    public String toString(){
         if(this.atRest){
             return "Ball is located at (" + this.x + "," + this.y + ")";
         }
@@ -159,11 +181,11 @@ public class Ball{
     //     return newY;
     // }
 
-    public String speedAfterTick(double b){ //was lcoation??
-        double newX = this.x * 0.99;
-        double newY = this.y * 0.99;
-        return "(" + newX + "," + newY + ")";
-    }
+    // public String speedAfterTick(double b){ //was lcoation??
+    //     double newX = this.x * 0.99;
+    //     double newY = this.y * 0.99;
+    //     return "(" + newX + "," + newY + ")";
+    // }
 
 
 
@@ -184,7 +206,37 @@ public class Ball{
 
     public static void main( String[] args ) {
         System.out.println( "Hello world from the Ball class..." );
-
+        Ball ball1 = new Ball(10.0, 50.0, 6.0, 2.0);
+        Ball ball2 = new Ball(2.0, 6.0, 3.0, 7.0);
+        Ball ball3 = new Ball(30.0, 70.0, 0.0, 0.0);
+        Ball ball4 = new Ball(4.0, 7.0, 3.0, 2.0);
+        System.out.println("Ball ball1: " + ball1.toString());
+        // System.out.println("Ball b1: " + ball1.getCurrentSpeed());
+        System.out.println("Ball ball2: " + ball2.toString());
+        // System.out.println("Ball b2: " + ball2.getCurrentSpeed());
+        System.out.println("Ball ball3: " + ball3.toString());
+        // System.out.println("Ball b3: " + ball3.getCurrentSpeed());
+        System.out.println("Ball ball4: " + ball4.toString());
+        // System.out.println("Ball b4: " + ball4.getCurrentSpeed());
+        System.out.println();
+        ball1.move(1.0);
+        ball2.move(1.0);
+        ball3.move(0.0);
+        ball4.move(2.0);
+        // ball2.speedAfterTick(0.1);
+        // ball3.speedAfterTick(0.1);
+        // ball4.speedAfterTick(0.1);
+        System.out.println("Ball ball1: " + ball1.toString());
+        System.out.println("Ball ball2: " + ball2.toString());
+        System.out.println("Ball ball3: " + ball3.toString());
+        System.out.println("Ball ball4: " + ball4.toString());
+        // System.out.println("Ball b2: " + ball2.locationToString());
+        // System.out.println("Ball b3: " + ball3.toString());
+        // System.out.println("Ball b4: " + ball4.toString());
+        System.out.println(ball1.atRest());
+        System.out.println(ball2.atRest());
+        System.out.println(ball3.atRest());
+        System.out.println(ball4.atRest());
         // System.out.println(new Point(5,5).toString());
         // Point p = new Point(3,2);
         //     System.out.println(p.toString());
