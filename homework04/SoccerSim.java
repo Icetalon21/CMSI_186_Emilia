@@ -20,6 +20,7 @@
  *  @version 1.0.4  2019-03-18  Emilia Huerta Wrote tick(), timeSliceUpdate(), and fixed Clock
  *  @version 1.0.5  2019-03-19  Emilia Huerta Created getBalls() method & fixed main
  *  @version 1.0.6  2019-03-19  Emilia Huerta Cleaned up code
+ *  @version 1.0.7  2019-03-19  Emilia Huerta Fixed timeSlice
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -31,7 +32,7 @@ public class SoccerSim{
    private double fieldHight = 500.0;
    private boolean stillMoving = true;
    private static Clock clock = null;
-   private double timeSlice = 100.0; // for one second
+   private double timeSlice = 1.0; // for one second
    private double poleX = 50.0;
    private double poleY = 50.0;
    private double x;
@@ -40,7 +41,7 @@ public class SoccerSim{
    private double yVel;
    private boolean initialReport = true;
 
-   public SoccerSim(double x, double y, double xVel, double yVel, int ballCount){ //hey this is your construcotr
+   public SoccerSim(double x, double y, double xVel, double yVel, int ballCount, double timeSlice){ //hey this is your construcotr
       this.ballCount = ballCount;
       // System.out.println(ballCount);
       this.soccerBalls = new Ball [ this.ballCount ];
@@ -59,6 +60,25 @@ public class SoccerSim{
       if( 4 > args.length){
          System.out.println(" Sorry you must enter in at least four arguments\n");
          System.exit(0);
+      }
+      if( 1 < args.length % 4){
+         throw new IllegalArgumentException();
+      }
+   }
+
+   // public void validateArgs(String[] args){
+   //    if(1 == args.length % 4){
+   //       this.timeSlice = this.clock.validateTimeSliceArg(args[args.length - 1]);
+   //    }
+   // }
+   public void validateTimeSlice(){
+      if(this.timeSlice < 1.0){
+         System.out.print("TimeSlice is too small. Ending program");
+         System.exit(3);
+      }
+      if(this.timeSlice > 1800){
+         System.out.print("TimeSlice is too large. Ending program");
+         System.exit(4);
       }
    }
 
@@ -122,7 +142,7 @@ public class SoccerSim{
 
    public static void main( String args[] ) {
       System.out.println( "\n   Hello world, from the SoccerSim program!!\n\n" );
-      SoccerSim soccerSim = new SoccerSim(0.0, 0.0, 0.0, 0.0, args.length/4); //initial dec of soccerSim
+      SoccerSim soccerSim = new SoccerSim(0.0, 0.0, 0.0, 0.0, args.length/4, 1); //initial dec of soccerSim
       try{
          soccerSim.handleInitialArguments(args);
       }
@@ -135,20 +155,27 @@ public class SoccerSim{
          System.exit(2);
       }
       int j = 0;
-      double last = 1.0;
-      if (args.length % 4 == 1) {
+      double last = soccerSim.timeSlice;
+      if (args.length % 4 == 1) { // 9 % 4  = 1
          try{
             last = Double.parseDouble(args[args.length -1]);
+            soccerSim.timeSlice = last;
+            soccerSim.validateTimeSlice();
          }
          catch (Exception exception){
             throw new IllegalArgumentException();
          }
       }
-      if (last <= 0.0){
-         throw new IllegalArgumentException();
-      }
       clock = new Clock(last); // if
       //double.parse double if not use one second
+      // if(last < 1){
+      //    last = 1.0;
+      //    System.out.println("TimeSlice too small. Defaulting to 1 second");
+      // }
+      // if(last > 1800){
+      //    last = 1.0;
+      //    System.out.println("TimeSlice too large. Defaulting to 1 second");
+      // }
       for(int i = 0; i < args.length; i +=4){
          try{
             double ballX = Double.parseDouble( args[i] );
