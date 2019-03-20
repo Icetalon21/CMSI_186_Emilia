@@ -23,6 +23,7 @@
  *  @version 1.0.7  2019-03-19  Emilia Huerta Fixed timeSlice
  *  @version 1.0.8  2019-03-19  Emilia Huerta Cleaned up code again
  *  @version 1.0.9  2019-03-19  Emilia Huerta Deleted unecessary prints
+ *  @version 1.1.0  2019-03-19  Emilia Huerta Added maxLength which fixed timeSlice
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -42,6 +43,7 @@ public class SoccerSim{
    private double xVel;
    private double yVel;
    private boolean initialReport = true;
+   private int maxLength = 0;
 
    public SoccerSim(double x, double y, double xVel, double yVel, int ballCount, double timeSlice){ //hey this is your construcotr
       this.ballCount = ballCount;
@@ -69,7 +71,7 @@ public class SoccerSim{
    }
 
    public void validateTimeSlice(){
-      if(this.timeSlice < 1.0){
+      if(this.timeSlice < 0.001){
          System.out.print("TimeSlice is too small. Ending program");
          System.exit(3);
       }
@@ -152,18 +154,20 @@ public class SoccerSim{
       }
       int j = 0;
       double last = soccerSim.timeSlice;
+      soccerSim.maxLength = args.length;
       if (args.length % 4 == 1) { // 9 % 4  = 1
          try{
             last = Double.parseDouble(args[args.length -1]);
             soccerSim.timeSlice = last;
             soccerSim.validateTimeSlice();
+            soccerSim.maxLength = args.length -1;
          }
          catch (Exception exception){
             throw new IllegalArgumentException();
          }
       }
       clock = new Clock(last);
-      for(int i = 0; i < args.length; i +=4){
+      for(int i = 0; i < soccerSim.maxLength; i +=4){
          try{
             double ballX = Double.parseDouble( args[i] );
             double ballY = Double.parseDouble( args[i+1] );
