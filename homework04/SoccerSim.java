@@ -22,6 +22,7 @@
  *  @version 1.0.6  2019-03-19  Emilia Huerta Cleaned up code
  *  @version 1.0.7  2019-03-19  Emilia Huerta Fixed timeSlice
  *  @version 1.0.8  2019-03-19  Emilia Huerta Cleaned up code again
+ *  @version 1.0.9  2019-03-19  Emilia Huerta Deleted unecessary prints
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -103,7 +104,6 @@ public class SoccerSim{
    }
 
    public void timeSliceUpdate(Ball[] balls){
-      System.out.println("heloo???");
       for(Ball ball: balls) {
          ball.move(this.timeSlice);
       }
@@ -123,7 +123,7 @@ public class SoccerSim{
          }
       }else{
          string = string + "\n Reporting at " + this.clock.toString();
-         System.out.print(this.soccerBalls.length);
+         // System.out.print(this.soccerBalls.length);
          for (int i = 0; i < this.soccerBalls.length; ++i){
             System.out.println(this.soccerBalls[i].isInBounds());
             string = string + "\n Ball" + i + ":\t" + this.soccerBalls[i].toString();
@@ -199,6 +199,5 @@ public class SoccerSim{
          }
 
       } while (true);
-      // System.out.println("derp. End of program.");
    }
 }
