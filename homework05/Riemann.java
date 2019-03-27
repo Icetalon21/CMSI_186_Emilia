@@ -16,6 +16,7 @@
  *  @version 1.0.0  2019-03-20  Emilia Huerta Created basic constructor
  *  @version 1.0.1  2019-03-25  Emilia Huerta Attempted to deal with "%"
  *  @version 1.0.2  2019-03-25  Emilia Huerta Wrote fields; tried to find roots
+ *  @version 1.0.3  2019-03-27  Emilia Huerta Wrote for if % or no %
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -65,8 +66,16 @@ public class Riemann{
    // }
 
    public static void main (String [] args){
+      System.out.println(" \n Hello world, from the Riemann program \n");
       if(args[args.length -1].contains("%")){
          double percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
+         double upperBound = Double.parseDouble((args[args.length - 2]));
+         double lowerBound = Double.parseDouble((args[args.length - 3]));
+      }
+      if(!args[args.length - 1].contains("%")){
+         double percent = 0.01;
+         double upperBound = Double.parseDouble((args[args.length - 1]));
+         double lowerBound = Double.parseDouble((args[args.length - 2]));
       }
       //make a riemann(blah blah blah, percent)
 
