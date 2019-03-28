@@ -1,0 +1,2617 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+Hello world from the Ball class...
+Ball ball1: Ball is located at (10.0,50.0) at a velocity of (6.0,2.0) feet per second
+Ball ball2: Ball is located at (2.0,6.0) at a velocity of (3.0,7.0) feet per second
+Ball ball3: Ball is located at (30.0,70.0)
+Ball ball4: Ball is located at (4.0,7.0) at a velocity of (3.0,2.0) feet per second
+
+Ball ball1: Ball is located at (16.0,52.0) at a velocity of (5.94,1.98) feet per second
+Ball ball2: Ball is located at (5.0,13.0) at a velocity of (2.97,6.93) feet per second
+Ball ball3: Ball is located at (30.0,70.0)
+Ball ball4: Ball is located at (9.97,10.98) at a velocity of (2.9403,1.9602) feet per second
+false
+false
+true
+false
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing Clock class ...                
+======================================  
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+    New clock created: 00:00:00
+    Testing validateAngleArg()....
+      sending '  0 degrees', expecting double value   0.0 - got 0.0
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+ Sorry you must enter in at least four arguments
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+ Sorry you must enter in at least four arguments
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+ Sorry you must enter in at least four arguments
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+ Sorry you must enter in at least four arguments
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+Please enter in valid arguments
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+ Sorry you must enter in at least four arguments
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+TimeSlice is too small. Ending program.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+TimeSlice is too large. Ending program.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+TimeSlice is too small. Ending program.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+...   Should stop at about 4:42           
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 1.0
+ The intial report is at 00:00:00.00
+ Ball0:	Ball is located at (10.0,10.0) at a velocity of (1.0,1.0) feet per second
+true
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (11.0,11.0) at a velocity of (0.99,0.99) feet per second
+true
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (11.0,11.0) at a velocity of (0.99,0.99) feet per second
+true
+
+ Reporting at 00:00:02
+ Ball0:	Ball is located at (11.99,11.99) at a velocity of (0.9801,0.9801) feet per second
+true
+
+ Reporting at 00:00:02
+ Ball0:	Ball is located at (11.99,11.99) at a velocity of (0.9801,0.9801) feet per second
+true
+
+ Reporting at 00:00:03
+ Ball0:	Ball is located at (12.9701,12.9701) at a velocity of (0.970299,0.970299) feet per second
+true
+
+ Reporting at 00:00:03
+ Ball0:	Ball is located at (12.9701,12.9701) at a velocity of (0.970299,0.970299) feet per second
+true
+
+ Reporting at 00:00:04
+ Ball0:	Ball is located at (13.940399000000001,13.940399000000001) at a velocity of (0.9605960100000001,0.9605960100000001) feet per second
+true
+
+ Reporting at 00:00:04
+ Ball0:	Ball is located at (13.940399000000001,13.940399000000001) at a velocity of (0.9605960100000001,0.9605960100000001) feet per second
+true
+
+ Reporting at 00:00:05
+ Ball0:	Ball is located at (14.90099501,14.90099501) at a velocity of (0.9509900499,0.9509900499) feet per second
+true
+
+ Reporting at 00:00:05
+ Ball0:	Ball is located at (14.90099501,14.90099501) at a velocity of (0.9509900499,0.9509900499) feet per second
+true
+
+ Reporting at 00:00:06
+ Ball0:	Ball is located at (15.8519850599,15.8519850599) at a velocity of (0.941480149401,0.941480149401) feet per second
+true
+
+ Reporting at 00:00:06
+ Ball0:	Ball is located at (15.8519850599,15.8519850599) at a velocity of (0.941480149401,0.941480149401) feet per second
+true
+
+ Reporting at 00:00:07
+ Ball0:	Ball is located at (16.793465209301,16.793465209301) at a velocity of (0.93206534790699,0.93206534790699) feet per second
+true
+
+ Reporting at 00:00:07
+ Ball0:	Ball is located at (16.793465209301,16.793465209301) at a velocity of (0.93206534790699,0.93206534790699) feet per second
+true
+
+ Reporting at 00:00:08
+ Ball0:	Ball is located at (17.72553055720799,17.72553055720799) at a velocity of (0.9227446944279202,0.9227446944279202) feet per second
+true
+
+ Reporting at 00:00:08
+ Ball0:	Ball is located at (17.72553055720799,17.72553055720799) at a velocity of (0.9227446944279202,0.9227446944279202) feet per second
+true
+
+ Reporting at 00:00:09
+ Ball0:	Ball is located at (18.64827525163591,18.64827525163591) at a velocity of (0.9135172474836409,0.9135172474836409) feet per second
+true
+
+ Reporting at 00:00:09
+ Ball0:	Ball is located at (18.64827525163591,18.64827525163591) at a velocity of (0.9135172474836409,0.9135172474836409) feet per second
+true
+
+ Reporting at 00:00:10
+ Ball0:	Ball is located at (19.561792499119548,19.561792499119548) at a velocity of (0.9043820750088045,0.9043820750088045) feet per second
+true
+
+ Reporting at 00:00:10
+ Ball0:	Ball is located at (19.561792499119548,19.561792499119548) at a velocity of (0.9043820750088045,0.9043820750088045) feet per second
+true
+
+ Reporting at 00:00:11
+ Ball0:	Ball is located at (20.466174574128353,20.466174574128353) at a velocity of (0.8953382542587165,0.8953382542587165) feet per second
+true
+
+ Reporting at 00:00:11
+ Ball0:	Ball is located at (20.466174574128353,20.466174574128353) at a velocity of (0.8953382542587165,0.8953382542587165) feet per second
+true
+
+ Reporting at 00:00:12
+ Ball0:	Ball is located at (21.36151282838707,21.36151282838707) at a velocity of (0.8863848717161293,0.8863848717161293) feet per second
+true
+
+ Reporting at 00:00:12
+ Ball0:	Ball is located at (21.36151282838707,21.36151282838707) at a velocity of (0.8863848717161293,0.8863848717161293) feet per second
+true
+
+ Reporting at 00:00:13
+ Ball0:	Ball is located at (22.2478977001032,22.2478977001032) at a velocity of (0.8775210229989681,0.8775210229989681) feet per second
+true
+
+ Reporting at 00:00:13
+ Ball0:	Ball is located at (22.2478977001032,22.2478977001032) at a velocity of (0.8775210229989681,0.8775210229989681) feet per second
+true
+
+ Reporting at 00:00:14
+ Ball0:	Ball is located at (23.125418723102168,23.125418723102168) at a velocity of (0.8687458127689783,0.8687458127689783) feet per second
+true
+
+ Reporting at 00:00:14
+ Ball0:	Ball is located at (23.125418723102168,23.125418723102168) at a velocity of (0.8687458127689783,0.8687458127689783) feet per second
+true
+
+ Reporting at 00:00:15
+ Ball0:	Ball is located at (23.994164535871146,23.994164535871146) at a velocity of (0.8600583546412885,0.8600583546412885) feet per second
+true
+
+ Reporting at 00:00:15
+ Ball0:	Ball is located at (23.994164535871146,23.994164535871146) at a velocity of (0.8600583546412885,0.8600583546412885) feet per second
+true
+
+ Reporting at 00:00:16
+ Ball0:	Ball is located at (24.854222890512435,24.854222890512435) at a velocity of (0.8514577710948756,0.8514577710948756) feet per second
+true
+
+ Reporting at 00:00:16
+ Ball0:	Ball is located at (24.854222890512435,24.854222890512435) at a velocity of (0.8514577710948756,0.8514577710948756) feet per second
+true
+
+ Reporting at 00:00:17
+ Ball0:	Ball is located at (25.70568066160731,25.70568066160731) at a velocity of (0.8429431933839269,0.8429431933839269) feet per second
+true
+
+ Reporting at 00:00:17
+ Ball0:	Ball is located at (25.70568066160731,25.70568066160731) at a velocity of (0.8429431933839269,0.8429431933839269) feet per second
+true
+
+ Reporting at 00:00:18
+ Ball0:	Ball is located at (26.548623854991238,26.548623854991238) at a velocity of (0.8345137614500876,0.8345137614500876) feet per second
+true
+
+ Reporting at 00:00:18
+ Ball0:	Ball is located at (26.548623854991238,26.548623854991238) at a velocity of (0.8345137614500876,0.8345137614500876) feet per second
+true
+
+ Reporting at 00:00:19
+ Ball0:	Ball is located at (27.383137616441324,27.383137616441324) at a velocity of (0.8261686238355868,0.8261686238355868) feet per second
+true
+
+ Reporting at 00:00:19
+ Ball0:	Ball is located at (27.383137616441324,27.383137616441324) at a velocity of (0.8261686238355868,0.8261686238355868) feet per second
+true
+
+ Reporting at 00:00:20
+ Ball0:	Ball is located at (28.20930624027691,28.20930624027691) at a velocity of (0.8179069375972309,0.8179069375972309) feet per second
+true
+
+ Reporting at 00:00:20
+ Ball0:	Ball is located at (28.20930624027691,28.20930624027691) at a velocity of (0.8179069375972309,0.8179069375972309) feet per second
+true
+
+ Reporting at 00:00:21
+ Ball0:	Ball is located at (29.027213177874142,29.027213177874142) at a velocity of (0.8097278682212585,0.8097278682212585) feet per second
+true
+
+ Reporting at 00:00:21
+ Ball0:	Ball is located at (29.027213177874142,29.027213177874142) at a velocity of (0.8097278682212585,0.8097278682212585) feet per second
+true
+
+ Reporting at 00:00:22
+ Ball0:	Ball is located at (29.8369410460954,29.8369410460954) at a velocity of (0.801630589539046,0.801630589539046) feet per second
+true
+
+ Reporting at 00:00:22
+ Ball0:	Ball is located at (29.8369410460954,29.8369410460954) at a velocity of (0.801630589539046,0.801630589539046) feet per second
+true
+
+ Reporting at 00:00:23
+ Ball0:	Ball is located at (30.638571635634445,30.638571635634445) at a velocity of (0.7936142836436555,0.7936142836436555) feet per second
+true
+
+ Reporting at 00:00:23
+ Ball0:	Ball is located at (30.638571635634445,30.638571635634445) at a velocity of (0.7936142836436555,0.7936142836436555) feet per second
+true
+
+ Reporting at 00:00:24
+ Ball0:	Ball is located at (31.4321859192781,31.4321859192781) at a velocity of (0.785678140807219,0.785678140807219) feet per second
+true
+
+ Reporting at 00:00:24
+ Ball0:	Ball is located at (31.4321859192781,31.4321859192781) at a velocity of (0.785678140807219,0.785678140807219) feet per second
+true
+
+ Reporting at 00:00:25
+ Ball0:	Ball is located at (32.21786406008532,32.21786406008532) at a velocity of (0.7778213593991468,0.7778213593991468) feet per second
+true
+
+ Reporting at 00:00:25
+ Ball0:	Ball is located at (32.21786406008532,32.21786406008532) at a velocity of (0.7778213593991468,0.7778213593991468) feet per second
+true
+
+ Reporting at 00:00:26
+ Ball0:	Ball is located at (32.99568541948447,32.99568541948447) at a velocity of (0.7700431458051553,0.7700431458051553) feet per second
+true
+
+ Reporting at 00:00:26
+ Ball0:	Ball is located at (32.99568541948447,32.99568541948447) at a velocity of (0.7700431458051553,0.7700431458051553) feet per second
+true
+
+ Reporting at 00:00:27
+ Ball0:	Ball is located at (33.76572856528962,33.76572856528962) at a velocity of (0.7623427143471038,0.7623427143471038) feet per second
+true
+
+ Reporting at 00:00:27
+ Ball0:	Ball is located at (33.76572856528962,33.76572856528962) at a velocity of (0.7623427143471038,0.7623427143471038) feet per second
+true
+
+ Reporting at 00:00:28
+ Ball0:	Ball is located at (34.52807127963673,34.52807127963673) at a velocity of (0.7547192872036327,0.7547192872036327) feet per second
+true
+
+ Reporting at 00:00:28
+ Ball0:	Ball is located at (34.52807127963673,34.52807127963673) at a velocity of (0.7547192872036327,0.7547192872036327) feet per second
+true
+
+ Reporting at 00:00:29
+ Ball0:	Ball is located at (35.28279056684036,35.28279056684036) at a velocity of (0.7471720943315964,0.7471720943315964) feet per second
+true
+
+ Reporting at 00:00:29
+ Ball0:	Ball is located at (35.28279056684036,35.28279056684036) at a velocity of (0.7471720943315964,0.7471720943315964) feet per second
+true
+
+ Reporting at 00:00:30
+ Ball0:	Ball is located at (36.02996266117196,36.02996266117196) at a velocity of (0.7397003733882804,0.7397003733882804) feet per second
+true
+
+ Reporting at 00:00:30
+ Ball0:	Ball is located at (36.02996266117196,36.02996266117196) at a velocity of (0.7397003733882804,0.7397003733882804) feet per second
+true
+
+ Reporting at 00:00:31
+ Ball0:	Ball is located at (36.76966303456024,36.76966303456024) at a velocity of (0.7323033696543976,0.7323033696543976) feet per second
+true
+
+ Reporting at 00:00:31
+ Ball0:	Ball is located at (36.76966303456024,36.76966303456024) at a velocity of (0.7323033696543976,0.7323033696543976) feet per second
+true
+
+ Reporting at 00:00:32
+ Ball0:	Ball is located at (37.501966404214635,37.501966404214635) at a velocity of (0.7249803359578536,0.7249803359578536) feet per second
+true
+
+ Reporting at 00:00:32
+ Ball0:	Ball is located at (37.501966404214635,37.501966404214635) at a velocity of (0.7249803359578536,0.7249803359578536) feet per second
+true
+
+ Reporting at 00:00:33
+ Ball0:	Ball is located at (38.22694674017249,38.22694674017249) at a velocity of (0.717730532598275,0.717730532598275) feet per second
+true
+
+ Reporting at 00:00:33
+ Ball0:	Ball is located at (38.22694674017249,38.22694674017249) at a velocity of (0.717730532598275,0.717730532598275) feet per second
+true
+
+ Reporting at 00:00:34
+ Ball0:	Ball is located at (38.94467727277076,38.94467727277076) at a velocity of (0.7105532272722923,0.7105532272722923) feet per second
+true
+
+ Reporting at 00:00:34
+ Ball0:	Ball is located at (38.94467727277076,38.94467727277076) at a velocity of (0.7105532272722923,0.7105532272722923) feet per second
+true
+
+ Reporting at 00:00:35
+ Ball0:	Ball is located at (39.655230500043054,39.655230500043054) at a velocity of (0.7034476949995694,0.7034476949995694) feet per second
+true
+
+ Reporting at 00:00:35
+ Ball0:	Ball is located at (39.655230500043054,39.655230500043054) at a velocity of (0.7034476949995694,0.7034476949995694) feet per second
+true
+
+ Reporting at 00:00:36
+ Ball0:	Ball is located at (40.35867819504262,40.35867819504262) at a velocity of (0.6964132180495737,0.6964132180495737) feet per second
+true
+
+ Reporting at 00:00:36
+ Ball0:	Ball is located at (40.35867819504262,40.35867819504262) at a velocity of (0.6964132180495737,0.6964132180495737) feet per second
+true
+
+ Reporting at 00:00:37
+ Ball0:	Ball is located at (41.05509141309219,41.05509141309219) at a velocity of (0.6894490858690779,0.6894490858690779) feet per second
+true
+
+ Reporting at 00:00:37
+ Ball0:	Ball is located at (41.05509141309219,41.05509141309219) at a velocity of (0.6894490858690779,0.6894490858690779) feet per second
+true
+
+ Reporting at 00:00:38
+ Ball0:	Ball is located at (41.74454049896127,41.74454049896127) at a velocity of (0.6825545950103872,0.6825545950103872) feet per second
+true
+
+ Reporting at 00:00:38
+ Ball0:	Ball is located at (41.74454049896127,41.74454049896127) at a velocity of (0.6825545950103872,0.6825545950103872) feet per second
+true
+
+ Reporting at 00:00:39
+ Ball0:	Ball is located at (42.42709509397166,42.42709509397166) at a velocity of (0.6757290490602833,0.6757290490602833) feet per second
+true
+
+ Reporting at 00:00:39
+ Ball0:	Ball is located at (42.42709509397166,42.42709509397166) at a velocity of (0.6757290490602833,0.6757290490602833) feet per second
+true
+
+ Reporting at 00:00:40
+ Ball0:	Ball is located at (43.10282414303194,43.10282414303194) at a velocity of (0.6689717585696805,0.6689717585696805) feet per second
+true
+
+ Reporting at 00:00:40
+ Ball0:	Ball is located at (43.10282414303194,43.10282414303194) at a velocity of (0.6689717585696805,0.6689717585696805) feet per second
+true
+
+ Reporting at 00:00:41
+ Ball0:	Ball is located at (43.77179590160162,43.77179590160162) at a velocity of (0.6622820409839837,0.6622820409839837) feet per second
+true
+
+ Reporting at 00:00:41
+ Ball0:	Ball is located at (43.77179590160162,43.77179590160162) at a velocity of (0.6622820409839837,0.6622820409839837) feet per second
+true
+
+ Reporting at 00:00:42
+ Ball0:	Ball is located at (44.4340779425856,44.4340779425856) at a velocity of (0.6556592205741438,0.6556592205741438) feet per second
+true
+
+ Reporting at 00:00:42
+ Ball0:	Ball is located at (44.4340779425856,44.4340779425856) at a velocity of (0.6556592205741438,0.6556592205741438) feet per second
+true
+
+ Reporting at 00:00:43
+ Ball0:	Ball is located at (45.08973716315975,45.08973716315975) at a velocity of (0.6491026283684024,0.6491026283684024) feet per second
+true
+
+ Reporting at 00:00:43
+ Ball0:	Ball is located at (45.08973716315975,45.08973716315975) at a velocity of (0.6491026283684024,0.6491026283684024) feet per second
+true
+
+ Reporting at 00:00:44
+ Ball0:	Ball is located at (45.73883979152815,45.73883979152815) at a velocity of (0.6426116020847183,0.6426116020847183) feet per second
+true
+
+ Reporting at 00:00:44
+ Ball0:	Ball is located at (45.73883979152815,45.73883979152815) at a velocity of (0.6426116020847183,0.6426116020847183) feet per second
+true
+
+ Reporting at 00:00:45
+ Ball0:	Ball is located at (46.38145139361287,46.38145139361287) at a velocity of (0.6361854860638712,0.6361854860638712) feet per second
+true
+
+ Reporting at 00:00:45
+ Ball0:	Ball is located at (46.38145139361287,46.38145139361287) at a velocity of (0.6361854860638712,0.6361854860638712) feet per second
+true
+
+ Reporting at 00:00:46
+ Ball0:	Ball is located at (47.01763687967674,47.01763687967674) at a velocity of (0.6298236312032325,0.6298236312032325) feet per second
+true
+
+ Reporting at 00:00:46
+ Ball0:	Ball is located at (47.01763687967674,47.01763687967674) at a velocity of (0.6298236312032325,0.6298236312032325) feet per second
+true
+
+ Reporting at 00:00:47
+ Ball0:	Ball is located at (47.647460510879974,47.647460510879974) at a velocity of (0.6235253948912002,0.6235253948912002) feet per second
+true
+
+ Reporting at 00:00:47
+ Ball0:	Ball is located at (47.647460510879974,47.647460510879974) at a velocity of (0.6235253948912002,0.6235253948912002) feet per second
+true
+
+ Reporting at 00:00:48
+ Ball0:	Ball is located at (48.27098590577118,48.27098590577118) at a velocity of (0.6172901409422882,0.6172901409422882) feet per second
+true
+
+ Reporting at 00:00:48
+ Ball0:	Ball is located at (48.27098590577118,48.27098590577118) at a velocity of (0.6172901409422882,0.6172901409422882) feet per second
+true
+
+ Reporting at 00:00:49
+ Ball0:	Ball is located at (48.888276046713464,48.888276046713464) at a velocity of (0.6111172395328653,0.6111172395328653) feet per second
+true
+
+ Reporting at 00:00:49
+ Ball0:	Ball is located at (48.888276046713464,48.888276046713464) at a velocity of (0.6111172395328653,0.6111172395328653) feet per second
+true
+
+ Reporting at 00:00:50
+ Ball0:	Ball is located at (49.49939328624633,49.49939328624633) at a velocity of (0.6050060671375367,0.6050060671375367) feet per second
+true
+
+ Reporting at 00:00:50
+ Ball0:	Ball is located at (49.49939328624633,49.49939328624633) at a velocity of (0.6050060671375367,0.6050060671375367) feet per second
+true
+
+ Reporting at 00:00:51
+ Ball0:	Ball is located at (50.10439935338387,50.10439935338387) at a velocity of (0.5989560064661613,0.5989560064661613) feet per second
+true
+
+ Reporting at 00:00:51
+ Ball0:	Ball is located at (50.10439935338387,50.10439935338387) at a velocity of (0.5989560064661613,0.5989560064661613) feet per second
+true
+
+ Reporting at 00:00:52
+ Ball0:	Ball is located at (50.70335535985003,50.70335535985003) at a velocity of (0.5929664464014998,0.5929664464014998) feet per second
+true
+
+ Reporting at 00:00:52
+ Ball0:	Ball is located at (50.70335535985003,50.70335535985003) at a velocity of (0.5929664464014998,0.5929664464014998) feet per second
+true
+
+ Reporting at 00:00:53
+ Ball0:	Ball is located at (51.29632180625153,51.29632180625153) at a velocity of (0.5870367819374848,0.5870367819374848) feet per second
+true
+
+ Reporting at 00:00:53
+ Ball0:	Ball is located at (51.29632180625153,51.29632180625153) at a velocity of (0.5870367819374848,0.5870367819374848) feet per second
+true
+
+ Reporting at 00:00:54
+ Ball0:	Ball is located at (51.88335858818901,51.88335858818901) at a velocity of (0.5811664141181099,0.5811664141181099) feet per second
+true
+
+ Reporting at 00:00:54
+ Ball0:	Ball is located at (51.88335858818901,51.88335858818901) at a velocity of (0.5811664141181099,0.5811664141181099) feet per second
+true
+
+ Reporting at 00:00:55
+ Ball0:	Ball is located at (52.46452500230712,52.46452500230712) at a velocity of (0.5753547499769288,0.5753547499769288) feet per second
+true
+
+ Reporting at 00:00:55
+ Ball0:	Ball is located at (52.46452500230712,52.46452500230712) at a velocity of (0.5753547499769288,0.5753547499769288) feet per second
+true
+
+ Reporting at 00:00:56
+ Ball0:	Ball is located at (53.03987975228405,53.03987975228405) at a velocity of (0.5696012024771595,0.5696012024771595) feet per second
+true
+
+ Reporting at 00:00:56
+ Ball0:	Ball is located at (53.03987975228405,53.03987975228405) at a velocity of (0.5696012024771595,0.5696012024771595) feet per second
+true
+
+ Reporting at 00:00:57
+ Ball0:	Ball is located at (53.60948095476121,53.60948095476121) at a velocity of (0.563905190452388,0.563905190452388) feet per second
+true
+
+ Reporting at 00:00:57
+ Ball0:	Ball is located at (53.60948095476121,53.60948095476121) at a velocity of (0.563905190452388,0.563905190452388) feet per second
+true
+
+ Reporting at 00:00:58
+ Ball0:	Ball is located at (54.1733861452136,54.1733861452136) at a velocity of (0.5582661385478641,0.5582661385478641) feet per second
+true
+
+ Reporting at 00:00:58
+ Ball0:	Ball is located at (54.1733861452136,54.1733861452136) at a velocity of (0.5582661385478641,0.5582661385478641) feet per second
+true
+
+ Reporting at 00:00:59
+ Ball0:	Ball is located at (54.73165228376146,54.73165228376146) at a velocity of (0.5526834771623854,0.5526834771623854) feet per second
+true
+
+ Reporting at 00:00:59
+ Ball0:	Ball is located at (54.73165228376146,54.73165228376146) at a velocity of (0.5526834771623854,0.5526834771623854) feet per second
+true
+
+ Reporting at 00:01:00
+ Ball0:	Ball is located at (55.284335760923845,55.284335760923845) at a velocity of (0.5471566423907616,0.5471566423907616) feet per second
+true
+
+ Reporting at 00:01:00
+ Ball0:	Ball is located at (55.284335760923845,55.284335760923845) at a velocity of (0.5471566423907616,0.5471566423907616) feet per second
+true
+
+ Reporting at 00:01:01
+ Ball0:	Ball is located at (55.831492403314606,55.831492403314606) at a velocity of (0.5416850759668539,0.5416850759668539) feet per second
+true
+
+ Reporting at 00:01:01
+ Ball0:	Ball is located at (55.831492403314606,55.831492403314606) at a velocity of (0.5416850759668539,0.5416850759668539) feet per second
+true
+
+ Reporting at 00:01:02
+ Ball0:	Ball is located at (56.37317747928146,56.37317747928146) at a velocity of (0.5362682252071853,0.5362682252071853) feet per second
+true
+
+ Reporting at 00:01:02
+ Ball0:	Ball is located at (56.37317747928146,56.37317747928146) at a velocity of (0.5362682252071853,0.5362682252071853) feet per second
+true
+
+ Reporting at 00:01:03
+ Ball0:	Ball is located at (56.90944570448865,56.90944570448865) at a velocity of (0.5309055429551135,0.5309055429551135) feet per second
+true
+
+ Reporting at 00:01:03
+ Ball0:	Ball is located at (56.90944570448865,56.90944570448865) at a velocity of (0.5309055429551135,0.5309055429551135) feet per second
+true
+
+ Reporting at 00:01:04
+ Ball0:	Ball is located at (57.44035124744376,57.44035124744376) at a velocity of (0.5255964875255623,0.5255964875255623) feet per second
+true
+
+ Reporting at 00:01:04
+ Ball0:	Ball is located at (57.44035124744376,57.44035124744376) at a velocity of (0.5255964875255623,0.5255964875255623) feet per second
+true
+
+ Reporting at 00:01:05
+ Ball0:	Ball is located at (57.96594773496932,57.96594773496932) at a velocity of (0.5203405226503067,0.5203405226503067) feet per second
+true
+
+ Reporting at 00:01:05
+ Ball0:	Ball is located at (57.96594773496932,57.96594773496932) at a velocity of (0.5203405226503067,0.5203405226503067) feet per second
+true
+
+ Reporting at 00:01:06
+ Ball0:	Ball is located at (58.48628825761963,58.48628825761963) at a velocity of (0.5151371174238036,0.5151371174238036) feet per second
+true
+
+ Reporting at 00:01:06
+ Ball0:	Ball is located at (58.48628825761963,58.48628825761963) at a velocity of (0.5151371174238036,0.5151371174238036) feet per second
+true
+
+ Reporting at 00:01:07
+ Ball0:	Ball is located at (59.00142537504343,59.00142537504343) at a velocity of (0.5099857462495656,0.5099857462495656) feet per second
+true
+
+ Reporting at 00:01:07
+ Ball0:	Ball is located at (59.00142537504343,59.00142537504343) at a velocity of (0.5099857462495656,0.5099857462495656) feet per second
+true
+
+ Reporting at 00:01:08
+ Ball0:	Ball is located at (59.511411121292994,59.511411121292994) at a velocity of (0.50488588878707,0.50488588878707) feet per second
+true
+
+ Reporting at 00:01:08
+ Ball0:	Ball is located at (59.511411121292994,59.511411121292994) at a velocity of (0.50488588878707,0.50488588878707) feet per second
+true
+
+ Reporting at 00:01:09
+ Ball0:	Ball is located at (60.016297010080066,60.016297010080066) at a velocity of (0.49983702989919926,0.49983702989919926) feet per second
+true
+
+ Reporting at 00:01:09
+ Ball0:	Ball is located at (60.016297010080066,60.016297010080066) at a velocity of (0.49983702989919926,0.49983702989919926) feet per second
+true
+
+ Reporting at 00:01:10
+ Ball0:	Ball is located at (60.51613403997926,60.51613403997926) at a velocity of (0.4948386596002073,0.4948386596002073) feet per second
+true
+
+ Reporting at 00:01:10
+ Ball0:	Ball is located at (60.51613403997926,60.51613403997926) at a velocity of (0.4948386596002073,0.4948386596002073) feet per second
+true
+
+ Reporting at 00:01:11
+ Ball0:	Ball is located at (61.01097269957947,61.01097269957947) at a velocity of (0.48989027300420523,0.48989027300420523) feet per second
+true
+
+ Reporting at 00:01:11
+ Ball0:	Ball is located at (61.01097269957947,61.01097269957947) at a velocity of (0.48989027300420523,0.48989027300420523) feet per second
+true
+
+ Reporting at 00:01:12
+ Ball0:	Ball is located at (61.500862972583676,61.500862972583676) at a velocity of (0.48499137027416317,0.48499137027416317) feet per second
+true
+
+ Reporting at 00:01:12
+ Ball0:	Ball is located at (61.500862972583676,61.500862972583676) at a velocity of (0.48499137027416317,0.48499137027416317) feet per second
+true
+
+ Reporting at 00:01:13
+ Ball0:	Ball is located at (61.98585434285784,61.98585434285784) at a velocity of (0.48014145657142154,0.48014145657142154) feet per second
+true
+
+ Reporting at 00:01:13
+ Ball0:	Ball is located at (61.98585434285784,61.98585434285784) at a velocity of (0.48014145657142154,0.48014145657142154) feet per second
+true
+
+ Reporting at 00:01:14
+ Ball0:	Ball is located at (62.465995799429265,62.465995799429265) at a velocity of (0.47534004200570734,0.47534004200570734) feet per second
+true
+
+ Reporting at 00:01:14
+ Ball0:	Ball is located at (62.465995799429265,62.465995799429265) at a velocity of (0.47534004200570734,0.47534004200570734) feet per second
+true
+
+ Reporting at 00:01:15
+ Ball0:	Ball is located at (62.94133584143497,62.94133584143497) at a velocity of (0.4705866415856503,0.4705866415856503) feet per second
+true
+
+ Reporting at 00:01:15
+ Ball0:	Ball is located at (62.94133584143497,62.94133584143497) at a velocity of (0.4705866415856503,0.4705866415856503) feet per second
+true
+
+ Reporting at 00:01:16
+ Ball0:	Ball is located at (63.41192248302062,63.41192248302062) at a velocity of (0.46588077516979376,0.46588077516979376) feet per second
+true
+
+ Reporting at 00:01:16
+ Ball0:	Ball is located at (63.41192248302062,63.41192248302062) at a velocity of (0.46588077516979376,0.46588077516979376) feet per second
+true
+
+ Reporting at 00:01:17
+ Ball0:	Ball is located at (63.87780325819041,63.87780325819041) at a velocity of (0.46122196741809585,0.46122196741809585) feet per second
+true
+
+ Reporting at 00:01:17
+ Ball0:	Ball is located at (63.87780325819041,63.87780325819041) at a velocity of (0.46122196741809585,0.46122196741809585) feet per second
+true
+
+ Reporting at 00:01:18
+ Ball0:	Ball is located at (64.33902522560851,64.33902522560851) at a velocity of (0.4566097477439149,0.4566097477439149) feet per second
+true
+
+ Reporting at 00:01:18
+ Ball0:	Ball is located at (64.33902522560851,64.33902522560851) at a velocity of (0.4566097477439149,0.4566097477439149) feet per second
+true
+
+ Reporting at 00:01:19
+ Ball0:	Ball is located at (64.79563497335242,64.79563497335242) at a velocity of (0.45204365026647575,0.45204365026647575) feet per second
+true
+
+ Reporting at 00:01:19
+ Ball0:	Ball is located at (64.79563497335242,64.79563497335242) at a velocity of (0.45204365026647575,0.45204365026647575) feet per second
+true
+
+ Reporting at 00:01:20
+ Ball0:	Ball is located at (65.2476786236189,65.2476786236189) at a velocity of (0.447523213763811,0.447523213763811) feet per second
+true
+
+ Reporting at 00:01:20
+ Ball0:	Ball is located at (65.2476786236189,65.2476786236189) at a velocity of (0.447523213763811,0.447523213763811) feet per second
+true
+
+ Reporting at 00:01:21
+ Ball0:	Ball is located at (65.69520183738271,65.69520183738271) at a velocity of (0.44304798162617287,0.44304798162617287) feet per second
+true
+
+ Reporting at 00:01:21
+ Ball0:	Ball is located at (65.69520183738271,65.69520183738271) at a velocity of (0.44304798162617287,0.44304798162617287) feet per second
+true
+
+ Reporting at 00:01:22
+ Ball0:	Ball is located at (66.13824981900889,66.13824981900889) at a velocity of (0.43861750180991116,0.43861750180991116) feet per second
+true
+
+ Reporting at 00:01:22
+ Ball0:	Ball is located at (66.13824981900889,66.13824981900889) at a velocity of (0.43861750180991116,0.43861750180991116) feet per second
+true
+
+ Reporting at 00:01:23
+ Ball0:	Ball is located at (66.5768673208188,66.5768673208188) at a velocity of (0.43423132679181203,0.43423132679181203) feet per second
+true
+
+ Reporting at 00:01:23
+ Ball0:	Ball is located at (66.5768673208188,66.5768673208188) at a velocity of (0.43423132679181203,0.43423132679181203) feet per second
+true
+
+ Reporting at 00:01:24
+ Ball0:	Ball is located at (67.01109864761062,67.01109864761062) at a velocity of (0.4298890135238939,0.4298890135238939) feet per second
+true
+
+ Reporting at 00:01:24
+ Ball0:	Ball is located at (67.01109864761062,67.01109864761062) at a velocity of (0.4298890135238939,0.4298890135238939) feet per second
+true
+
+ Reporting at 00:01:25
+ Ball0:	Ball is located at (67.44098766113451,67.44098766113451) at a velocity of (0.425590123388655,0.425590123388655) feet per second
+true
+
+ Reporting at 00:01:25
+ Ball0:	Ball is located at (67.44098766113451,67.44098766113451) at a velocity of (0.425590123388655,0.425590123388655) feet per second
+true
+
+ Reporting at 00:01:26
+ Ball0:	Ball is located at (67.86657778452317,67.86657778452317) at a velocity of (0.42133422215476846,0.42133422215476846) feet per second
+true
+
+ Reporting at 00:01:26
+ Ball0:	Ball is located at (67.86657778452317,67.86657778452317) at a velocity of (0.42133422215476846,0.42133422215476846) feet per second
+true
+
+ Reporting at 00:01:27
+ Ball0:	Ball is located at (68.28791200667794,68.28791200667794) at a velocity of (0.4171208799332208,0.4171208799332208) feet per second
+true
+
+ Reporting at 00:01:27
+ Ball0:	Ball is located at (68.28791200667794,68.28791200667794) at a velocity of (0.4171208799332208,0.4171208799332208) feet per second
+true
+
+ Reporting at 00:01:28
+ Ball0:	Ball is located at (68.70503288661116,68.70503288661116) at a velocity of (0.4129496711338886,0.4129496711338886) feet per second
+true
+
+ Reporting at 00:01:28
+ Ball0:	Ball is located at (68.70503288661116,68.70503288661116) at a velocity of (0.4129496711338886,0.4129496711338886) feet per second
+true
+
+ Reporting at 00:01:29
+ Ball0:	Ball is located at (69.11798255774505,69.11798255774505) at a velocity of (0.4088201744225497,0.4088201744225497) feet per second
+true
+
+ Reporting at 00:01:29
+ Ball0:	Ball is located at (69.11798255774505,69.11798255774505) at a velocity of (0.4088201744225497,0.4088201744225497) feet per second
+true
+
+ Reporting at 00:01:30
+ Ball0:	Ball is located at (69.5268027321676,69.5268027321676) at a velocity of (0.4047319726783242,0.4047319726783242) feet per second
+true
+
+ Reporting at 00:01:30
+ Ball0:	Ball is located at (69.5268027321676,69.5268027321676) at a velocity of (0.4047319726783242,0.4047319726783242) feet per second
+true
+
+ Reporting at 00:01:31
+ Ball0:	Ball is located at (69.93153470484592,69.93153470484592) at a velocity of (0.400684652951541,0.400684652951541) feet per second
+true
+
+ Reporting at 00:01:31
+ Ball0:	Ball is located at (69.93153470484592,69.93153470484592) at a velocity of (0.400684652951541,0.400684652951541) feet per second
+true
+
+ Reporting at 00:01:32
+ Ball0:	Ball is located at (70.33221935779746,70.33221935779746) at a velocity of (0.3966778064220256,0.3966778064220256) feet per second
+true
+
+ Reporting at 00:01:32
+ Ball0:	Ball is located at (70.33221935779746,70.33221935779746) at a velocity of (0.3966778064220256,0.3966778064220256) feet per second
+true
+
+ Reporting at 00:01:33
+ Ball0:	Ball is located at (70.72889716421948,70.72889716421948) at a velocity of (0.39271102835780536,0.39271102835780536) feet per second
+true
+
+ Reporting at 00:01:33
+ Ball0:	Ball is located at (70.72889716421948,70.72889716421948) at a velocity of (0.39271102835780536,0.39271102835780536) feet per second
+true
+
+ Reporting at 00:01:34
+ Ball0:	Ball is located at (71.12160819257728,71.12160819257728) at a velocity of (0.3887839180742273,0.3887839180742273) feet per second
+true
+
+ Reporting at 00:01:34
+ Ball0:	Ball is located at (71.12160819257728,71.12160819257728) at a velocity of (0.3887839180742273,0.3887839180742273) feet per second
+true
+
+ Reporting at 00:01:35
+ Ball0:	Ball is located at (71.51039211065151,71.51039211065151) at a velocity of (0.38489607889348504,0.38489607889348504) feet per second
+true
+
+ Reporting at 00:01:35
+ Ball0:	Ball is located at (71.51039211065151,71.51039211065151) at a velocity of (0.38489607889348504,0.38489607889348504) feet per second
+true
+
+ Reporting at 00:01:36
+ Ball0:	Ball is located at (71.895288189545,71.895288189545) at a velocity of (0.38104711810455016,0.38104711810455016) feet per second
+true
+
+ Reporting at 00:01:36
+ Ball0:	Ball is located at (71.895288189545,71.895288189545) at a velocity of (0.38104711810455016,0.38104711810455016) feet per second
+true
+
+ Reporting at 00:01:37
+ Ball0:	Ball is located at (72.27633530764955,72.27633530764955) at a velocity of (0.37723664692350467,0.37723664692350467) feet per second
+true
+
+ Reporting at 00:01:37
+ Ball0:	Ball is located at (72.27633530764955,72.27633530764955) at a velocity of (0.37723664692350467,0.37723664692350467) feet per second
+true
+
+ Reporting at 00:01:38
+ Ball0:	Ball is located at (72.65357195457305,72.65357195457305) at a velocity of (0.3734642804542696,0.3734642804542696) feet per second
+true
+
+ Reporting at 00:01:38
+ Ball0:	Ball is located at (72.65357195457305,72.65357195457305) at a velocity of (0.3734642804542696,0.3734642804542696) feet per second
+true
+
+ Reporting at 00:01:39
+ Ball0:	Ball is located at (73.02703623502732,73.02703623502732) at a velocity of (0.3697296376497269,0.3697296376497269) feet per second
+true
+
+ Reporting at 00:01:39
+ Ball0:	Ball is located at (73.02703623502732,73.02703623502732) at a velocity of (0.3697296376497269,0.3697296376497269) feet per second
+true
+
+ Reporting at 00:01:40
+ Ball0:	Ball is located at (73.39676587267705,73.39676587267705) at a velocity of (0.3660323412732296,0.3660323412732296) feet per second
+true
+
+ Reporting at 00:01:40
+ Ball0:	Ball is located at (73.39676587267705,73.39676587267705) at a velocity of (0.3660323412732296,0.3660323412732296) feet per second
+true
+
+ Reporting at 00:01:41
+ Ball0:	Ball is located at (73.76279821395028,73.76279821395028) at a velocity of (0.3623720178604973,0.3623720178604973) feet per second
+true
+
+ Reporting at 00:01:41
+ Ball0:	Ball is located at (73.76279821395028,73.76279821395028) at a velocity of (0.3623720178604973,0.3623720178604973) feet per second
+true
+
+ Reporting at 00:01:42
+ Ball0:	Ball is located at (74.12517023181077,74.12517023181077) at a velocity of (0.3587482976818923,0.3587482976818923) feet per second
+true
+
+ Reporting at 00:01:42
+ Ball0:	Ball is located at (74.12517023181077,74.12517023181077) at a velocity of (0.3587482976818923,0.3587482976818923) feet per second
+true
+
+ Reporting at 00:01:43
+ Ball0:	Ball is located at (74.48391852949267,74.48391852949267) at a velocity of (0.3551608147050734,0.3551608147050734) feet per second
+true
+
+ Reporting at 00:01:43
+ Ball0:	Ball is located at (74.48391852949267,74.48391852949267) at a velocity of (0.3551608147050734,0.3551608147050734) feet per second
+true
+
+ Reporting at 00:01:44
+ Ball0:	Ball is located at (74.83907934419774,74.83907934419774) at a velocity of (0.35160920655802264,0.35160920655802264) feet per second
+true
+
+ Reporting at 00:01:44
+ Ball0:	Ball is located at (74.83907934419774,74.83907934419774) at a velocity of (0.35160920655802264,0.35160920655802264) feet per second
+true
+
+ Reporting at 00:01:45
+ Ball0:	Ball is located at (75.19068855075577,75.19068855075577) at a velocity of (0.3480931144924424,0.3480931144924424) feet per second
+true
+
+ Reporting at 00:01:45
+ Ball0:	Ball is located at (75.19068855075577,75.19068855075577) at a velocity of (0.3480931144924424,0.3480931144924424) feet per second
+true
+
+ Reporting at 00:01:46
+ Ball0:	Ball is located at (75.53878166524821,75.53878166524821) at a velocity of (0.344612183347518,0.344612183347518) feet per second
+true
+
+ Reporting at 00:01:46
+ Ball0:	Ball is located at (75.53878166524821,75.53878166524821) at a velocity of (0.344612183347518,0.344612183347518) feet per second
+true
+
+ Reporting at 00:01:47
+ Ball0:	Ball is located at (75.88339384859573,75.88339384859573) at a velocity of (0.3411660615140428,0.3411660615140428) feet per second
+true
+
+ Reporting at 00:01:47
+ Ball0:	Ball is located at (75.88339384859573,75.88339384859573) at a velocity of (0.3411660615140428,0.3411660615140428) feet per second
+true
+
+ Reporting at 00:01:48
+ Ball0:	Ball is located at (76.22455991010978,76.22455991010978) at a velocity of (0.33775440089890235,0.33775440089890235) feet per second
+true
+
+ Reporting at 00:01:48
+ Ball0:	Ball is located at (76.22455991010978,76.22455991010978) at a velocity of (0.33775440089890235,0.33775440089890235) feet per second
+true
+
+ Reporting at 00:01:49
+ Ball0:	Ball is located at (76.56231431100868,76.56231431100868) at a velocity of (0.3343768568899133,0.3343768568899133) feet per second
+true
+
+ Reporting at 00:01:49
+ Ball0:	Ball is located at (76.56231431100868,76.56231431100868) at a velocity of (0.3343768568899133,0.3343768568899133) feet per second
+true
+
+ Reporting at 00:01:50
+ Ball0:	Ball is located at (76.8966911678986,76.8966911678986) at a velocity of (0.3310330883210142,0.3310330883210142) feet per second
+true
+
+ Reporting at 00:01:50
+ Ball0:	Ball is located at (76.8966911678986,76.8966911678986) at a velocity of (0.3310330883210142,0.3310330883210142) feet per second
+true
+
+ Reporting at 00:01:51
+ Ball0:	Ball is located at (77.2277242562196,77.2277242562196) at a velocity of (0.32772275743780405,0.32772275743780405) feet per second
+true
+
+ Reporting at 00:01:51
+ Ball0:	Ball is located at (77.2277242562196,77.2277242562196) at a velocity of (0.32772275743780405,0.32772275743780405) feet per second
+true
+
+ Reporting at 00:01:52
+ Ball0:	Ball is located at (77.5554470136574,77.5554470136574) at a velocity of (0.324445529863426,0.324445529863426) feet per second
+true
+
+ Reporting at 00:01:52
+ Ball0:	Ball is located at (77.5554470136574,77.5554470136574) at a velocity of (0.324445529863426,0.324445529863426) feet per second
+true
+
+ Reporting at 00:01:53
+ Ball0:	Ball is located at (77.87989254352082,77.87989254352082) at a velocity of (0.32120107456479174,0.32120107456479174) feet per second
+true
+
+ Reporting at 00:01:53
+ Ball0:	Ball is located at (77.87989254352082,77.87989254352082) at a velocity of (0.32120107456479174,0.32120107456479174) feet per second
+true
+
+ Reporting at 00:01:54
+ Ball0:	Ball is located at (78.20109361808562,78.20109361808562) at a velocity of (0.3179890638191438,0.3179890638191438) feet per second
+true
+
+ Reporting at 00:01:54
+ Ball0:	Ball is located at (78.20109361808562,78.20109361808562) at a velocity of (0.3179890638191438,0.3179890638191438) feet per second
+true
+
+ Reporting at 00:01:55
+ Ball0:	Ball is located at (78.51908268190476,78.51908268190476) at a velocity of (0.31480917318095236,0.31480917318095236) feet per second
+true
+
+ Reporting at 00:01:55
+ Ball0:	Ball is located at (78.51908268190476,78.51908268190476) at a velocity of (0.31480917318095236,0.31480917318095236) feet per second
+true
+
+ Reporting at 00:01:56
+ Ball0:	Ball is located at (78.83389185508571,78.83389185508571) at a velocity of (0.31166108144914284,0.31166108144914284) feet per second
+true
+
+ Reporting at 00:01:56
+ Ball0:	Ball is located at (78.83389185508571,78.83389185508571) at a velocity of (0.31166108144914284,0.31166108144914284) feet per second
+true
+
+ Reporting at 00:01:57
+ Ball0:	Ball is located at (79.14555293653486,79.14555293653486) at a velocity of (0.3085444706346514,0.3085444706346514) feet per second
+true
+
+ Reporting at 00:01:57
+ Ball0:	Ball is located at (79.14555293653486,79.14555293653486) at a velocity of (0.3085444706346514,0.3085444706346514) feet per second
+true
+
+ Reporting at 00:01:58
+ Ball0:	Ball is located at (79.45409740716951,79.45409740716951) at a velocity of (0.3054590259283049,0.3054590259283049) feet per second
+true
+
+ Reporting at 00:01:58
+ Ball0:	Ball is located at (79.45409740716951,79.45409740716951) at a velocity of (0.3054590259283049,0.3054590259283049) feet per second
+true
+
+ Reporting at 00:01:59
+ Ball0:	Ball is located at (79.75955643309781,79.75955643309781) at a velocity of (0.3024044356690218,0.3024044356690218) feet per second
+true
+
+ Reporting at 00:01:59
+ Ball0:	Ball is located at (79.75955643309781,79.75955643309781) at a velocity of (0.3024044356690218,0.3024044356690218) feet per second
+true
+
+ Reporting at 00:02:00
+ Ball0:	Ball is located at (80.06196086876683,80.06196086876683) at a velocity of (0.2993803913123316,0.2993803913123316) feet per second
+true
+
+ Reporting at 00:02:00
+ Ball0:	Ball is located at (80.06196086876683,80.06196086876683) at a velocity of (0.2993803913123316,0.2993803913123316) feet per second
+true
+
+ Reporting at 00:02:01
+ Ball0:	Ball is located at (80.36134126007916,80.36134126007916) at a velocity of (0.29638658739920826,0.29638658739920826) feet per second
+true
+
+ Reporting at 00:02:01
+ Ball0:	Ball is located at (80.36134126007916,80.36134126007916) at a velocity of (0.29638658739920826,0.29638658739920826) feet per second
+true
+
+ Reporting at 00:02:02
+ Ball0:	Ball is located at (80.65772784747837,80.65772784747837) at a velocity of (0.2934227215252162,0.2934227215252162) feet per second
+true
+
+ Reporting at 00:02:02
+ Ball0:	Ball is located at (80.65772784747837,80.65772784747837) at a velocity of (0.2934227215252162,0.2934227215252162) feet per second
+true
+
+ Reporting at 00:02:03
+ Ball0:	Ball is located at (80.95115056900359,80.95115056900359) at a velocity of (0.29048849430996404,0.29048849430996404) feet per second
+true
+
+ Reporting at 00:02:03
+ Ball0:	Ball is located at (80.95115056900359,80.95115056900359) at a velocity of (0.29048849430996404,0.29048849430996404) feet per second
+true
+
+ Reporting at 00:02:04
+ Ball0:	Ball is located at (81.24163906331356,81.24163906331356) at a velocity of (0.2875836093668644,0.2875836093668644) feet per second
+true
+
+ Reporting at 00:02:04
+ Ball0:	Ball is located at (81.24163906331356,81.24163906331356) at a velocity of (0.2875836093668644,0.2875836093668644) feet per second
+true
+
+ Reporting at 00:02:05
+ Ball0:	Ball is located at (81.52922267268042,81.52922267268042) at a velocity of (0.28470777327319574,0.28470777327319574) feet per second
+true
+
+ Reporting at 00:02:05
+ Ball0:	Ball is located at (81.52922267268042,81.52922267268042) at a velocity of (0.28470777327319574,0.28470777327319574) feet per second
+true
+
+ Reporting at 00:02:06
+ Ball0:	Ball is located at (81.81393044595362,81.81393044595362) at a velocity of (0.2818606955404638,0.2818606955404638) feet per second
+true
+
+ Reporting at 00:02:06
+ Ball0:	Ball is located at (81.81393044595362,81.81393044595362) at a velocity of (0.2818606955404638,0.2818606955404638) feet per second
+true
+
+ Reporting at 00:02:07
+ Ball0:	Ball is located at (82.09579114149408,82.09579114149408) at a velocity of (0.27904208858505913,0.27904208858505913) feet per second
+true
+
+ Reporting at 00:02:07
+ Ball0:	Ball is located at (82.09579114149408,82.09579114149408) at a velocity of (0.27904208858505913,0.27904208858505913) feet per second
+true
+
+ Reporting at 00:02:08
+ Ball0:	Ball is located at (82.37483323007913,82.37483323007913) at a velocity of (0.27625166769920856,0.27625166769920856) feet per second
+true
+
+ Reporting at 00:02:08
+ Ball0:	Ball is located at (82.37483323007913,82.37483323007913) at a velocity of (0.27625166769920856,0.27625166769920856) feet per second
+true
+
+ Reporting at 00:02:09
+ Ball0:	Ball is located at (82.65108489777835,82.65108489777835) at a velocity of (0.2734891510222165,0.2734891510222165) feet per second
+true
+
+ Reporting at 00:02:09
+ Ball0:	Ball is located at (82.65108489777835,82.65108489777835) at a velocity of (0.2734891510222165,0.2734891510222165) feet per second
+true
+
+ Reporting at 00:02:10
+ Ball0:	Ball is located at (82.92457404880057,82.92457404880057) at a velocity of (0.27075425951199433,0.27075425951199433) feet per second
+true
+
+ Reporting at 00:02:10
+ Ball0:	Ball is located at (82.92457404880057,82.92457404880057) at a velocity of (0.27075425951199433,0.27075425951199433) feet per second
+true
+
+ Reporting at 00:02:11
+ Ball0:	Ball is located at (83.19532830831255,83.19532830831255) at a velocity of (0.2680467169168744,0.2680467169168744) feet per second
+true
+
+ Reporting at 00:02:11
+ Ball0:	Ball is located at (83.19532830831255,83.19532830831255) at a velocity of (0.2680467169168744,0.2680467169168744) feet per second
+true
+
+ Reporting at 00:02:12
+ Ball0:	Ball is located at (83.46337502522942,83.46337502522942) at a velocity of (0.2653662497477056,0.2653662497477056) feet per second
+true
+
+ Reporting at 00:02:12
+ Ball0:	Ball is located at (83.46337502522942,83.46337502522942) at a velocity of (0.2653662497477056,0.2653662497477056) feet per second
+true
+
+ Reporting at 00:02:13
+ Ball0:	Ball is located at (83.72874127497712,83.72874127497712) at a velocity of (0.26271258725022856,0.26271258725022856) feet per second
+true
+
+ Reporting at 00:02:13
+ Ball0:	Ball is located at (83.72874127497712,83.72874127497712) at a velocity of (0.26271258725022856,0.26271258725022856) feet per second
+true
+
+ Reporting at 00:02:14
+ Ball0:	Ball is located at (83.99145386222736,83.99145386222736) at a velocity of (0.26008546137772626,0.26008546137772626) feet per second
+true
+
+ Reporting at 00:02:14
+ Ball0:	Ball is located at (83.99145386222736,83.99145386222736) at a velocity of (0.26008546137772626,0.26008546137772626) feet per second
+true
+
+ Reporting at 00:02:15
+ Ball0:	Ball is located at (84.25153932360509,84.25153932360509) at a velocity of (0.257484606763949,0.257484606763949) feet per second
+true
+
+ Reporting at 00:02:15
+ Ball0:	Ball is located at (84.25153932360509,84.25153932360509) at a velocity of (0.257484606763949,0.257484606763949) feet per second
+true
+
+ Reporting at 00:02:16
+ Ball0:	Ball is located at (84.50902393036904,84.50902393036904) at a velocity of (0.25490976069630955,0.25490976069630955) feet per second
+true
+
+ Reporting at 00:02:16
+ Ball0:	Ball is located at (84.50902393036904,84.50902393036904) at a velocity of (0.25490976069630955,0.25490976069630955) feet per second
+true
+
+ Reporting at 00:02:17
+ Ball0:	Ball is located at (84.76393369106535,84.76393369106535) at a velocity of (0.25236066308934646,0.25236066308934646) feet per second
+true
+
+ Reporting at 00:02:17
+ Ball0:	Ball is located at (84.76393369106535,84.76393369106535) at a velocity of (0.25236066308934646,0.25236066308934646) feet per second
+true
+
+ Reporting at 00:02:18
+ Ball0:	Ball is located at (85.0162943541547,85.0162943541547) at a velocity of (0.249837056458453,0.249837056458453) feet per second
+true
+
+ Reporting at 00:02:18
+ Ball0:	Ball is located at (85.0162943541547,85.0162943541547) at a velocity of (0.249837056458453,0.249837056458453) feet per second
+true
+
+ Reporting at 00:02:19
+ Ball0:	Ball is located at (85.26613141061314,85.26613141061314) at a velocity of (0.24733868589386848,0.24733868589386848) feet per second
+true
+
+ Reporting at 00:02:19
+ Ball0:	Ball is located at (85.26613141061314,85.26613141061314) at a velocity of (0.24733868589386848,0.24733868589386848) feet per second
+true
+
+ Reporting at 00:02:20
+ Ball0:	Ball is located at (85.513470096507,85.513470096507) at a velocity of (0.2448652990349298,0.2448652990349298) feet per second
+true
+
+ Reporting at 00:02:20
+ Ball0:	Ball is located at (85.513470096507,85.513470096507) at a velocity of (0.2448652990349298,0.2448652990349298) feet per second
+true
+
+ Reporting at 00:02:21
+ Ball0:	Ball is located at (85.75833539554193,85.75833539554193) at a velocity of (0.2424166460445805,0.2424166460445805) feet per second
+true
+
+ Reporting at 00:02:21
+ Ball0:	Ball is located at (85.75833539554193,85.75833539554193) at a velocity of (0.2424166460445805,0.2424166460445805) feet per second
+true
+
+ Reporting at 00:02:22
+ Ball0:	Ball is located at (86.00075204158651,86.00075204158651) at a velocity of (0.2399924795841347,0.2399924795841347) feet per second
+true
+
+ Reporting at 00:02:22
+ Ball0:	Ball is located at (86.00075204158651,86.00075204158651) at a velocity of (0.2399924795841347,0.2399924795841347) feet per second
+true
+
+ Reporting at 00:02:23
+ Ball0:	Ball is located at (86.24074452117064,86.24074452117064) at a velocity of (0.23759255478829336,0.23759255478829336) feet per second
+true
+
+ Reporting at 00:02:23
+ Ball0:	Ball is located at (86.24074452117064,86.24074452117064) at a velocity of (0.23759255478829336,0.23759255478829336) feet per second
+true
+
+ Reporting at 00:02:24
+ Ball0:	Ball is located at (86.47833707595893,86.47833707595893) at a velocity of (0.23521662924041042,0.23521662924041042) feet per second
+true
+
+ Reporting at 00:02:24
+ Ball0:	Ball is located at (86.47833707595893,86.47833707595893) at a velocity of (0.23521662924041042,0.23521662924041042) feet per second
+true
+
+ Reporting at 00:02:25
+ Ball0:	Ball is located at (86.71355370519935,86.71355370519935) at a velocity of (0.2328644629480063,0.2328644629480063) feet per second
+true
+
+ Reporting at 00:02:25
+ Ball0:	Ball is located at (86.71355370519935,86.71355370519935) at a velocity of (0.2328644629480063,0.2328644629480063) feet per second
+true
+
+ Reporting at 00:02:26
+ Ball0:	Ball is located at (86.94641816814735,86.94641816814735) at a velocity of (0.23053581831852624,0.23053581831852624) feet per second
+true
+
+ Reporting at 00:02:26
+ Ball0:	Ball is located at (86.94641816814735,86.94641816814735) at a velocity of (0.23053581831852624,0.23053581831852624) feet per second
+true
+
+ Reporting at 00:02:27
+ Ball0:	Ball is located at (87.17695398646588,87.17695398646588) at a velocity of (0.22823046013534098,0.22823046013534098) feet per second
+true
+
+ Reporting at 00:02:27
+ Ball0:	Ball is located at (87.17695398646588,87.17695398646588) at a velocity of (0.22823046013534098,0.22823046013534098) feet per second
+true
+
+ Reporting at 00:02:28
+ Ball0:	Ball is located at (87.40518444660121,87.40518444660121) at a velocity of (0.2259481555339876,0.2259481555339876) feet per second
+true
+
+ Reporting at 00:02:28
+ Ball0:	Ball is located at (87.40518444660121,87.40518444660121) at a velocity of (0.2259481555339876,0.2259481555339876) feet per second
+true
+
+ Reporting at 00:02:29
+ Ball0:	Ball is located at (87.6311326021352,87.6311326021352) at a velocity of (0.22368867397864772,0.22368867397864772) feet per second
+true
+
+ Reporting at 00:02:29
+ Ball0:	Ball is located at (87.6311326021352,87.6311326021352) at a velocity of (0.22368867397864772,0.22368867397864772) feet per second
+true
+
+ Reporting at 00:02:30
+ Ball0:	Ball is located at (87.85482127611384,87.85482127611384) at a velocity of (0.22145178723886125,0.22145178723886125) feet per second
+true
+
+ Reporting at 00:02:30
+ Ball0:	Ball is located at (87.85482127611384,87.85482127611384) at a velocity of (0.22145178723886125,0.22145178723886125) feet per second
+true
+
+ Reporting at 00:02:31
+ Ball0:	Ball is located at (88.0762730633527,88.0762730633527) at a velocity of (0.21923726936647264,0.21923726936647264) feet per second
+true
+
+ Reporting at 00:02:31
+ Ball0:	Ball is located at (88.0762730633527,88.0762730633527) at a velocity of (0.21923726936647264,0.21923726936647264) feet per second
+true
+
+ Reporting at 00:02:32
+ Ball0:	Ball is located at (88.29551033271918,88.29551033271918) at a velocity of (0.2170448966728079,0.2170448966728079) feet per second
+true
+
+ Reporting at 00:02:32
+ Ball0:	Ball is located at (88.29551033271918,88.29551033271918) at a velocity of (0.2170448966728079,0.2170448966728079) feet per second
+true
+
+ Reporting at 00:02:33
+ Ball0:	Ball is located at (88.51255522939198,88.51255522939198) at a velocity of (0.21487444770607983,0.21487444770607983) feet per second
+true
+
+ Reporting at 00:02:33
+ Ball0:	Ball is located at (88.51255522939198,88.51255522939198) at a velocity of (0.21487444770607983,0.21487444770607983) feet per second
+true
+
+ Reporting at 00:02:34
+ Ball0:	Ball is located at (88.72742967709806,88.72742967709806) at a velocity of (0.21272570322901904,0.21272570322901904) feet per second
+true
+
+ Reporting at 00:02:34
+ Ball0:	Ball is located at (88.72742967709806,88.72742967709806) at a velocity of (0.21272570322901904,0.21272570322901904) feet per second
+true
+
+ Reporting at 00:02:35
+ Ball0:	Ball is located at (88.94015538032708,88.94015538032708) at a velocity of (0.21059844619672885,0.21059844619672885) feet per second
+true
+
+ Reporting at 00:02:35
+ Ball0:	Ball is located at (88.94015538032708,88.94015538032708) at a velocity of (0.21059844619672885,0.21059844619672885) feet per second
+true
+
+ Reporting at 00:02:36
+ Ball0:	Ball is located at (89.15075382652381,89.15075382652381) at a velocity of (0.20849246173476157,0.20849246173476157) feet per second
+true
+
+ Reporting at 00:02:36
+ Ball0:	Ball is located at (89.15075382652381,89.15075382652381) at a velocity of (0.20849246173476157,0.20849246173476157) feet per second
+true
+
+ Reporting at 00:02:37
+ Ball0:	Ball is located at (89.35924628825857,89.35924628825857) at a velocity of (0.20640753711741397,0.20640753711741397) feet per second
+true
+
+ Reporting at 00:02:37
+ Ball0:	Ball is located at (89.35924628825857,89.35924628825857) at a velocity of (0.20640753711741397,0.20640753711741397) feet per second
+true
+
+ Reporting at 00:02:38
+ Ball0:	Ball is located at (89.56565382537599,89.56565382537599) at a velocity of (0.20434346174623982,0.20434346174623982) feet per second
+true
+
+ Reporting at 00:02:38
+ Ball0:	Ball is located at (89.56565382537599,89.56565382537599) at a velocity of (0.20434346174623982,0.20434346174623982) feet per second
+true
+
+ Reporting at 00:02:39
+ Ball0:	Ball is located at (89.76999728712222,89.76999728712222) at a velocity of (0.20230002712877743,0.20230002712877743) feet per second
+true
+
+ Reporting at 00:02:39
+ Ball0:	Ball is located at (89.76999728712222,89.76999728712222) at a velocity of (0.20230002712877743,0.20230002712877743) feet per second
+true
+
+ Reporting at 00:02:40
+ Ball0:	Ball is located at (89.972297314251,89.972297314251) at a velocity of (0.20027702685748966,0.20027702685748966) feet per second
+true
+
+ Reporting at 00:02:40
+ Ball0:	Ball is located at (89.972297314251,89.972297314251) at a velocity of (0.20027702685748966,0.20027702685748966) feet per second
+true
+
+ Reporting at 00:02:41
+ Ball0:	Ball is located at (90.17257434110849,90.17257434110849) at a velocity of (0.19827425658891476,0.19827425658891476) feet per second
+true
+
+ Reporting at 00:02:41
+ Ball0:	Ball is located at (90.17257434110849,90.17257434110849) at a velocity of (0.19827425658891476,0.19827425658891476) feet per second
+true
+
+ Reporting at 00:02:42
+ Ball0:	Ball is located at (90.3708485976974,90.3708485976974) at a velocity of (0.1962915140230256,0.1962915140230256) feet per second
+true
+
+ Reporting at 00:02:42
+ Ball0:	Ball is located at (90.3708485976974,90.3708485976974) at a velocity of (0.1962915140230256,0.1962915140230256) feet per second
+true
+
+ Reporting at 00:02:43
+ Ball0:	Ball is located at (90.56714011172043,90.56714011172043) at a velocity of (0.19432859888279536,0.19432859888279536) feet per second
+true
+
+ Reporting at 00:02:43
+ Ball0:	Ball is located at (90.56714011172043,90.56714011172043) at a velocity of (0.19432859888279536,0.19432859888279536) feet per second
+true
+
+ Reporting at 00:02:44
+ Ball0:	Ball is located at (90.76146871060322,90.76146871060322) at a velocity of (0.1923853128939674,0.1923853128939674) feet per second
+true
+
+ Reporting at 00:02:44
+ Ball0:	Ball is located at (90.76146871060322,90.76146871060322) at a velocity of (0.1923853128939674,0.1923853128939674) feet per second
+true
+
+ Reporting at 00:02:45
+ Ball0:	Ball is located at (90.95385402349719,90.95385402349719) at a velocity of (0.19046145976502774,0.19046145976502774) feet per second
+true
+
+ Reporting at 00:02:45
+ Ball0:	Ball is located at (90.95385402349719,90.95385402349719) at a velocity of (0.19046145976502774,0.19046145976502774) feet per second
+true
+
+ Reporting at 00:02:46
+ Ball0:	Ball is located at (91.14431548326222,91.14431548326222) at a velocity of (0.18855684516737745,0.18855684516737745) feet per second
+true
+
+ Reporting at 00:02:46
+ Ball0:	Ball is located at (91.14431548326222,91.14431548326222) at a velocity of (0.18855684516737745,0.18855684516737745) feet per second
+true
+
+ Reporting at 00:02:47
+ Ball0:	Ball is located at (91.3328723284296,91.3328723284296) at a velocity of (0.18667127671570366,0.18667127671570366) feet per second
+true
+
+ Reporting at 00:02:47
+ Ball0:	Ball is located at (91.3328723284296,91.3328723284296) at a velocity of (0.18667127671570366,0.18667127671570366) feet per second
+true
+
+ Reporting at 00:02:48
+ Ball0:	Ball is located at (91.5195436051453,91.5195436051453) at a velocity of (0.18480456394854664,0.18480456394854664) feet per second
+true
+
+ Reporting at 00:02:48
+ Ball0:	Ball is located at (91.5195436051453,91.5195436051453) at a velocity of (0.18480456394854664,0.18480456394854664) feet per second
+true
+
+ Reporting at 00:02:49
+ Ball0:	Ball is located at (91.70434816909385,91.70434816909385) at a velocity of (0.18295651830906118,0.18295651830906118) feet per second
+true
+
+ Reporting at 00:02:49
+ Ball0:	Ball is located at (91.70434816909385,91.70434816909385) at a velocity of (0.18295651830906118,0.18295651830906118) feet per second
+true
+
+ Reporting at 00:02:50
+ Ball0:	Ball is located at (91.8873046874029,91.8873046874029) at a velocity of (0.18112695312597057,0.18112695312597057) feet per second
+true
+
+ Reporting at 00:02:50
+ Ball0:	Ball is located at (91.8873046874029,91.8873046874029) at a velocity of (0.18112695312597057,0.18112695312597057) feet per second
+true
+
+ Reporting at 00:02:51
+ Ball0:	Ball is located at (92.06843164052887,92.06843164052887) at a velocity of (0.17931568359471087,0.17931568359471087) feet per second
+true
+
+ Reporting at 00:02:51
+ Ball0:	Ball is located at (92.06843164052887,92.06843164052887) at a velocity of (0.17931568359471087,0.17931568359471087) feet per second
+true
+
+ Reporting at 00:02:52
+ Ball0:	Ball is located at (92.24774732412358,92.24774732412358) at a velocity of (0.17752252675876376,0.17752252675876376) feet per second
+true
+
+ Reporting at 00:02:52
+ Ball0:	Ball is located at (92.24774732412358,92.24774732412358) at a velocity of (0.17752252675876376,0.17752252675876376) feet per second
+true
+
+ Reporting at 00:02:53
+ Ball0:	Ball is located at (92.42526985088234,92.42526985088234) at a velocity of (0.17574730149117612,0.17574730149117612) feet per second
+true
+
+ Reporting at 00:02:53
+ Ball0:	Ball is located at (92.42526985088234,92.42526985088234) at a velocity of (0.17574730149117612,0.17574730149117612) feet per second
+true
+
+ Reporting at 00:02:54
+ Ball0:	Ball is located at (92.60101715237352,92.60101715237352) at a velocity of (0.17398982847626437,0.17398982847626437) feet per second
+true
+
+ Reporting at 00:02:54
+ Ball0:	Ball is located at (92.60101715237352,92.60101715237352) at a velocity of (0.17398982847626437,0.17398982847626437) feet per second
+true
+
+ Reporting at 00:02:55
+ Ball0:	Ball is located at (92.77500698084978,92.77500698084978) at a velocity of (0.17224993019150173,0.17224993019150173) feet per second
+true
+
+ Reporting at 00:02:55
+ Ball0:	Ball is located at (92.77500698084978,92.77500698084978) at a velocity of (0.17224993019150173,0.17224993019150173) feet per second
+true
+
+ Reporting at 00:02:56
+ Ball0:	Ball is located at (92.94725691104128,92.94725691104128) at a velocity of (0.17052743088958672,0.17052743088958672) feet per second
+true
+
+ Reporting at 00:02:56
+ Ball0:	Ball is located at (92.94725691104128,92.94725691104128) at a velocity of (0.17052743088958672,0.17052743088958672) feet per second
+true
+
+ Reporting at 00:02:57
+ Ball0:	Ball is located at (93.11778434193087,93.11778434193087) at a velocity of (0.16882215658069086,0.16882215658069086) feet per second
+true
+
+ Reporting at 00:02:57
+ Ball0:	Ball is located at (93.11778434193087,93.11778434193087) at a velocity of (0.16882215658069086,0.16882215658069086) feet per second
+true
+
+ Reporting at 00:02:58
+ Ball0:	Ball is located at (93.28660649851156,93.28660649851156) at a velocity of (0.16713393501488394,0.16713393501488394) feet per second
+true
+
+ Reporting at 00:02:58
+ Ball0:	Ball is located at (93.28660649851156,93.28660649851156) at a velocity of (0.16713393501488394,0.16713393501488394) feet per second
+true
+
+ Reporting at 00:02:59
+ Ball0:	Ball is located at (93.45374043352645,93.45374043352645) at a velocity of (0.1654625956647351,0.1654625956647351) feet per second
+true
+
+ Reporting at 00:02:59
+ Ball0:	Ball is located at (93.45374043352645,93.45374043352645) at a velocity of (0.1654625956647351,0.1654625956647351) feet per second
+true
+
+ Reporting at 00:03:00
+ Ball0:	Ball is located at (93.61920302919118,93.61920302919118) at a velocity of (0.16380796970808775,0.16380796970808775) feet per second
+true
+
+ Reporting at 00:03:00
+ Ball0:	Ball is located at (93.61920302919118,93.61920302919118) at a velocity of (0.16380796970808775,0.16380796970808775) feet per second
+true
+
+ Reporting at 00:03:01
+ Ball0:	Ball is located at (93.78301099889927,93.78301099889927) at a velocity of (0.16216989001100687,0.16216989001100687) feet per second
+true
+
+ Reporting at 00:03:01
+ Ball0:	Ball is located at (93.78301099889927,93.78301099889927) at a velocity of (0.16216989001100687,0.16216989001100687) feet per second
+true
+
+ Reporting at 00:03:02
+ Ball0:	Ball is located at (93.94518088891027,93.94518088891027) at a velocity of (0.1605481911108968,0.1605481911108968) feet per second
+true
+
+ Reporting at 00:03:02
+ Ball0:	Ball is located at (93.94518088891027,93.94518088891027) at a velocity of (0.1605481911108968,0.1605481911108968) feet per second
+true
+
+ Reporting at 00:03:03
+ Ball0:	Ball is located at (94.10572908002116,94.10572908002116) at a velocity of (0.15894270919978784,0.15894270919978784) feet per second
+true
+
+ Reporting at 00:03:03
+ Ball0:	Ball is located at (94.10572908002116,94.10572908002116) at a velocity of (0.15894270919978784,0.15894270919978784) feet per second
+true
+
+ Reporting at 00:03:04
+ Ball0:	Ball is located at (94.26467178922096,94.26467178922096) at a velocity of (0.15735328210778995,0.15735328210778995) feet per second
+true
+
+ Reporting at 00:03:04
+ Ball0:	Ball is located at (94.26467178922096,94.26467178922096) at a velocity of (0.15735328210778995,0.15735328210778995) feet per second
+true
+
+ Reporting at 00:03:05
+ Ball0:	Ball is located at (94.42202507132875,94.42202507132875) at a velocity of (0.15577974928671207,0.15577974928671207) feet per second
+true
+
+ Reporting at 00:03:05
+ Ball0:	Ball is located at (94.42202507132875,94.42202507132875) at a velocity of (0.15577974928671207,0.15577974928671207) feet per second
+true
+
+ Reporting at 00:03:06
+ Ball0:	Ball is located at (94.57780482061546,94.57780482061546) at a velocity of (0.15422195179384496,0.15422195179384496) feet per second
+true
+
+ Reporting at 00:03:06
+ Ball0:	Ball is located at (94.57780482061546,94.57780482061546) at a velocity of (0.15422195179384496,0.15422195179384496) feet per second
+true
+
+ Reporting at 00:03:07
+ Ball0:	Ball is located at (94.7320267724093,94.7320267724093) at a velocity of (0.1526797322759065,0.1526797322759065) feet per second
+true
+
+ Reporting at 00:03:07
+ Ball0:	Ball is located at (94.7320267724093,94.7320267724093) at a velocity of (0.1526797322759065,0.1526797322759065) feet per second
+true
+
+ Reporting at 00:03:08
+ Ball0:	Ball is located at (94.8847065046852,94.8847065046852) at a velocity of (0.15115293495314744,0.15115293495314744) feet per second
+true
+
+ Reporting at 00:03:08
+ Ball0:	Ball is located at (94.8847065046852,94.8847065046852) at a velocity of (0.15115293495314744,0.15115293495314744) feet per second
+true
+
+ Reporting at 00:03:09
+ Ball0:	Ball is located at (95.03585943963834,95.03585943963834) at a velocity of (0.14964140560361597,0.14964140560361597) feet per second
+true
+
+ Reporting at 00:03:09
+ Ball0:	Ball is located at (95.03585943963834,95.03585943963834) at a velocity of (0.14964140560361597,0.14964140560361597) feet per second
+true
+
+ Reporting at 00:03:10
+ Ball0:	Ball is located at (95.18550084524196,95.18550084524196) at a velocity of (0.14814499154757982,0.14814499154757982) feet per second
+true
+
+ Reporting at 00:03:10
+ Ball0:	Ball is located at (95.18550084524196,95.18550084524196) at a velocity of (0.14814499154757982,0.14814499154757982) feet per second
+true
+
+ Reporting at 00:03:11
+ Ball0:	Ball is located at (95.33364583678954,95.33364583678954) at a velocity of (0.14666354163210402,0.14666354163210402) feet per second
+true
+
+ Reporting at 00:03:11
+ Ball0:	Ball is located at (95.33364583678954,95.33364583678954) at a velocity of (0.14666354163210402,0.14666354163210402) feet per second
+true
+
+ Reporting at 00:03:12
+ Ball0:	Ball is located at (95.48030937842165,95.48030937842165) at a velocity of (0.145196906215783,0.145196906215783) feet per second
+true
+
+ Reporting at 00:03:12
+ Ball0:	Ball is located at (95.48030937842165,95.48030937842165) at a velocity of (0.145196906215783,0.145196906215783) feet per second
+true
+
+ Reporting at 00:03:13
+ Ball0:	Ball is located at (95.62550628463744,95.62550628463744) at a velocity of (0.14374493715362516,0.14374493715362516) feet per second
+true
+
+ Reporting at 00:03:13
+ Ball0:	Ball is located at (95.62550628463744,95.62550628463744) at a velocity of (0.14374493715362516,0.14374493715362516) feet per second
+true
+
+ Reporting at 00:03:14
+ Ball0:	Ball is located at (95.76925122179107,95.76925122179107) at a velocity of (0.1423074877820889,0.1423074877820889) feet per second
+true
+
+ Reporting at 00:03:14
+ Ball0:	Ball is located at (95.76925122179107,95.76925122179107) at a velocity of (0.1423074877820889,0.1423074877820889) feet per second
+true
+
+ Reporting at 00:03:15
+ Ball0:	Ball is located at (95.91155870957316,95.91155870957316) at a velocity of (0.140884412904268,0.140884412904268) feet per second
+true
+
+ Reporting at 00:03:15
+ Ball0:	Ball is located at (95.91155870957316,95.91155870957316) at a velocity of (0.140884412904268,0.140884412904268) feet per second
+true
+
+ Reporting at 00:03:16
+ Ball0:	Ball is located at (96.05244312247743,96.05244312247743) at a velocity of (0.13947556877522532,0.13947556877522532) feet per second
+true
+
+ Reporting at 00:03:16
+ Ball0:	Ball is located at (96.05244312247743,96.05244312247743) at a velocity of (0.13947556877522532,0.13947556877522532) feet per second
+true
+
+ Reporting at 00:03:17
+ Ball0:	Ball is located at (96.19191869125265,96.19191869125265) at a velocity of (0.13808081308747308,0.13808081308747308) feet per second
+true
+
+ Reporting at 00:03:17
+ Ball0:	Ball is located at (96.19191869125265,96.19191869125265) at a velocity of (0.13808081308747308,0.13808081308747308) feet per second
+true
+
+ Reporting at 00:03:18
+ Ball0:	Ball is located at (96.32999950434012,96.32999950434012) at a velocity of (0.13670000495659834,0.13670000495659834) feet per second
+true
+
+ Reporting at 00:03:18
+ Ball0:	Ball is located at (96.32999950434012,96.32999950434012) at a velocity of (0.13670000495659834,0.13670000495659834) feet per second
+true
+
+ Reporting at 00:03:19
+ Ball0:	Ball is located at (96.46669950929672,96.46669950929672) at a velocity of (0.13533300490703237,0.13533300490703237) feet per second
+true
+
+ Reporting at 00:03:19
+ Ball0:	Ball is located at (96.46669950929672,96.46669950929672) at a velocity of (0.13533300490703237,0.13533300490703237) feet per second
+true
+
+ Reporting at 00:03:20
+ Ball0:	Ball is located at (96.60203251420376,96.60203251420376) at a velocity of (0.13397967485796206,0.13397967485796206) feet per second
+true
+
+ Reporting at 00:03:20
+ Ball0:	Ball is located at (96.60203251420376,96.60203251420376) at a velocity of (0.13397967485796206,0.13397967485796206) feet per second
+true
+
+ Reporting at 00:03:21
+ Ball0:	Ball is located at (96.73601218906173,96.73601218906173) at a velocity of (0.13263987810938244,0.13263987810938244) feet per second
+true
+
+ Reporting at 00:03:21
+ Ball0:	Ball is located at (96.73601218906173,96.73601218906173) at a velocity of (0.13263987810938244,0.13263987810938244) feet per second
+true
+
+ Reporting at 00:03:22
+ Ball0:	Ball is located at (96.86865206717111,96.86865206717111) at a velocity of (0.1313134793282886,0.1313134793282886) feet per second
+true
+
+ Reporting at 00:03:22
+ Ball0:	Ball is located at (96.86865206717111,96.86865206717111) at a velocity of (0.1313134793282886,0.1313134793282886) feet per second
+true
+
+ Reporting at 00:03:23
+ Ball0:	Ball is located at (96.9999655464994,96.9999655464994) at a velocity of (0.13000034453500572,0.13000034453500572) feet per second
+true
+
+ Reporting at 00:03:23
+ Ball0:	Ball is located at (96.9999655464994,96.9999655464994) at a velocity of (0.13000034453500572,0.13000034453500572) feet per second
+true
+
+ Reporting at 00:03:24
+ Ball0:	Ball is located at (97.1299658910344,97.1299658910344) at a velocity of (0.12870034108965567,0.12870034108965567) feet per second
+true
+
+ Reporting at 00:03:24
+ Ball0:	Ball is located at (97.1299658910344,97.1299658910344) at a velocity of (0.12870034108965567,0.12870034108965567) feet per second
+true
+
+ Reporting at 00:03:25
+ Ball0:	Ball is located at (97.25866623212406,97.25866623212406) at a velocity of (0.12741333767875912,0.12741333767875912) feet per second
+true
+
+ Reporting at 00:03:25
+ Ball0:	Ball is located at (97.25866623212406,97.25866623212406) at a velocity of (0.12741333767875912,0.12741333767875912) feet per second
+true
+
+ Reporting at 00:03:26
+ Ball0:	Ball is located at (97.38607956980282,97.38607956980282) at a velocity of (0.12613920430197154,0.12613920430197154) feet per second
+true
+
+ Reporting at 00:03:26
+ Ball0:	Ball is located at (97.38607956980282,97.38607956980282) at a velocity of (0.12613920430197154,0.12613920430197154) feet per second
+true
+
+ Reporting at 00:03:27
+ Ball0:	Ball is located at (97.5122187741048,97.5122187741048) at a velocity of (0.12487781225895182,0.12487781225895182) feet per second
+true
+
+ Reporting at 00:03:27
+ Ball0:	Ball is located at (97.5122187741048,97.5122187741048) at a velocity of (0.12487781225895182,0.12487781225895182) feet per second
+true
+
+ Reporting at 00:03:28
+ Ball0:	Ball is located at (97.63709658636375,97.63709658636375) at a velocity of (0.12362903413636231,0.12362903413636231) feet per second
+true
+
+ Reporting at 00:03:28
+ Ball0:	Ball is located at (97.63709658636375,97.63709658636375) at a velocity of (0.12362903413636231,0.12362903413636231) feet per second
+true
+
+ Reporting at 00:03:29
+ Ball0:	Ball is located at (97.76072562050011,97.76072562050011) at a velocity of (0.12239274379499869,0.12239274379499869) feet per second
+true
+
+ Reporting at 00:03:29
+ Ball0:	Ball is located at (97.76072562050011,97.76072562050011) at a velocity of (0.12239274379499869,0.12239274379499869) feet per second
+true
+
+ Reporting at 00:03:30
+ Ball0:	Ball is located at (97.88311836429511,97.88311836429511) at a velocity of (0.12116881635704871,0.12116881635704871) feet per second
+true
+
+ Reporting at 00:03:30
+ Ball0:	Ball is located at (97.88311836429511,97.88311836429511) at a velocity of (0.12116881635704871,0.12116881635704871) feet per second
+true
+
+ Reporting at 00:03:31
+ Ball0:	Ball is located at (98.00428718065217,98.00428718065217) at a velocity of (0.11995712819347822,0.11995712819347822) feet per second
+true
+
+ Reporting at 00:03:31
+ Ball0:	Ball is located at (98.00428718065217,98.00428718065217) at a velocity of (0.11995712819347822,0.11995712819347822) feet per second
+true
+
+ Reporting at 00:03:32
+ Ball0:	Ball is located at (98.12424430884565,98.12424430884565) at a velocity of (0.11875755691154344,0.11875755691154344) feet per second
+true
+
+ Reporting at 00:03:32
+ Ball0:	Ball is located at (98.12424430884565,98.12424430884565) at a velocity of (0.11875755691154344,0.11875755691154344) feet per second
+true
+
+ Reporting at 00:03:33
+ Ball0:	Ball is located at (98.2430018657572,98.2430018657572) at a velocity of (0.117569981342428,0.117569981342428) feet per second
+true
+
+ Reporting at 00:03:33
+ Ball0:	Ball is located at (98.2430018657572,98.2430018657572) at a velocity of (0.117569981342428,0.117569981342428) feet per second
+true
+
+ Reporting at 00:03:34
+ Ball0:	Ball is located at (98.36057184709962,98.36057184709962) at a velocity of (0.11639428152900373,0.11639428152900373) feet per second
+true
+
+ Reporting at 00:03:34
+ Ball0:	Ball is located at (98.36057184709962,98.36057184709962) at a velocity of (0.11639428152900373,0.11639428152900373) feet per second
+true
+
+ Reporting at 00:03:35
+ Ball0:	Ball is located at (98.47696612862862,98.47696612862862) at a velocity of (0.1152303387137137,0.1152303387137137) feet per second
+true
+
+ Reporting at 00:03:35
+ Ball0:	Ball is located at (98.47696612862862,98.47696612862862) at a velocity of (0.1152303387137137,0.1152303387137137) feet per second
+true
+
+ Reporting at 00:03:36
+ Ball0:	Ball is located at (98.59219646734233,98.59219646734233) at a velocity of (0.11407803532657657,0.11407803532657657) feet per second
+true
+
+ Reporting at 00:03:36
+ Ball0:	Ball is located at (98.59219646734233,98.59219646734233) at a velocity of (0.11407803532657657,0.11407803532657657) feet per second
+true
+
+ Reporting at 00:03:37
+ Ball0:	Ball is located at (98.7062745026689,98.7062745026689) at a velocity of (0.1129372549733108,0.1129372549733108) feet per second
+true
+
+ Reporting at 00:03:37
+ Ball0:	Ball is located at (98.7062745026689,98.7062745026689) at a velocity of (0.1129372549733108,0.1129372549733108) feet per second
+true
+
+ Reporting at 00:03:38
+ Ball0:	Ball is located at (98.81921175764222,98.81921175764222) at a velocity of (0.11180788242357768,0.11180788242357768) feet per second
+true
+
+ Reporting at 00:03:38
+ Ball0:	Ball is located at (98.81921175764222,98.81921175764222) at a velocity of (0.11180788242357768,0.11180788242357768) feet per second
+true
+
+ Reporting at 00:03:39
+ Ball0:	Ball is located at (98.9310196400658,98.9310196400658) at a velocity of (0.11068980359934191,0.11068980359934191) feet per second
+true
+
+ Reporting at 00:03:39
+ Ball0:	Ball is located at (98.9310196400658,98.9310196400658) at a velocity of (0.11068980359934191,0.11068980359934191) feet per second
+true
+
+ Reporting at 00:03:40
+ Ball0:	Ball is located at (99.04170944366514,99.04170944366514) at a velocity of (0.10958290556334849,0.10958290556334849) feet per second
+true
+
+ Reporting at 00:03:40
+ Ball0:	Ball is located at (99.04170944366514,99.04170944366514) at a velocity of (0.10958290556334849,0.10958290556334849) feet per second
+true
+
+ Reporting at 00:03:41
+ Ball0:	Ball is located at (99.15129234922848,99.15129234922848) at a velocity of (0.108487076507715,0.108487076507715) feet per second
+true
+
+ Reporting at 00:03:41
+ Ball0:	Ball is located at (99.15129234922848,99.15129234922848) at a velocity of (0.108487076507715,0.108487076507715) feet per second
+true
+
+ Reporting at 00:03:42
+ Ball0:	Ball is located at (99.2597794257362,99.2597794257362) at a velocity of (0.10740220574263784,0.10740220574263784) feet per second
+true
+
+ Reporting at 00:03:42
+ Ball0:	Ball is located at (99.2597794257362,99.2597794257362) at a velocity of (0.10740220574263784,0.10740220574263784) feet per second
+true
+
+ Reporting at 00:03:43
+ Ball0:	Ball is located at (99.36718163147884,99.36718163147884) at a velocity of (0.10632818368521146,0.10632818368521146) feet per second
+true
+
+ Reporting at 00:03:43
+ Ball0:	Ball is located at (99.36718163147884,99.36718163147884) at a velocity of (0.10632818368521146,0.10632818368521146) feet per second
+true
+
+ Reporting at 00:03:44
+ Ball0:	Ball is located at (99.47350981516405,99.47350981516405) at a velocity of (0.10526490184835935,0.10526490184835935) feet per second
+true
+
+ Reporting at 00:03:44
+ Ball0:	Ball is located at (99.47350981516405,99.47350981516405) at a velocity of (0.10526490184835935,0.10526490184835935) feet per second
+true
+
+ Reporting at 00:03:45
+ Ball0:	Ball is located at (99.57877471701241,99.57877471701241) at a velocity of (0.10421225282987576,0.10421225282987576) feet per second
+true
+
+ Reporting at 00:03:45
+ Ball0:	Ball is located at (99.57877471701241,99.57877471701241) at a velocity of (0.10421225282987576,0.10421225282987576) feet per second
+true
+
+ Reporting at 00:03:46
+ Ball0:	Ball is located at (99.68298696984229,99.68298696984229) at a velocity of (0.103170130301577,0.103170130301577) feet per second
+true
+
+ Reporting at 00:03:46
+ Ball0:	Ball is located at (99.68298696984229,99.68298696984229) at a velocity of (0.103170130301577,0.103170130301577) feet per second
+true
+
+ Reporting at 00:03:47
+ Ball0:	Ball is located at (99.78615710014387,99.78615710014387) at a velocity of (0.10213842899856122,0.10213842899856122) feet per second
+true
+
+ Reporting at 00:03:47
+ Ball0:	Ball is located at (99.78615710014387,99.78615710014387) at a velocity of (0.10213842899856122,0.10213842899856122) feet per second
+true
+
+ Reporting at 00:03:48
+ Ball0:	Ball is located at (99.88829552914243,99.88829552914243) at a velocity of (0.1011170447085756,0.1011170447085756) feet per second
+true
+
+ Reporting at 00:03:48
+ Ball0:	Ball is located at (99.88829552914243,99.88829552914243) at a velocity of (0.1011170447085756,0.1011170447085756) feet per second
+true
+
+ Reporting at 00:03:49
+ Ball0:	Ball is located at (99.989412573851,99.989412573851) at a velocity of (0.10010587426148984,0.10010587426148984) feet per second
+true
+
+ Reporting at 00:03:49
+ Ball0:	Ball is located at (99.989412573851,99.989412573851) at a velocity of (0.10010587426148984,0.10010587426148984) feet per second
+true
+
+ Reporting at 00:03:50
+ Ball0:	Ball is located at (100.08951844811249,100.08951844811249) at a velocity of (0.09910481551887494,0.09910481551887494) feet per second
+true
+
+ Reporting at 00:03:50
+ Ball0:	Ball is located at (100.08951844811249,100.08951844811249) at a velocity of (0.09910481551887494,0.09910481551887494) feet per second
+true
+
+ Reporting at 00:03:51
+ Ball0:	Ball is located at (100.18862326363136,100.18862326363136) at a velocity of (0.0981137673636862,0.0981137673636862) feet per second
+true
+
+ Reporting at 00:03:51
+ Ball0:	Ball is located at (100.18862326363136,100.18862326363136) at a velocity of (0.0981137673636862,0.0981137673636862) feet per second
+true
+
+ Reporting at 00:03:52
+ Ball0:	Ball is located at (100.28673703099504,100.28673703099504) at a velocity of (0.09713262969004934,0.09713262969004934) feet per second
+true
+
+ Reporting at 00:03:52
+ Ball0:	Ball is located at (100.28673703099504,100.28673703099504) at a velocity of (0.09713262969004934,0.09713262969004934) feet per second
+true
+
+ Reporting at 00:03:53
+ Ball0:	Ball is located at (100.3838696606851,100.3838696606851) at a velocity of (0.09616130339314884,0.09616130339314884) feet per second
+true
+
+ Reporting at 00:03:53
+ Ball0:	Ball is located at (100.3838696606851,100.3838696606851) at a velocity of (0.09616130339314884,0.09616130339314884) feet per second
+true
+
+ Reporting at 00:03:54
+ Ball0:	Ball is located at (100.48003096407824,100.48003096407824) at a velocity of (0.09519969035921735,0.09519969035921735) feet per second
+true
+
+ Reporting at 00:03:54
+ Ball0:	Ball is located at (100.48003096407824,100.48003096407824) at a velocity of (0.09519969035921735,0.09519969035921735) feet per second
+true
+
+ Reporting at 00:03:55
+ Ball0:	Ball is located at (100.57523065443746,100.57523065443746) at a velocity of (0.09424769345562518,0.09424769345562518) feet per second
+true
+
+ Reporting at 00:03:55
+ Ball0:	Ball is located at (100.57523065443746,100.57523065443746) at a velocity of (0.09424769345562518,0.09424769345562518) feet per second
+true
+
+ Reporting at 00:03:56
+ Ball0:	Ball is located at (100.66947834789309,100.66947834789309) at a velocity of (0.09330521652106893,0.09330521652106893) feet per second
+true
+
+ Reporting at 00:03:56
+ Ball0:	Ball is located at (100.66947834789309,100.66947834789309) at a velocity of (0.09330521652106893,0.09330521652106893) feet per second
+true
+
+ Reporting at 00:03:57
+ Ball0:	Ball is located at (100.76278356441416,100.76278356441416) at a velocity of (0.09237216435585824,0.09237216435585824) feet per second
+true
+
+ Reporting at 00:03:57
+ Ball0:	Ball is located at (100.76278356441416,100.76278356441416) at a velocity of (0.09237216435585824,0.09237216435585824) feet per second
+true
+
+ Reporting at 00:03:58
+ Ball0:	Ball is located at (100.85515572877003,100.85515572877003) at a velocity of (0.09144844271229965,0.09144844271229965) feet per second
+true
+
+ Reporting at 00:03:58
+ Ball0:	Ball is located at (100.85515572877003,100.85515572877003) at a velocity of (0.09144844271229965,0.09144844271229965) feet per second
+true
+
+ Reporting at 00:03:59
+ Ball0:	Ball is located at (100.94660417148233,100.94660417148233) at a velocity of (0.09053395828517666,0.09053395828517666) feet per second
+true
+
+ Reporting at 00:03:59
+ Ball0:	Ball is located at (100.94660417148233,100.94660417148233) at a velocity of (0.09053395828517666,0.09053395828517666) feet per second
+true
+
+ Reporting at 00:04:00
+ Ball0:	Ball is located at (101.03713812976751,101.03713812976751) at a velocity of (0.08962861870232489,0.08962861870232489) feet per second
+true
+
+ Reporting at 00:04:00
+ Ball0:	Ball is located at (101.03713812976751,101.03713812976751) at a velocity of (0.08962861870232489,0.08962861870232489) feet per second
+true
+
+ Reporting at 00:04:01
+ Ball0:	Ball is located at (101.12676674846983,101.12676674846983) at a velocity of (0.08873233251530163,0.08873233251530163) feet per second
+true
+
+ Reporting at 00:04:01
+ Ball0:	Ball is located at (101.12676674846983,101.12676674846983) at a velocity of (0.08873233251530163,0.08873233251530163) feet per second
+true
+
+ Reporting at 00:04:02
+ Ball0:	Ball is located at (101.21549908098514,101.21549908098514) at a velocity of (0.08784500919014862,0.08784500919014862) feet per second
+true
+
+ Reporting at 00:04:02
+ Ball0:	Ball is located at (101.21549908098514,101.21549908098514) at a velocity of (0.08784500919014862,0.08784500919014862) feet per second
+true
+
+ Reporting at 00:04:03
+ Ball0:	Ball is located at (101.30334409017529,101.30334409017529) at a velocity of (0.08696655909824713,0.08696655909824713) feet per second
+true
+
+ Reporting at 00:04:03
+ Ball0:	Ball is located at (101.30334409017529,101.30334409017529) at a velocity of (0.08696655909824713,0.08696655909824713) feet per second
+true
+
+ Reporting at 00:04:04
+ Ball0:	Ball is located at (101.39031064927353,101.39031064927353) at a velocity of (0.08609689350726465,0.08609689350726465) feet per second
+true
+
+ Reporting at 00:04:04
+ Ball0:	Ball is located at (101.39031064927353,101.39031064927353) at a velocity of (0.08609689350726465,0.08609689350726465) feet per second
+true
+
+ Reporting at 00:04:05
+ Ball0:	Ball is located at (101.47640754278079,101.47640754278079) at a velocity of (0.085235924572192,0.085235924572192) feet per second
+true
+
+ Reporting at 00:04:05
+ Ball0:	Ball is located at (101.47640754278079,101.47640754278079) at a velocity of (0.085235924572192,0.085235924572192) feet per second
+true
+
+ Reporting at 00:04:06
+ Ball0:	Ball is located at (101.56164346735298,101.56164346735298) at a velocity of (0.08438356532647008,0.08438356532647008) feet per second
+true
+
+ Reporting at 00:04:06
+ Ball0:	Ball is located at (101.56164346735298,101.56164346735298) at a velocity of (0.08438356532647008,0.08438356532647008) feet per second
+true
+
+ Reporting at 00:04:07
+ Ball0:	Ball is located at (101.64602703267946,101.64602703267946) at a velocity of (0.08353972967320537,0.08353972967320537) feet per second
+true
+
+ Reporting at 00:04:07
+ Ball0:	Ball is located at (101.64602703267946,101.64602703267946) at a velocity of (0.08353972967320537,0.08353972967320537) feet per second
+true
+
+ Reporting at 00:04:08
+ Ball0:	Ball is located at (101.72956676235266,101.72956676235266) at a velocity of (0.08270433237647332,0.08270433237647332) feet per second
+true
+
+ Reporting at 00:04:08
+ Ball0:	Ball is located at (101.72956676235266,101.72956676235266) at a velocity of (0.08270433237647332,0.08270433237647332) feet per second
+true
+
+ Reporting at 00:04:09
+ Ball0:	Ball is located at (101.81227109472914,101.81227109472914) at a velocity of (0.08187728905270858,0.08187728905270858) feet per second
+true
+
+ Reporting at 00:04:09
+ Ball0:	Ball is located at (101.81227109472914,101.81227109472914) at a velocity of (0.08187728905270858,0.08187728905270858) feet per second
+true
+
+ Reporting at 00:04:10
+ Ball0:	Ball is located at (101.89414838378185,101.89414838378185) at a velocity of (0.08105851616218149,0.08105851616218149) feet per second
+true
+
+ Reporting at 00:04:10
+ Ball0:	Ball is located at (101.89414838378185,101.89414838378185) at a velocity of (0.08105851616218149,0.08105851616218149) feet per second
+true
+
+ Reporting at 00:04:11
+ Ball0:	Ball is located at (101.97520689994404,101.97520689994404) at a velocity of (0.08024793100055967,0.08024793100055967) feet per second
+true
+
+ Reporting at 00:04:11
+ Ball0:	Ball is located at (101.97520689994404,101.97520689994404) at a velocity of (0.08024793100055967,0.08024793100055967) feet per second
+true
+
+ Reporting at 00:04:12
+ Ball0:	Ball is located at (102.0554548309446,102.0554548309446) at a velocity of (0.07944545169055407,0.07944545169055407) feet per second
+true
+
+ Reporting at 00:04:12
+ Ball0:	Ball is located at (102.0554548309446,102.0554548309446) at a velocity of (0.07944545169055407,0.07944545169055407) feet per second
+true
+
+ Reporting at 00:04:13
+ Ball0:	Ball is located at (102.13490028263516,102.13490028263516) at a velocity of (0.07865099717364853,0.07865099717364853) feet per second
+true
+
+ Reporting at 00:04:13
+ Ball0:	Ball is located at (102.13490028263516,102.13490028263516) at a velocity of (0.07865099717364853,0.07865099717364853) feet per second
+true
+
+ Reporting at 00:04:14
+ Ball0:	Ball is located at (102.21355127980881,102.21355127980881) at a velocity of (0.07786448720191204,0.07786448720191204) feet per second
+true
+
+ Reporting at 00:04:14
+ Ball0:	Ball is located at (102.21355127980881,102.21355127980881) at a velocity of (0.07786448720191204,0.07786448720191204) feet per second
+true
+
+ Reporting at 00:04:15
+ Ball0:	Ball is located at (102.29141576701072,102.29141576701072) at a velocity of (0.07708584232989292,0.07708584232989292) feet per second
+true
+
+ Reporting at 00:04:15
+ Ball0:	Ball is located at (102.29141576701072,102.29141576701072) at a velocity of (0.07708584232989292,0.07708584232989292) feet per second
+true
+
+ Reporting at 00:04:16
+ Ball0:	Ball is located at (102.36850160934061,102.36850160934061) at a velocity of (0.076314983906594,0.076314983906594) feet per second
+true
+
+ Reporting at 00:04:16
+ Ball0:	Ball is located at (102.36850160934061,102.36850160934061) at a velocity of (0.076314983906594,0.076314983906594) feet per second
+true
+
+ Reporting at 00:04:17
+ Ball0:	Ball is located at (102.44481659324721,102.44481659324721) at a velocity of (0.07555183406752805,0.07555183406752805) feet per second
+true
+
+ Reporting at 00:04:17
+ Ball0:	Ball is located at (102.44481659324721,102.44481659324721) at a velocity of (0.07555183406752805,0.07555183406752805) feet per second
+true
+
+ Reporting at 00:04:18
+ Ball0:	Ball is located at (102.52036842731474,102.52036842731474) at a velocity of (0.07479631572685277,0.07479631572685277) feet per second
+true
+
+ Reporting at 00:04:18
+ Ball0:	Ball is located at (102.52036842731474,102.52036842731474) at a velocity of (0.07479631572685277,0.07479631572685277) feet per second
+true
+
+ Reporting at 00:04:19
+ Ball0:	Ball is located at (102.5951647430416,102.5951647430416) at a velocity of (0.07404835256958425,0.07404835256958425) feet per second
+true
+
+ Reporting at 00:04:19
+ Ball0:	Ball is located at (102.5951647430416,102.5951647430416) at a velocity of (0.07404835256958425,0.07404835256958425) feet per second
+true
+
+ Reporting at 00:04:20
+ Ball0:	Ball is located at (102.66921309561118,102.66921309561118) at a velocity of (0.0733078690438884,0.0733078690438884) feet per second
+true
+
+ Reporting at 00:04:20
+ Ball0:	Ball is located at (102.66921309561118,102.66921309561118) at a velocity of (0.0733078690438884,0.0733078690438884) feet per second
+true
+
+ Reporting at 00:04:21
+ Ball0:	Ball is located at (102.74252096465507,102.74252096465507) at a velocity of (0.07257479035344952,0.07257479035344952) feet per second
+true
+
+ Reporting at 00:04:21
+ Ball0:	Ball is located at (102.74252096465507,102.74252096465507) at a velocity of (0.07257479035344952,0.07257479035344952) feet per second
+true
+
+ Reporting at 00:04:22
+ Ball0:	Ball is located at (102.81509575500851,102.81509575500851) at a velocity of (0.07184904244991502,0.07184904244991502) feet per second
+true
+
+ Reporting at 00:04:22
+ Ball0:	Ball is located at (102.81509575500851,102.81509575500851) at a velocity of (0.07184904244991502,0.07184904244991502) feet per second
+true
+
+ Reporting at 00:04:23
+ Ball0:	Ball is located at (102.88694479745843,102.88694479745843) at a velocity of (0.07113055202541588,0.07113055202541588) feet per second
+true
+
+ Reporting at 00:04:23
+ Ball0:	Ball is located at (102.88694479745843,102.88694479745843) at a velocity of (0.07113055202541588,0.07113055202541588) feet per second
+true
+
+ Reporting at 00:04:24
+ Ball0:	Ball is located at (102.95807534948385,102.95807534948385) at a velocity of (0.07041924650516172,0.07041924650516172) feet per second
+true
+
+ Reporting at 00:04:24
+ Ball0:	Ball is located at (102.95807534948385,102.95807534948385) at a velocity of (0.07041924650516172,0.07041924650516172) feet per second
+true
+
+ Reporting at 00:04:25
+ Ball0:	Ball is located at (103.02849459598902,103.02849459598902) at a velocity of (0.06971505404011011,0.06971505404011011) feet per second
+true
+
+ Reporting at 00:04:25
+ Ball0:	Ball is located at (103.02849459598902,103.02849459598902) at a velocity of (0.06971505404011011,0.06971505404011011) feet per second
+true
+
+ Reporting at 00:04:26
+ Ball0:	Ball is located at (103.09820965002913,103.09820965002913) at a velocity of (0.069017903499709,0.069017903499709) feet per second
+true
+
+ Reporting at 00:04:26
+ Ball0:	Ball is located at (103.09820965002913,103.09820965002913) at a velocity of (0.069017903499709,0.069017903499709) feet per second
+true
+
+ Reporting at 00:04:27
+ Ball0:	Ball is located at (103.16722755352885,103.16722755352885) at a velocity of (0.06832772446471191,0.06832772446471191) feet per second
+true
+
+ Reporting at 00:04:27
+ Ball0:	Ball is located at (103.16722755352885,103.16722755352885) at a velocity of (0.06832772446471191,0.06832772446471191) feet per second
+true
+
+ Reporting at 00:04:28
+ Ball0:	Ball is located at (103.23555527799356,103.23555527799356) at a velocity of (0.0676444472200648,0.0676444472200648) feet per second
+true
+
+ Reporting at 00:04:28
+ Ball0:	Ball is located at (103.23555527799356,103.23555527799356) at a velocity of (0.0676444472200648,0.0676444472200648) feet per second
+true
+
+ Reporting at 00:04:29
+ Ball0:	Ball is located at (103.30319972521362,103.30319972521362) at a velocity of (0.06696800274786414,0.06696800274786414) feet per second
+true
+
+ Reporting at 00:04:29
+ Ball0:	Ball is located at (103.30319972521362,103.30319972521362) at a velocity of (0.06696800274786414,0.06696800274786414) feet per second
+true
+
+ Reporting at 00:04:30
+ Ball0:	Ball is located at (103.37016772796149,103.37016772796149) at a velocity of (0.06629832272038551,0.06629832272038551) feet per second
+true
+
+ Reporting at 00:04:30
+ Ball0:	Ball is located at (103.37016772796149,103.37016772796149) at a velocity of (0.06629832272038551,0.06629832272038551) feet per second
+true
+
+ Reporting at 00:04:31
+ Ball0:	Ball is located at (103.43646605068187,103.43646605068187) at a velocity of (0.06563533949318165,0.06563533949318165) feet per second
+true
+
+ Reporting at 00:04:31
+ Ball0:	Ball is located at (103.43646605068187,103.43646605068187) at a velocity of (0.06563533949318165,0.06563533949318165) feet per second
+true
+
+ Reporting at 00:04:32
+ Ball0:	Ball is located at (103.50210139017506,103.50210139017506) at a velocity of (0.06497898609824983,0.06497898609824983) feet per second
+true
+
+ Reporting at 00:04:32
+ Ball0:	Ball is located at (103.50210139017506,103.50210139017506) at a velocity of (0.06497898609824983,0.06497898609824983) feet per second
+true
+
+ Reporting at 00:04:33
+ Ball0:	Ball is located at (103.56708037627331,103.56708037627331) at a velocity of (0.06432919623726734,0.06432919623726734) feet per second
+true
+
+ Reporting at 00:04:33
+ Ball0:	Ball is located at (103.56708037627331,103.56708037627331) at a velocity of (0.06432919623726734,0.06432919623726734) feet per second
+true
+
+ Reporting at 00:04:34
+ Ball0:	Ball is located at (103.63140957251058,103.63140957251058) at a velocity of (0.06368590427489466,0.06368590427489466) feet per second
+true
+
+ Reporting at 00:04:34
+ Ball0:	Ball is located at (103.63140957251058,103.63140957251058) at a velocity of (0.06368590427489466,0.06368590427489466) feet per second
+true
+
+ Reporting at 00:04:35
+ Ball0:	Ball is located at (103.69509547678547,103.69509547678547) at a velocity of (0.06304904523214572,0.06304904523214572) feet per second
+true
+
+ Reporting at 00:04:35
+ Ball0:	Ball is located at (103.69509547678547,103.69509547678547) at a velocity of (0.06304904523214572,0.06304904523214572) feet per second
+true
+
+ Reporting at 00:04:36
+ Ball0:	Ball is located at (103.75814452201762,103.75814452201762) at a velocity of (0.06241855477982426,0.06241855477982426) feet per second
+true
+
+ Reporting at 00:04:36
+ Ball0:	Ball is located at (103.75814452201762,103.75814452201762) at a velocity of (0.06241855477982426,0.06241855477982426) feet per second
+true
+
+ Reporting at 00:04:37
+ Ball0:	Ball is located at (103.82056307679744,103.82056307679744) at a velocity of (0.06179436923202602,0.06179436923202602) feet per second
+true
+
+ Reporting at 00:04:37
+ Ball0:	Ball is located at (103.82056307679744,103.82056307679744) at a velocity of (0.06179436923202602,0.06179436923202602) feet per second
+true
+
+ Reporting at 00:04:38
+ Ball0:	Ball is located at (103.88235744602947,103.88235744602947) at a velocity of (0.06117642553970576,0.06117642553970576) feet per second
+true
+
+ Reporting at 00:04:38
+ Ball0:	Ball is located at (103.88235744602947,103.88235744602947) at a velocity of (0.06117642553970576,0.06117642553970576) feet per second
+true
+
+ Reporting at 00:04:39
+ Ball0:	Ball is located at (103.94353387156917,103.94353387156917) at a velocity of (0.0605646612843087,0.0605646612843087) feet per second
+true
+
+ Reporting at 00:04:39
+ Ball0:	Ball is located at (103.94353387156917,103.94353387156917) at a velocity of (0.0605646612843087,0.0605646612843087) feet per second
+true
+
+ Reporting at 00:04:40
+ Ball0:	Ball is located at (104.00409853285348,104.00409853285348) at a velocity of (0.05995901467146561,0.05995901467146561) feet per second
+true
+
+ Reporting at 00:04:40
+ Ball0:	Ball is located at (104.00409853285348,104.00409853285348) at a velocity of (0.05995901467146561,0.05995901467146561) feet per second
+true
+
+ Reporting at 00:04:41
+ Ball0:	Ball is located at (104.06405754752494,104.06405754752494) at a velocity of (0.05935942452475095,0.05935942452475095) feet per second
+true
+
+ Reporting at 00:04:41
+ Ball0:	Ball is located at (104.06405754752494,104.06405754752494) at a velocity of (0.05935942452475095,0.05935942452475095) feet per second
+true
+
+ Reporting at 00:04:42
+ Ball0:	Ball is located at (104.1234169720497,104.1234169720497)
+All of the balls have stopped moveing. No collsions occurred..                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+...   Should collide at about 5 seconds   
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 1.0
+ The intial report is at 00:00:00.00
+ Ball0:	Ball is located at (10.0,10.0) at a velocity of (1.0,1.0) feet per second
+ Ball1:	Ball is located at (20.0,20.0) at a velocity of (-1.0,-1.0) feet per second
+true
+true
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (11.0,11.0) at a velocity of (0.99,0.99) feet per second
+ Ball1:	Ball is located at (19.0,19.0) at a velocity of (-0.99,-0.99) feet per second
+true
+true
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (11.0,11.0) at a velocity of (0.99,0.99) feet per second
+ Ball1:	Ball is located at (19.0,19.0) at a velocity of (-0.99,-0.99) feet per second
+true
+true
+
+ Reporting at 00:00:02
+ Ball0:	Ball is located at (11.99,11.99) at a velocity of (0.9801,0.9801) feet per second
+ Ball1:	Ball is located at (18.01,18.01) at a velocity of (-0.9801,-0.9801) feet per second
+A collision occurred
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+...   Speed *should* kick it out quickly  
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 1.0
+ The intial report is at 00:00:00.00
+ Ball0:	Ball is located at (10.0,10.0) at a velocity of (1000.0,1000.0) feet per second
+false
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (1010.0,1010.0) at a velocity of (990.0,990.0) feet per second
+Your ball is out of bounds :(
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+...   Should collide Ball 1 and 4 in less than 1 sec  
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 0.1
+ The intial report is at 00:00:00.00
+ Ball0:	Ball is located at (200.0,200.0) at a velocity of (10.0,10.0) feet per second
+ Ball1:	Ball is located at (100.0,100.0) at a velocity of (-100.0,-100.0) feet per second
+ Ball2:	Ball is located at (150.0,150.0) at a velocity of (200.0,200.0) feet per second
+ Ball3:	Ball is located at (175.0,175.0) at a velocity of (-110.0,-110.0) feet per second
+ Ball4:	Ball is located at (20.0,20.0) at a velocity of (1.0,1.0) feet per second
+ Ball5:	Ball is located at (50.0,50.0) at a velocity of (-5.0,-5.0) feet per second
+9.99
+false
+-99.9
+false
+199.8
+false
+-109.89
+false
+0.999
+false
+-4.995
+false
+true
+true
+true
+true
+true
+true
+
+ Reporting at 00:00:00
+ Ball0:	Ball is located at (201.0,201.0) at a velocity of (9.99,9.99) feet per second
+ Ball1:	Ball is located at (90.0,90.0) at a velocity of (-99.9,-99.9) feet per second
+ Ball2:	Ball is located at (170.0,170.0) at a velocity of (199.8,199.8) feet per second
+ Ball3:	Ball is located at (164.0,164.0) at a velocity of (-109.89,-109.89) feet per second
+ Ball4:	Ball is located at (20.1,20.1) at a velocity of (0.999,0.999) feet per second
+ Ball5:	Ball is located at (49.5,49.5) at a velocity of (-4.995,-4.995) feet per second
+A collision occurred
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 1.234
+ The intial report is at 00:00:00.00s
+ Ball0:	Ball is located at (200.0,200.0) at a velocity of (10.0,10.0) feet per second
+ Ball1:	Ball is located at (100.0,100.0) at a velocity of (-100.0,-100.0) feet per second
+ Ball2:	Ball is located at (150.0,150.0) at a velocity of (200.0,200.0) feet per second
+ Ball3:	Ball is located at (175.0,175.0) at a velocity of (-110.0,-110.0) feet per second
+ Ball4:	Ball is located at (20.0,20.0) at a velocity of (1.0,1.0) feet per second
+ Ball5:	Ball is located at (50.0,50.0) at a velocity of (-5.0,-5.0) feet per second
+9.876834
+false
+-98.76834
+false
+197.53668
+false
+-108.64517400000001
+false
+0.9876834
+false
+-4.938417
+false
+true
+true
+false
+true
+true
+true
+
+ Reporting at 00:00:01
+ Ball0:	Ball is located at (212.3166,212.3166) at a velocity of (9.876834,9.876834) feet per second
+ Ball1:	Ball is located at (-23.165999999999997,-23.165999999999997) at a velocity of (-98.76834,-98.76834) feet per second
+ Ball2:	Ball is located at (396.332,396.332) at a velocity of (197.53668,197.53668) feet per second
+ Ball3:	Ball is located at (39.517399999999995,39.517399999999995) at a velocity of (-108.64517400000001,-108.64517400000001) feet per second
+ Ball4:	Ball is located at (21.23166,21.23166) at a velocity of (0.9876834,0.9876834) feet per second
+ Ball5:	Ball is located at (43.8417,43.8417) at a velocity of (-4.938417,-4.938417) feet per second
+A collision occurred
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+...   Should contact ball 1 and 8 @ 30 sec  
+======================================  
+
+   Hello world, from the SoccerSim program!!
+
+
+
+ The field is 500.0 by 500.0
+ The pole is located at 50.0,50.0
+ The timeSlice is 10.0
+ The intial report is at 00:00:00.00s
+ Ball0:	Ball is located at (150.0,150.0) at a velocity of (10.0,10.0) feet per second
+ Ball1:	Ball is located at (100.0,100.0) at a velocity of (-100.0,-100.0) feet per second
+ Ball2:	Ball is located at (200.0,200.0) at a velocity of (200.0,200.0) feet per second
+ Ball3:	Ball is located at (250.0,250.0) at a velocity of (-110.0,-110.0) feet per second
+ Ball4:	Ball is located at (20.0,20.0) at a velocity of (1.0,1.0) feet per second
+ Ball5:	Ball is located at (50.0,50.0) at a velocity of (-5.0,-5.0) feet per second
+ Ball6:	Ball is located at (-100.0,-100.0) at a velocity of (200.0,200.0) feet per second
+ Ball7:	Ball is located at (-200.0,-200.0) at a velocity of (300.0,300.0) feet per second
+ Ball8:	Ball is located at (-110.0,-110.0) at a velocity of (20.0,20.0) feet per second
+ Ball9:	Ball is located at (1.0,1.0) at a velocity of (50.0,50.0) feet per second
+true
+false
+false
+false
+true
+true
+false
+false
+true
+false
+
+ Reporting at 00:00:10
+ Ball0:	Ball is located at (245.61792499119548,245.61792499119548) at a velocity of (9.043820750088043,9.043820750088043) feet per second
+ Ball1:	Ball is located at (-856.1792499119551,-856.1792499119551) at a velocity of (-90.43820750088047,-90.43820750088047) feet per second
+ Ball2:	Ball is located at (2112.3584998239103,2112.3584998239103) at a velocity of (180.87641500176093,180.87641500176093) feet per second
+ Ball3:	Ball is located at (-801.7971749031506,-801.7971749031506) at a velocity of (-99.48202825096848,-99.48202825096848) feet per second
+ Ball4:	Ball is located at (29.561792499119548,29.561792499119548) at a velocity of (0.9043820750088045,0.9043820750088045) feet per second
+ Ball5:	Ball is located at (2.1910375044022476,2.1910375044022476) at a velocity of (-4.521910375044022,-4.521910375044022) feet per second
+ Ball6:	Ball is located at (1812.3584998239103,1812.3584998239103) at a velocity of (180.87641500176093,180.87641500176093) feet per second
+ Ball7:	Ball is located at (2668.537749735865,2668.537749735865) at a velocity of (271.3146225026414,271.3146225026414) feet per second
+ Ball8:	Ball is located at (81.235849982391,81.235849982391) at a velocity of (18.087641500176087,18.087641500176087) feet per second
+ Ball9:	Ball is located at (479.08962495597757,479.08962495597757) at a velocity of (45.21910375044023,45.21910375044023) feet per second
+Your ball is out of bounds :(
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  

@@ -52,13 +52,13 @@ public class SoccerSim{
       // System.out.println(this.ballCount);
       for (int i = 0; i < ballCount; i ++){
          soccerBalls[i] = new Ball(x, y, xVel, yVel);
+      }
+      this.x = x;
+      this.y = y;
+      this.xVel = xVel;
+      this.yVel = yVel;
+      this.timeSlice = timeSlice;
    }
-   this.x = x;
-   this.y = y;
-   this.xVel = xVel;
-   this.yVel = yVel;
-   this.timeSlice = timeSlice;
-}
 
    public void handleInitialArguments(String args[]){
       if( 4 > args.length){
