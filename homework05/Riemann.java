@@ -17,14 +17,15 @@
  *  @version 1.0.1  2019-03-25  Emilia Huerta Attempted to deal with "%"
  *  @version 1.0.2  2019-03-25  Emilia Huerta Wrote fields; tried to find roots
  *  @version 1.0.3  2019-03-27  Emilia Huerta Wrote for if % or no %
+ *  @version 1.0.4  2019-03-31  Emilia Huerta Wrote method for getMid() and polyCalc()
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
-   private String type;
-   private double[] coeffs;
-   private double lowerBound;
-   private double upperBound;
-   private double percent;
+   // private String type;
+   // private double[] coeffs;
+   // private double lowerBound;
+   // private double upperBound;
+   // private double percent;
 
    public Riemann( String type, double[] coeffs, double lowerBound, double upperBound, double percent){
       //handle type
@@ -41,10 +42,23 @@ public class Riemann{
       }
    }
 
-   public void getHeight(){
+   // public void getHeight(){
 
+   // }
+
+   public static double getMid(Double upperBound, Double lowerBound){
+      return (upperBound + lowerBound) / 2;
    }
 
+   public static double polyCalc(Double [] args, Double x){
+      int lastArg = args.length -1;
+      double answer = 0;
+      for(int i = lastArg; i >= 0; i--){
+         double math = args[0] * (Math.pow(x,i));
+         answer = answer + math;
+      }
+      return answer;
+   }
 
    // static void bisectionMethod(double a, double b){
    //    double c = a;
@@ -77,6 +91,12 @@ public class Riemann{
          double upperBound = Double.parseDouble((args[args.length - 1]));
          double lowerBound = Double.parseDouble((args[args.length - 2]));
       }
+
+      // int x = 1;
+      // for(int i = 0; i < args.length; i++){
+
+      // }
+
       //make a riemann(blah blah blah, percent)
 
       // switch(args[0]){
