@@ -18,6 +18,7 @@
  *  @version 1.0.2  2019-03-25  Emilia Huerta Wrote fields; tried to find roots
  *  @version 1.0.3  2019-03-27  Emilia Huerta Wrote for if % or no %
  *  @version 1.0.4  2019-03-31  Emilia Huerta Wrote method for getMid() and polyCalc()
+ *  @version 1.0.5  2019-03-31  Emilia Huerta Changed type switch to if statements
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -27,7 +28,7 @@ public class Riemann{
    // private double upperBound;
    // private double percent;
 
-   public Riemann( String type, double[] coeffs, double lowerBound, double upperBound, double percent){
+   public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
       //handle type
       //handle coeffs
    }
@@ -36,11 +37,11 @@ public class Riemann{
    //    if()
    // }
 
-   public void type( String args[]){
-      switch(args[0]){
-         case "poly":
-      }
-   }
+   // public void type( String args[]){
+   //    switch(args[0]){
+   //       case "poly":
+   //    }
+   // }
 
    // public void getHeight(){
 
@@ -92,6 +93,15 @@ public class Riemann{
          double lowerBound = Double.parseDouble((args[args.length - 2]));
       }
 
+      if(args[0].equals("poly")){
+         Riemann riemann = new Riemann(lowerBound,upperBound, args)
+      }
+      else if(args[0].equals("sin")){
+         Riemann riemann = new Riemann(lowerBound, upperBound, args)
+      }
+      else{
+         throw new IllegalArgumentException("not an option")
+      }
       // int x = 1;
       // for(int i = 0; i < args.length; i++){
 
