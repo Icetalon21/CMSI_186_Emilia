@@ -19,6 +19,7 @@
  *  @version 1.0.3  2019-03-27  Emilia Huerta Wrote for if % or no %
  *  @version 1.0.4  2019-03-31  Emilia Huerta Wrote method for getMid() and polyCalc()
  *  @version 1.0.5  2019-03-31  Emilia Huerta Changed type switch to if statements
+ *  @version 1.0.6  2019-04-01  Emilia huerta Wrote polyIntegrate
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -51,14 +52,34 @@ public class Riemann{
       return (upperBound + lowerBound) / 2;
    }
 
-   public static double polyCalc(Double [] args, Double x){
+   public static double polyCalc(Double x, Double [] args){
       int lastArg = args.length -1;
       double answer = 0;
       for(int i = lastArg; i >= 0; i--){
-         double math = args[0] * (Math.pow(x,i));
+         double math = args[0] * (Math.pow(x, i));
          answer = answer + math;
       }
       return answer;
+   }
+
+   public static double polyIntegrate(Double lowerBound, Double upperBound, Double[] coeffs){
+      double previous = 0;
+      double area = (upperBound - lowerBound) * polyCalc((upperBound + lowerBound) / 2, coeffs);
+
+      while (Math.abs(previous - area) > 0.01){
+         double width = Math.abs((upperBound - lowerBound) / 2);
+         double newLowerBound = lowerBound;
+         double newUpperBound = upperBound;
+         previous = area;
+         area = 0;
+
+         for(int i = 2; i > 0; i--){
+            area = area + ((newUpperBound - newLowerBound) * polyCalc((newUpperBound + newLowerBound) / 2, coeffs));
+            newLowerBound = newLowerBound + width;
+            newUpperBound = newUpperBound + width;
+         }
+      }
+      return area;
    }
 
    // static void bisectionMethod(double a, double b){
