@@ -26,6 +26,7 @@
  *  @version 1.1.0  2019-04-02  Emilia Huerta Fixed handleInitialArguments()
  *  @version 1.1.1  2019-04-03  Emilia Huerta Changed polyCalc() - not correct answer
  *  @version 1.1.2  2019-04-03  Emilia Huerta Fixed isInBounds() - correct
+ *  @version 1.1.3  2019-04-03  Emilia Huerta Number of boxes is incorrect - stuck at 1
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -35,6 +36,7 @@ public class Riemann{
     private double lowerBound;
     private double upperBound;
     private double percent;
+
 
 //    public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
 //       this.lowerBound = lowerBound;
@@ -91,7 +93,7 @@ public class Riemann{
                 coeffs = new double[numberOFCoeff];
                 for(int i=0; i < numberOFCoeff; i++){
                     if (Double.parseDouble(args[i+1]) != 0.0){
-                        // System.out.println("Containing " + Double.parseDouble(args[i+1]));
+                        System.out.println("Containing " + Double.parseDouble(args[i+1]));
                         coeffs[i] = Double.parseDouble(args[i + 1]);
                     }
                 }
@@ -140,19 +142,23 @@ public class Riemann{
         System.out.println("UpperBound " + upperBound);
         System.out.println("LowerBound " + lowerBound);
         System.out.println(area);
-        while (Math.abs(previous - area) > 0.01){
-            double width = Math.abs((upperBound - lowerBound) / 2);
+        while (percent < (1-(area/previous)) /*percent */){
             double newLowerBound = lowerBound;
             double newUpperBound = upperBound;
             previous = area;
             area = 0;
 
-            for(int i = 2; i > 0; i--){
+            int n = 1;
+            double width = Math.abs((upperBound - lowerBound) / n);
+            for(int i = 0; i < n; i++){ //number of
                 // area = area + ((newUpperBound - newLowerBound) * polyCalc((newUpperBound + newLowerBound) / 2, coeffs));
-                area = area + ((newUpperBound - newLowerBound) * solvePoly((newUpperBound + newLowerBound) / 2, coeffs));
+                // area = area + ((newUpperBound - newLowerBound) * solvePoly((newUpperBound + newLowerBound) / 2, coeffs));
                 newLowerBound = newLowerBound + width;
                 newUpperBound = newUpperBound + width;
+                area = area + ((newUpperBound - newLowerBound) * solvePoly((newUpperBound + newLowerBound) / 2, coeffs));
+                System.out.println(" N " + n);
             }
+            n++;
         }
         System.out.println(area);
         return area;
@@ -226,6 +232,7 @@ public class Riemann{
         }
 
         if(args[0].equals("poly")){
+            
             riemann.polyIntegrate();
          // riemann = new Riemann(lowerBound, upperBound, coeffs, percent);
         }
