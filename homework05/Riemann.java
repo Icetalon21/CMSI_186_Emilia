@@ -24,6 +24,8 @@
  *  @version 1.0.8  2019-04-02  Emilia Huerta Revived fields and constructor
  *  @version 1.0.9  2019-04-02  Emilia Huerta Killed constructor, numberOfCoeff()
  *  @version 1.1.0  2019-04-02  Emilia Huerta Fixed handleInitialArguments()
+ *  @version 1.1.1  2019-04-03  Emilia Huerta Changed polyCalc() - not correct answer
+ *  @version 1.1.2  2019-04-03  Emilia Huerta Fixed isInBounds() - correct
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -85,11 +87,11 @@ public class Riemann{
     public void numberOFCoeff(String args[]){
         if (args.length > 0) {
             if (!args[args.length - 1].contains("%")) {
-                int numberOFCoeff  = args.length - 3;//poly,ub,lb,percent
+                int numberOFCoeff  = args.length - 3;//poly,ub,lb
                 coeffs = new double[numberOFCoeff];
                 for(int i=0; i < numberOFCoeff; i++){
                     if (Double.parseDouble(args[i+1]) != 0.0){
-                        //System.out.println("Containing " + Double.parseDouble(args[i+1]));
+                        // System.out.println("Containing " + Double.parseDouble(args[i+1]));
                         coeffs[i] = Double.parseDouble(args[i + 1]);
                     }
                 }
@@ -109,10 +111,11 @@ public class Riemann{
    // }
 
     public double polyCalc(double x, double [] localCoeffs){
-        int lastArg = localCoeffs.length -1;
+        // int lastArg = localCoeffs.length -1;
         System.out.println(x);
         double answer = 0;
-        for(int i = lastArg; i >= 0; i--){
+        // for(int i = lastArg; i >= 0; i--){
+        for(int i = 0; i < localCoeffs.length; i++){
             System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
             double math = localCoeffs[i] * (Math.pow(x, localCoeffs[i]));
             answer = answer + math;
@@ -120,9 +123,20 @@ public class Riemann{
         return answer;
     }
 
+    public double solvePoly(double x, double[] localCoeffs){
+        double solved = 0;
+        for(int i=0; i < localCoeffs.length; i++){
+            System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
+            solved += (localCoeffs[i] * (Math.pow(x, i)));
+        }
+        System.out.println("solved " + solved);
+        return solved;
+    }
+
     public double polyIntegrate(/* double lowerBound, double upperBound, double[] coeffs */){
         double previous = 0;
-        double area = (upperBound - lowerBound) * polyCalc((upperBound + lowerBound) / 2, coeffs);
+        // double area = (upperBound - lowerBound) * polyCalc((upperBound + lowerBound) / 2, coeffs);
+        double area = (upperBound - lowerBound) * solvePoly((upperBound + lowerBound) / 2, coeffs);
         System.out.println("UpperBound " + upperBound);
         System.out.println("LowerBound " + lowerBound);
         System.out.println(area);
@@ -134,7 +148,8 @@ public class Riemann{
             area = 0;
 
             for(int i = 2; i > 0; i--){
-                area = area + ((newUpperBound - newLowerBound) * polyCalc((newUpperBound + newLowerBound) / 2, coeffs));
+                // area = area + ((newUpperBound - newLowerBound) * polyCalc((newUpperBound + newLowerBound) / 2, coeffs));
+                area = area + ((newUpperBound - newLowerBound) * solvePoly((newUpperBound + newLowerBound) / 2, coeffs));
                 newLowerBound = newLowerBound + width;
                 newUpperBound = newUpperBound + width;
             }
@@ -204,7 +219,7 @@ public class Riemann{
         }
 
         try{
-        riemann.isInBounds(lowerBound, upperBound);
+        riemann.isInBounds(riemann.lowerBound, riemann.upperBound);
         }
         catch(IllegalArgumentException illegalArgumentException){
             System.out.println("less");
