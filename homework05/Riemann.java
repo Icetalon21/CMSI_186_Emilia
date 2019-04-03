@@ -19,7 +19,8 @@
  *  @version 1.0.3  2019-03-27  Emilia Huerta Wrote for if % or no %
  *  @version 1.0.4  2019-03-31  Emilia Huerta Wrote method for getMid() and polyCalc()
  *  @version 1.0.5  2019-03-31  Emilia Huerta Changed type switch to if statements
- *  @version 1.0.6  2019-04-01  Emilia huerta Wrote polyIntegrate
+ *  @version 1.0.6  2019-04-01  Emilia Huerta Wrote polyIntegrate
+ *  @version 1.0.7  2019-04-02  Emilia Huerta Handled Arguments
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -29,9 +30,10 @@ public class Riemann{
    // private double upperBound;
    // private double percent;
 
-   public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
+   public Riemann(Double lowerBound, Double upperBound, Double[] coeffs, Double percent){
       //handle type
       //handle coeffs
+      System.out.println(polyIntegrate(lowerBound, upperBound, coeffs));
    }
 
    // public static int coefficients (double[] args){
@@ -47,6 +49,13 @@ public class Riemann{
    // public void getHeight(){
 
    // }
+
+   public void handleInitialArguments(String args[]){
+      if(4 > args.length){
+         System.out.println(" Sorry you have entered in too few arguments \n");
+         System.exit(0);
+      }
+   }
 
    public static double getMid(Double upperBound, Double lowerBound){
       return (upperBound + lowerBound) / 2;
@@ -103,6 +112,7 @@ public class Riemann{
 
    public static void main (String [] args){
       System.out.println(" \n Hello world, from the Riemann program \n");
+
       if(args[args.length -1].contains("%")){
          double percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
          double upperBound = Double.parseDouble((args[args.length - 2]));
@@ -115,13 +125,13 @@ public class Riemann{
       }
 
       if(args[0].equals("poly")){
-         Riemann riemann = new Riemann(lowerBound,upperBound, args)
+         Riemann riemann = new Riemann(lowerBound, upperBound, args);
       }
       else if(args[0].equals("sin")){
-         Riemann riemann = new Riemann(lowerBound, upperBound, args)
+         Riemann riemann = new Riemann(lowerBound, upperBound, args);
       }
       else{
-         throw new IllegalArgumentException("not an option")
+         throw new IllegalArgumentException("not an option");
       }
       // int x = 1;
       // for(int i = 0; i < args.length; i++){
