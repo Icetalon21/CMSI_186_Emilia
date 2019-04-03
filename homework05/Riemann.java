@@ -21,19 +21,24 @@
  *  @version 1.0.5  2019-03-31  Emilia Huerta Changed type switch to if statements
  *  @version 1.0.6  2019-04-01  Emilia Huerta Wrote polyIntegrate
  *  @version 1.0.7  2019-04-02  Emilia Huerta Handled Arguments
+ *  @version 1.0.8  2019-04-02  Emilia Huerta Revived fields and constructor
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
    // private String type;
-   // private double[] coeffs;
-   // private double lowerBound;
-   // private double upperBound;
-   // private double percent;
+   private double[] coeffs;
+   private double lowerBound;
+   private double upperBound;
+   private double percent;
 
-   public Riemann(Double lowerBound, Double upperBound, Double[] coeffs, Double percent){
+   public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
+      this.lowerBound = lowerBound;
+      this.upperBound = upperBound;
+      this.coeffs = coeffs;
+      this.percent = percent;
       //handle type
       //handle coeffs
-      System.out.println(polyIntegrate(lowerBound, upperBound, coeffs));
+      // System.out.println(polyIntegrate(lowerBound, upperBound, coeffs));
    }
 
    // public static int coefficients (double[] args){
@@ -57,11 +62,11 @@ public class Riemann{
       }
    }
 
-   public static double getMid(Double upperBound, Double lowerBound){
+   public double getMid(double upperBound, double lowerBound){
       return (upperBound + lowerBound) / 2;
    }
 
-   public static double polyCalc(Double x, Double [] args){
+   public double polyCalc(double x, double [] args){
       int lastArg = args.length -1;
       double answer = 0;
       for(int i = lastArg; i >= 0; i--){
@@ -71,7 +76,7 @@ public class Riemann{
       return answer;
    }
 
-   public static double polyIntegrate(Double lowerBound, Double upperBound, Double[] coeffs){
+   public double polyIntegrate(/* double lowerBound, double upperBound, double[] coeffs */){
       double previous = 0;
       double area = (upperBound - lowerBound) * polyCalc((upperBound + lowerBound) / 2, coeffs);
 
@@ -111,28 +116,42 @@ public class Riemann{
    // }
 
    public static void main (String [] args){
+
+      double [] coeffs = new double[3];
+
+      coeffs[0] =  Double.parseDouble(args[1]);
+      coeffs[1] =  Double.parseDouble(args[2]);
+      coeffs[2] =  Double.parseDouble(args[3]);
+
+      double percent = 0, upperBound = 0, lowerBound = 0;
+
+      Riemann riemann = null;
+
       System.out.println(" \n Hello world, from the Riemann program \n");
 
       if(args[args.length -1].contains("%")){
-         double percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
-         double upperBound = Double.parseDouble((args[args.length - 2]));
-         double lowerBound = Double.parseDouble((args[args.length - 3]));
+         percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
+         upperBound = Double.parseDouble((args[args.length - 2]));
+         lowerBound = Double.parseDouble((args[args.length - 3]));
       }
       if(!args[args.length - 1].contains("%")){
-         double percent = 0.01;
-         double upperBound = Double.parseDouble((args[args.length - 1]));
-         double lowerBound = Double.parseDouble((args[args.length - 2]));
+         percent = 0.01;
+         upperBound = Double.parseDouble((args[args.length - 1]));
+         lowerBound = Double.parseDouble((args[args.length - 2]));
       }
 
       if(args[0].equals("poly")){
-         Riemann riemann = new Riemann(lowerBound, upperBound, args);
+         riemann = new Riemann(lowerBound, upperBound, coeffs, percent);
       }
       else if(args[0].equals("sin")){
-         Riemann riemann = new Riemann(lowerBound, upperBound, args);
+         /* riemann = new Riemann(lowerBound, upperBound, args); */
       }
       else{
          throw new IllegalArgumentException("not an option");
       }
+
+      double result = riemann.polyIntegrate();
+
       // int x = 1;
       // for(int i = 0; i < args.length; i++){
 
