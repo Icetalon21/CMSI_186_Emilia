@@ -23,6 +23,7 @@
  *  @version 1.0.7  2019-04-02  Emilia Huerta Handled Arguments
  *  @version 1.0.8  2019-04-02  Emilia Huerta Revived fields and constructor
  *  @version 1.0.9  2019-04-02  Emilia Huerta Killed constructor, numberOfCoeff()
+ *  @version 1.1.0  2019-04-02  Emilia Huerta Fixed handleInitialArguments()
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -176,7 +177,7 @@ public class Riemann{
         double upperBound = 0;
         double lowerBound = 0;
 
-        riemann.numberOFCoeff(args);
+        // riemann.numberOFCoeff(args);
 
 
       // Riemann riemann = null;
@@ -186,6 +187,8 @@ public class Riemann{
         catch(IllegalArgumentException illegalArgumentException){
             System.out.println("Please enter in valid arguments");
         }
+
+        riemann.numberOFCoeff(args);
 
         System.out.println(" \n Hello world, from the Riemann program \n");
 
