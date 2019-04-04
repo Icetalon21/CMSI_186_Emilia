@@ -28,6 +28,7 @@
  *  @version 1.1.2  2019-04-03  Emilia Huerta Fixed isInBounds() - correct
  *  @version 1.1.3  2019-04-03  Emilia Huerta Number of boxes is incorrect - stuck at 1
  *  @version 1.1.4  2019-04-04  Emilia Huerta Deleted n boxes, changed polyIntegrate()
+ *  @version 1.1.5  2019-04-04  Emilia Huerta Implemented Math.floor and 0.0
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -132,6 +133,10 @@ public class Riemann{
             System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
             solved += (localCoeffs[i] * (Math.pow(x, i)));
         }
+        if(solved == 0.0){
+            System.out.println("area is 0.0");
+            System.exit(2);
+        }
         System.out.println("solved " + solved);
         return solved;
     }
@@ -140,17 +145,17 @@ public class Riemann{
         double width = (upperBound - lowerBound);
         double currentArea = 0;
         double previousArea = 0;
-        while(currentArea == 0 || 0.001 < (1 - (previousArea / currentArea))){
+        while(currentArea == 0 || 0.01 < (1 - (previousArea / currentArea))){
             previousArea = currentArea;
             currentArea = 0;
             width /= 2;
             for( double i = lowerBound; i < upperBound; i += width){
                 currentArea += solvePoly(i - width/2, coeffs) * width; //adds all areas
             }
-            System.out.println("current area " + currentArea);
+            // System.out.println("current area " + currentArea);
         }
-        System.out.println("current area " + currentArea);
-        return currentArea;
+        System.out.println("current area " + Math.floor(currentArea));
+        return Math.floor(currentArea);
     }
 
    // static void bisectionMethod(double a, double b){
