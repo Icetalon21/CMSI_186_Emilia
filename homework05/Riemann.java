@@ -29,6 +29,7 @@
  *  @version 1.1.3  2019-04-03  Emilia Huerta Number of boxes is incorrect - stuck at 1
  *  @version 1.1.4  2019-04-04  Emilia Huerta Deleted n boxes, changed polyIntegrate()
  *  @version 1.1.5  2019-04-04  Emilia Huerta Implemented Math.floor and 0.0
+ *  @version 1.1.6  2019-04-04  Emilia Huerta Tried to implement sine - failed
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -158,6 +159,32 @@ public class Riemann{
         return Math.floor(currentArea);
     }
 
+    public double sinIntegrate(double lowerBound, double upperBound){
+        double currentArea = (upperBound - lowerBound) * (Math.sin((upperBound + lowerBound) / 2));
+        double  slice = 2;
+        double previousArea = 0;
+
+        while(Math.abs(previousArea - currentArea) > 0.01){
+            double width = (upperBound - lowerBound)/2;
+            double newLowerBound = lowerBound;
+            double newUpperBound = lowerBound + width;
+            previousArea = currentArea;
+            currentArea = 0;
+
+            for(int i =  (int) slice; i > 0; i --){
+                currentArea = currentArea + ((newUpperBound - newLowerBound) * (Math.sin(newUpperBound + newLowerBound) / 2));
+
+                newLowerBound = newLowerBound + width;
+                newUpperBound = newUpperBound + width;
+            }
+            slice = Math.pow(slice, 2.0);
+        }
+        System.out.print("Current Sine Area" + currentArea);
+        return currentArea;
+    }
+
+
+
    // static void bisectionMethod(double a, double b){
    //    double c = a;
    //    while ((b-a) >= 0.01){
@@ -230,6 +257,7 @@ public class Riemann{
          // riemann = new Riemann(lowerBound, upperBound, coeffs, percent);
         }
         else if(args[0].equals("sin")){
+            riemann.sinIntegrate(lowerBound, upperBound);
          /* riemann = new Riemann(lowerBound, upperBound, args); */
         }
         else{
