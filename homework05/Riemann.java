@@ -30,6 +30,7 @@
  *  @version 1.1.4  2019-04-04  Emilia Huerta Deleted n boxes, changed polyIntegrate()
  *  @version 1.1.5  2019-04-04  Emilia Huerta Implemented Math.floor and 0.0
  *  @version 1.1.6  2019-04-04  Emilia Huerta Tried to implement sine - failed
+ *  @version 1.1.7  2019-04-04  Emilia Huerta Change of percent was wrong - fixed
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -38,7 +39,7 @@ public class Riemann{
     private int coeffCount;
     private double lowerBound;
     private double upperBound;
-    private double percent;
+    private double percent = 1;
 
 
 //    public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
@@ -131,31 +132,33 @@ public class Riemann{
     public double solvePoly(double x, double[] localCoeffs){
         double solved = 0;
         for(int i=0; i < localCoeffs.length; i++){
-            System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
+            // System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
             solved += (localCoeffs[i] * (Math.pow(x, i)));
         }
-        if(solved == 0.0){
-            System.out.println("area is 0.0");
-            System.exit(2);
-        }
-        System.out.println("solved " + solved);
+        // if(solved == 0.0){
+        //     // System.out.println("area is 0.0");
+        //     System.exit(2);
+        // }
+        // System.out.println("solved " + solved);
         return solved;
     }
 
     public double polyIntegrate(/* double lowerBound, double upperBound, double[] coeffs */){
         double width = (upperBound - lowerBound);
-        double currentArea = 0;
-        double previousArea = 0;
-        while(currentArea == 0 || 0.01 < (1 - (previousArea / currentArea))){
+        double currentArea = 1;
+        double previousArea = 1;
+        while((currentArea == 1 || (percent/100) < Math.abs((previousArea - currentArea) / previousArea)) && currentArea != 0.0){
             previousArea = currentArea;
             currentArea = 0;
-            width /= 2;
+            width /= 1.5;
+            System.out.println("coeffs" + coeffs[0]);
             for( double i = lowerBound; i < upperBound; i += width){
-                currentArea += solvePoly(i - width/2, coeffs) * width; //adds all areas
+                currentArea += solvePoly(i - width/2, coeffs); //adds all areas
             }
-            // System.out.println("current area " + currentArea);
+            currentArea *= width;
+            System.out.println("current area " + currentArea);
         }
-        System.out.println("current area " + Math.floor(currentArea));
+        // System.out.println("current area " + Math.floor(currentArea));
         return Math.floor(currentArea);
     }
 
@@ -235,7 +238,8 @@ public class Riemann{
         System.out.println(" \n Hello world, from the Riemann program \n");
 
         if(args[args.length -1].contains("%")){
-            riemann.percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
+            // riemann.percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
+            riemann.percent = Double.parseDouble(args[args.length - 1].replace("%", " ").trim());
             riemann.upperBound = Double.parseDouble((args[args.length - 2]));
             riemann.lowerBound = Double.parseDouble((args[args.length - 3]));
         }
@@ -244,6 +248,19 @@ public class Riemann{
             riemann.upperBound = Double.parseDouble((args[args.length - 1]));
             riemann.lowerBound = Double.parseDouble((args[args.length - 2]));
         }
+        // if(args[args.length - 1].contains("%")){
+        //     percent = Double.parseDouble(args[args.length - 1].replace("%", " ").trim());
+        //     upperBound = Double.parseDouble(args[args.length -2]);
+        //     lowerBound = Double.parseDouble(args[args.length -3]); //need to adjust when upperbound is smaller?
+        //     for(int i = 1; i < (args.length - 3); i++ ){
+        //         riemann.coeffs.add(Double.parseDouble(args[i])); 
+        //     }
+        // }else{ //percent is required 
+        //     upperBound = Double.parseDouble(args[args.length -1]);
+        //     lowerBound = Double.parseDouble(args[args.length -2]);
+        //     for(int i = 1; i < (args.length - 2); i++ ){
+        //         inputs.add(Double.parseDouble(args[i])); 
+        //     }
 
         try{
         riemann.isInBounds(riemann.lowerBound, riemann.upperBound);
