@@ -1,6 +1,6 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  Riemann.java
- *  Purpose       :  Provides a class describing a single soccer ball.
+ *  Purpose       :
  *  @author       :  Emilia Huerta
  *  Date          :  2019-03-20
  *  Description   :  This class computes definite integrals using Riemann integration.
@@ -31,6 +31,7 @@
  *  @version 1.1.5  2019-04-04  Emilia Huerta Implemented Math.floor and 0.0
  *  @version 1.1.6  2019-04-04  Emilia Huerta Tried to implement sine - failed
  *  @version 1.1.7  2019-04-04  Emilia Huerta Change of percent was wrong - fixed
+ *  @version 1.1.8  2019-04-05  Emilia Huerta Commented out unnecessary prints
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -151,15 +152,29 @@ public class Riemann{
             previousArea = currentArea;
             currentArea = 0;
             width /= 1.5;
-            System.out.println("coeffs" + coeffs[0]);
+            // System.out.println("coeffs" + coeffs[0]);
             for( double i = lowerBound; i < upperBound; i += width){
                 currentArea += solvePoly(i - width/2, coeffs); //adds all areas
             }
             currentArea *= width;
-            System.out.println("current area " + currentArea);
+            // System.out.println("current area " + currentArea);
         }
-        // System.out.println("current area " + Math.floor(currentArea));
+        System.out.println("current area is " + Math.floor(currentArea));
         return Math.floor(currentArea);
+    }
+
+    public double solveSin(double y){
+        double solved = 0.0; // if inputs.length == 0
+        double x = 0.0;
+
+        if (coeffs.length == 0){
+            solved = Math.sin(x);
+        }else{
+            x = solvePoly(y, coeffs); //getting whatever that y value is?
+            solved = Math.sin(x);
+        }
+
+        return solved;
     }
 
     public double sinIntegrate(double lowerBound, double upperBound){
@@ -209,7 +224,7 @@ public class Riemann{
 
     public static void main (String [] args){
 
-        System.out.println(" \n Hello world!!\n");
+        // System.out.println(" \n Hello world!!\n");
         Riemann riemann = new Riemann();
 
     //   double [] coeffs = new double[3];
@@ -235,7 +250,7 @@ public class Riemann{
 
         riemann.numberOFCoeff(args);
 
-        System.out.println(" \n Hello world, from the Riemann program \n");
+        // System.out.println(" \n Hello world, from the Riemann program \n");
 
         if(args[args.length -1].contains("%")){
             // riemann.percent = Double.parseDouble(args[args.length -1].substring(0, args[args.length -1].length() - 1));
