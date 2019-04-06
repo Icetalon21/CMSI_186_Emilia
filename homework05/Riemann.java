@@ -33,53 +33,17 @@
  *  @version 1.1.7  2019-04-04  Emilia Huerta Change of percent was wrong - fixed
  *  @version 1.1.8  2019-04-05  Emilia Huerta Commented out unecessary prints
  *  @version 1.1.9  2019-04-05  Emilia Huerta Implemented sine - fixed percent change
+ *  @version 1.2.0  2019-04-05  Emilia Huerta Cleaned up code
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
-    private static final String poly = null;
-    // private String type;
+    // private static final String poly = null; //for tester
     private double[] coeffs;
     private int coeffCount;
     private double lowerBound;
     private double upperBound;
     private double percent = 1;
 
-    // public Riemann(){
-
-    // }
-
-    // public Riemann(String function, double x1, double x2, double x3){
-
-    // }
-//    public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
-//       this.lowerBound = lowerBound;
-//       this.upperBound = upperBound;
-//       this.coeffs = coeffs;
-//       this.percent = percent;
-//       this.coeffCount = coeffCount;
-//       // coeffs = new double [this.coeffCount];
-//       // for(int i = 0; i < coeffCount; i ++){
-//       //    coeffs[i] = new double[] coeffs;
-
-
-//       //handle type
-//       //handle coeffs
-//       // System.out.println(polyIntegrate(lowerBound, upperBound, coeffs));
-//    }
-
-   // public static int coefficients (double[] args){
-   //    if()
-   // }
-
-   // public void type( String args[]){
-   //    switch(args[0]){
-   //       case "poly":
-   //    }
-   // }
-
-   // public void getHeight(){
-
-   // }
 
     public void handleInitialArguments(String args[]){
         if(4 > args.length){
@@ -121,22 +85,6 @@ public class Riemann{
         }
     }
 
-   // public double[] getCoeffs(){
-   //    return this.coeffs;
-   // }
-
-    public double polyCalc(double x, double [] localCoeffs){
-        // int lastArg = localCoeffs.length -1;
-        System.out.println(x);
-        double answer = 0;
-        // for(int i = lastArg; i >= 0; i--){
-        for(int i = 0; i < localCoeffs.length; i++){
-            System.out.println("Multiplying " + localCoeffs[i] + " " +  (Math.pow(x, localCoeffs[i])));
-            double math = localCoeffs[i] * (Math.pow(x, localCoeffs[i]));
-            answer = answer + math;
-        }
-        return answer;
-    }
 
     public double solvePoly(double x, double[] localCoeffs){
         double solved = 0;
@@ -210,26 +158,6 @@ public class Riemann{
     }
 
 
-
-   // static void bisectionMethod(double a, double b){
-   //    double c = a;
-   //    while ((b-a) >= 0.01){
-   //       c = (a + b) / 2;
-   //    }
-   // }
-
-   // public static findRoots(double coefficients){
-   //    int N = coefficients.length -1;
-   //    test c = new test (N,N);
-   //    double a = coefficients[N];
-   //    for(int i = 0; i < N; i++){
-   //       c.set(i, N-1, -coefficients[i]/a);
-   //    }
-   //    for(int i = 1; i < N; i++){
-   //       c.set(i,i-1,1);
-   //    }
-   // }
-
     public static void main (String [] args){
 
         // System.out.println(" \n Hello world!!\n");
@@ -237,21 +165,10 @@ public class Riemann{
         // Riemann tester = new Riemann(poly, 0, 1, 2);
         // System.out.println("Tester area is " + tester.polyIntegrate());
 
-
-    //   double [] coeffs = new double[3];
-
-    //   coeffs[0] =  Double.parseDouble(args[1]);
-    //   coeffs[1] =  Double.parseDouble(args[2]);
-    //   coeffs[2] =  Double.parseDouble(args[3]);
-
         double percent = 0;
         double upperBound = 0;
         double lowerBound = 0;
 
-        // riemann.numberOFCoeff(args);
-
-
-      // Riemann riemann = null;
         try{
             riemann.handleInitialArguments(args);
         }
@@ -274,19 +191,6 @@ public class Riemann{
             riemann.upperBound = Double.parseDouble((args[args.length - 1]));
             riemann.lowerBound = Double.parseDouble((args[args.length - 2]));
         }
-        // if(args[args.length - 1].contains("%")){
-        //     percent = Double.parseDouble(args[args.length - 1].replace("%", " ").trim());
-        //     upperBound = Double.parseDouble(args[args.length -2]);
-        //     lowerBound = Double.parseDouble(args[args.length -3]); //need to adjust when upperbound is smaller?
-        //     for(int i = 1; i < (args.length - 3); i++ ){
-        //         riemann.coeffs.add(Double.parseDouble(args[i])); 
-        //     }
-        // }else{ //percent is required 
-        //     upperBound = Double.parseDouble(args[args.length -1]);
-        //     lowerBound = Double.parseDouble(args[args.length -2]);
-        //     for(int i = 1; i < (args.length - 2); i++ ){
-        //         inputs.add(Double.parseDouble(args[i])); 
-        //     }
 
         try{
         riemann.isInBounds(riemann.lowerBound, riemann.upperBound);
@@ -297,29 +201,12 @@ public class Riemann{
 
         if(args[0].equals("poly")){
             riemann.polyIntegrate();
-         // riemann = new Riemann(lowerBound, upperBound, coeffs, percent);
         }
         else if(args[0].equals("sin")){
             riemann.sinIntegrate();
-         /* riemann = new Riemann(lowerBound, upperBound, args); */
         }
         else{
             throw new IllegalArgumentException("not an option");
         }
-
-
-        // double result = riemann.polyIntegrate();
-
-      // int x = 1;
-      // for(int i = 0; i < args.length; i++){
-
-      // }
-
-      //make a riemann(blah blah blah, percent)
-
-      // switch(args[0]){
-      //    case "poly":
-
-      // }
     }
 }
