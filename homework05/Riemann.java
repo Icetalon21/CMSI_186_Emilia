@@ -31,18 +31,26 @@
  *  @version 1.1.5  2019-04-04  Emilia Huerta Implemented Math.floor and 0.0
  *  @version 1.1.6  2019-04-04  Emilia Huerta Tried to implement sine - failed
  *  @version 1.1.7  2019-04-04  Emilia Huerta Change of percent was wrong - fixed
- *  @version 1.1.8  2019-04-05  Emilia Huerta Commented out unnecessary prints
+ *  @version 1.1.8  2019-04-05  Emilia Huerta Commented out unecessary prints
+ *  @version 1.1.9  2019-04-05  Emilia Huerta Implemented sine - fixed percent change
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
-   // private String type;
+    private static final String poly = null;
+    // private String type;
     private double[] coeffs;
     private int coeffCount;
     private double lowerBound;
     private double upperBound;
     private double percent = 1;
 
+    // public Riemann(){
 
+    // }
+
+    // public Riemann(String function, double x1, double x2, double x3){
+
+    // }
 //    public Riemann(double lowerBound, double upperBound, double[] coeffs, double percent){
 //       this.lowerBound = lowerBound;
 //       this.upperBound = upperBound;
@@ -177,12 +185,12 @@ public class Riemann{
         return solved;
     }
 
-    public double sinIntegrate(double lowerBound, double upperBound){
+    public double sinIntegrate(){
         double currentArea = (upperBound - lowerBound) * (Math.sin((upperBound + lowerBound) / 2));
         double  slice = 2;
         double previousArea = 0;
 
-        while(Math.abs(previousArea - currentArea) > 0.01){
+        while(Math.abs(previousArea - currentArea)/previousArea > percent/100){
             double width = (upperBound - lowerBound)/2;
             double newLowerBound = lowerBound;
             double newUpperBound = lowerBound + width;
@@ -197,7 +205,7 @@ public class Riemann{
             }
             slice = Math.pow(slice, 2.0);
         }
-        System.out.print("Current Sine Area" + currentArea);
+        System.out.print("Current Sine Area is " + currentArea);
         return currentArea;
     }
 
@@ -226,6 +234,9 @@ public class Riemann{
 
         // System.out.println(" \n Hello world!!\n");
         Riemann riemann = new Riemann();
+        // Riemann tester = new Riemann(poly, 0, 1, 2);
+        // System.out.println("Tester area is " + tester.polyIntegrate());
+
 
     //   double [] coeffs = new double[3];
 
@@ -289,12 +300,13 @@ public class Riemann{
          // riemann = new Riemann(lowerBound, upperBound, coeffs, percent);
         }
         else if(args[0].equals("sin")){
-            riemann.sinIntegrate(lowerBound, upperBound);
+            riemann.sinIntegrate();
          /* riemann = new Riemann(lowerBound, upperBound, args); */
         }
         else{
             throw new IllegalArgumentException("not an option");
         }
+
 
         // double result = riemann.polyIntegrate();
 
