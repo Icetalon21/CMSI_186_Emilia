@@ -34,6 +34,7 @@
  *  @version 1.1.8  2019-04-05  Emilia Huerta Commented out unecessary prints
  *  @version 1.1.9  2019-04-05  Emilia Huerta Implemented sine - fixed percent change
  *  @version 1.2.0  2019-04-05  Emilia Huerta Cleaned up code
+ *  @version 1.2.1  2019-04-05  Emilia Huerta Cleaned up code 2.0
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -44,6 +45,10 @@ public class Riemann{
     private double upperBound;
     private double percent = 1;
 
+
+    public Riemann(){
+
+    }
 
     public void handleInitialArguments(String args[]){
         if(4 > args.length){
