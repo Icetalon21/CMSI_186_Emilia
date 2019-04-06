@@ -35,6 +35,7 @@
  *  @version 1.1.9  2019-04-05  Emilia Huerta Implemented sine - fixed percent change
  *  @version 1.2.0  2019-04-05  Emilia Huerta Cleaned up code
  *  @version 1.2.1  2019-04-05  Emilia Huerta Cleaned up code 2.0
+ *  @version 1.2.2  2019-04-06  Emilia Huerta Tried to implement cosine for fun
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Riemann{
@@ -112,7 +113,7 @@ public class Riemann{
         while((currentArea == 1 || (percent/100) < Math.abs((previousArea - currentArea) / previousArea)) && currentArea != 0.0){
             previousArea = currentArea;
             currentArea = 0;
-            width /= 1.5;
+            width /= 2;
             // System.out.println("coeffs" + coeffs[0]);
             for( double i = lowerBound; i < upperBound; i += width){
                 currentArea += solvePoly(i - width/2, coeffs); //adds all areas
@@ -162,6 +163,49 @@ public class Riemann{
         return currentArea;
     }
 
+    public double solveCos(double y){
+        double solved = 0.0; // if inputs.length == 0
+        double x = 0.0;
+
+        if (coeffs.length == 0){
+            solved = Math.cos(x);
+        }else{
+            x = solvePoly(y, coeffs); //getting whatever that y value is?
+            solved = Math.cos(x);
+        }
+
+        return solved;
+    }
+
+    public double cosIntegrate(){
+
+		double previousArea = 0;
+		double slice = 2;
+		double currentArea = (upperBound - lowerBound) * (Math.cos((upperBound + lowerBound) / 2));
+
+		while (Math.abs(previousArea - currentArea) / previousArea > percent/100) {
+
+			double width =  Math.abs((upperBound - lowerBound) / slice);
+			double newLowBound = lowerBound;
+		    double newUpBound = lowerBound + width;
+			previousArea = currentArea;
+			currentArea = 0;
+
+			for(int i = (int) slice; i > 0; i-- ) {
+
+				currentArea = currentArea + ((newUpBound - newLowBound) * (Math.cos((newUpBound + newLowBound) / 2)));
+
+				newLowBound = newLowBound + width;
+				newUpBound = newUpBound + width;
+
+			}
+			slice = Math.pow(slice, 2.0);
+
+		}
+        System.out.println("Current Cosine Area is " + currentArea);
+		return currentArea;
+	}
+
 
     public static void main (String [] args){
 
@@ -209,6 +253,9 @@ public class Riemann{
         }
         else if(args[0].equals("sin")){
             riemann.sinIntegrate();
+        }
+        else if(args[0].equals("cos")){
+            riemann.cosIntegrate();
         }
         else{
             throw new IllegalArgumentException("not an option");
