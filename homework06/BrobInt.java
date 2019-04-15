@@ -10,20 +10,22 @@
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Revision History
  * ================
- *      Ver      Date     Modified by:  Reason for change or modification
- *      -----  ----------  ------------  ---------------------------------------------------------------------
+ *   Ver      Date     Modified by:  Reason for change or modification
+ *  -----  ----------  ------------  ---------------------------------------------------------------------
  *  1.0.0  2017-04-04  B.J. Johnson  Initial writing and begin coding
  *  1.1.0  2017-04-13  B.J. Johnson  Completed addByt, addInt, compareTo, equals, toString, Constructor,
  *                                     validateDigits, two reversers, and valueOf methods; revamped equals
  *                                     and compareTo methods to use the Java String methods; ready to
  *                                     start work on subtractByte and subtractInt methods
  *  1.2.0  2019-04-08  Emilia Huerta Copied from Repo
+ *  1.2.1  2019-04-15  Emilia Huerta Validated Digits & toString
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
 
-public class BrobIntTemplate {
+public class BrobInt {
 
+   // private String value; //added by emilia
    public static final BrobInt ZERO     = new BrobInt(  "0" );      /// Constant for "zero"
    public static final BrobInt ONE      = new BrobInt(  "1" );      /// Constant for "one"
    public static final BrobInt TWO      = new BrobInt(  "2" );      /// Constant for "two"
@@ -55,8 +57,8 @@ public class BrobIntTemplate {
    *   for later use
    *  @param  value  String value to make into a BrobInt
    */
-   public BrobIntTemplate( String value ) {
-      super();			// replace this with the appropriate code to accomplish what is in the javadoc text
+   public BrobInt( String value ) {
+      internalValue = value;			// replace this with the appropriate code to accomplish what is in the javadoc text
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,8 +68,14 @@ public class BrobIntTemplate {
    *  note that there is no return false, because of throwing the exception
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean validateDigits() {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+   public boolean validateDigits( String value /*added string*/) {
+      try{
+         double d = Double.parseDouble(value);
+      }catch (NumberFormatException numberFormatException) {
+         throw new IllegalArgumentException(" Sorry, that value is not valid");
+      }
+      return true;
+      // throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
