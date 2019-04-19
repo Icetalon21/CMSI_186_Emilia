@@ -25,6 +25,7 @@
  *                                      of the file to test construction.  Also added two tests there to
  *                                      test multiplication by three and times-3-plus-1 operations
  *  1.3.0  2019-04-19  Emilia Huerta  Copied from repo again
+ *  1.3.1  2019-04-19  Emilia Huerta  Wrote add()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -81,13 +82,13 @@ public class BrobInt {
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits( String value /*added string*/) throws IllegalArgumentException {
-    try{
-        double d = Double.parseDouble(value);
-    }catch (NumberFormatException numberFormatException) {
-        throw new IllegalArgumentException(" Sorry, that value is not valid");
-    }
-    return true;
-    //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      try{
+         double d = Double.parseDouble(value);
+      }catch (NumberFormatException numberFormatException) {
+         throw new IllegalArgumentException(" Sorry, that value is not valid");
+      }
+      return true;
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,7 +119,43 @@ public class BrobInt {
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      String answer = "";
+      String currentValue = internalValue; //a String representation of this BrobInt
+      String passedArgument = bint.internalValue; //a String representation of the passed BrobIntk
+      int temporary = 0;
+      boolean carryOver = false;
+      while(currentValue.length() > 0 || passedArgument.length() > 0){
+         if(currentValue.length() !=0 && passedArgument.length() !=0){
+            //The getNumericValue() method of character class returns the int value of the specified character.
+            // Minus 1 since the index starts at 0
+            //Starts on the righthand side
+            temporary = (Character.getNumericValue(currentValue.charAt(currentValue.length() - 1)) + Character.getNumericValue(passedArgument.charAt(passedArgument.length() -1)));
+         } else if (currentValue.length() == 0) {
+            temporary = Character.getNumericValue(passedArgument.charAt(passedArgument.charAt(passedArgument.length() -1)));
+         } else {
+            temporary = Character.getNumericValue(currentValue.charAt(currentValue.length() - 1));
+         }
+         if (carryOver) {
+            temporary = temporary + 1;
+         }
+         carryOver = false;
+         if (temporary > 9) { //greater than 9
+            carryOver = true; //need a carry
+            if(!(currentValue.length() < 2 && passedArgument.length() < 2)) {
+               temporary = temporary - 10;
+            }
+         }
+         answer = temporary + answer;
+         //Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
+         if (currentValue.length() > 0){
+            currentValue = currentValue.substring(0, currentValue.length() - 1);
+         }
+         if (passedArgument.length() > 0){
+            passedArgument = passedArgument.substring(0, passedArgument.length() - 1);
+         }
+      }
+      return new BrobInt(answer);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
