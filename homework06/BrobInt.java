@@ -26,6 +26,7 @@
  *                                      test multiplication by three and times-3-plus-1 operations
  *  1.3.0  2019-04-19  Emilia Huerta  Copied from repo again
  *  1.3.1  2019-04-19  Emilia Huerta  Wrote add()
+ *  1.3.2  2019-04-21  Emilia Huerta  Tried to change sign & implement subtract - failed
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -113,6 +114,18 @@ public class BrobInt {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
+   public BrobInt changeSign(){
+      BrobInt oppositeSign;
+      String string = this.toString();
+      if(string.substring(0, 1).equals("+")){
+         string = "-" + string.substring(1);
+      }else if(string.substring(0, 1).equals("-")){
+         string = "+" + string.substring(1);
+      }
+      oppositeSign = new BrobInt(string);
+      return oppositeSign;
+   }
+
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to add the value of a BrobIntk passed as argument to this BrobInt
    *  @param  bint         BrobInt to add to this
@@ -163,8 +176,42 @@ public class BrobInt {
    *  @param  bint         BrobInt to subtract from this
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt subtract( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+   public BrobInt subtract( BrobInt bint ) { //opposite of add
+      return new BrobInt(this.add(bint.changeSign()).toString());
+      // String answer = "";
+      // String currentValue = internalValue;
+      // String passedArgument = bint.internalValue;
+      // int temporary = 0;
+      // boolean carryOver = false;
+      // while(currentValue.length() > 0 || passedArgument.length() > 0){
+      //    if(currentValue.length() !=0 && passedArgument.length() !=0){
+      //       temporary = (Character.getNumericValue(currentValue.charAt(currentValue.length() - 1)) + Character.getNumericValue(passedArgument.charAt(passedArgument.length() -1)));
+      //    } else if (currentValue.length() == 0) {
+      //       temporary = Character.getNumericValue(passedArgument.charAt(passedArgument.charAt(passedArgument.length() -1)));
+      //    } else {
+      //       temporary = Character.getNumericValue(currentValue.charAt(currentValue.length() - 1));
+      //    }
+      //    if (carryOver) {
+      //       temporary = temporary + 1;
+      //    }
+      //    carryOver = false;
+      //    if (temporary > 9) { //greater than 9
+      //       carryOver = true; //need a carry
+      //       if(!(currentValue.length() < 2 && passedArgument.length() < 2)) {
+      //          temporary = temporary - 10;
+      //       }
+      //    }
+      //    answer = temporary + answer;
+         //Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
+      //    if (currentValue.length() > 0){
+      //       currentValue = currentValue.substring(0, currentValue.length() - 1);
+      //    }
+      //    if (passedArgument.length() > 0){
+      //       passedArgument = passedArgument.substring(0, passedArgument.length() - 1);
+      //    }
+      // }
+      // return new BrobInt(answer);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
