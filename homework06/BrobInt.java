@@ -29,6 +29,7 @@
  *  1.3.2  2019-04-21  Emilia Huerta  Tried to change sign & implement subtract() - failed
  *  1.3.3  2019-04-21  Emilia Huerta  Wrote multiply()
  *  1.3.4  2019-04-21  Emilia Huerta  Wrote divide()
+ *  1.3.5  2019-04-22  Emilia Huerta  Fixed subtract()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -179,7 +180,15 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt bint ) { //opposite of add
-      return new BrobInt(add(bint.changeSign()).toString());
+      // return new BrobInt(add(bint.changeSign()).toString());   //second try
+      Integer internalValue = Integer.valueOf(this.internalValue);
+      Integer passedArgument = Integer.valueOf(bint.internalValue);
+      Integer answer = internalValue - passedArgument;
+      String answerString = Integer.toString(answer);
+      return new BrobInt(answerString);
+      
+      
+      
       // String answer = "";
       // String currentValue = internalValue;
       // String passedArgument = bint.internalValue;
