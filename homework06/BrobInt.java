@@ -26,7 +26,8 @@
  *                                      test multiplication by three and times-3-plus-1 operations
  *  1.3.0  2019-04-19  Emilia Huerta  Copied from repo again
  *  1.3.1  2019-04-19  Emilia Huerta  Wrote add()
- *  1.3.2  2019-04-21  Emilia Huerta  Tried to change sign & implement subtract - failed
+ *  1.3.2  2019-04-21  Emilia Huerta  Tried to change sign & implement subtract() - failed
+ *  1.3.2  2019-04-21  Emilia Huerta  Wrote multiply()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -177,7 +178,7 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt bint ) { //opposite of add
-      return new BrobInt(this.add(bint.changeSign()).toString());
+      return new BrobInt(add(bint.changeSign()).toString());
       // String answer = "";
       // String currentValue = internalValue;
       // String passedArgument = bint.internalValue;
@@ -220,7 +221,13 @@ public class BrobInt {
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      //int internalValue = Integer.parseInt(internalValue);
+      Integer internalValue = Integer.valueOf(this.internalValue);
+      Integer passedArgument = Integer.valueOf(bint.internalValue);
+      Integer answer = internalValue * passedArgument;
+      String answerString = Integer.toString(answer);
+      return new BrobInt(answerString);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
