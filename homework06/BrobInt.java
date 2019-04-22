@@ -27,7 +27,8 @@
  *  1.3.0  2019-04-19  Emilia Huerta  Copied from repo again
  *  1.3.1  2019-04-19  Emilia Huerta  Wrote add()
  *  1.3.2  2019-04-21  Emilia Huerta  Tried to change sign & implement subtract() - failed
- *  1.3.2  2019-04-21  Emilia Huerta  Wrote multiply()
+ *  1.3.3  2019-04-21  Emilia Huerta  Wrote multiply()
+ *  1.3.4  2019-04-21  Emilia Huerta  Wrote divide()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -236,7 +237,12 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      Integer internalValue = Integer.valueOf(this.internalValue);
+      Integer passedArgument = Integer.valueOf(bint.internalValue);
+      Integer answer = internalValue / passedArgument;
+      String answerString = Integer.toString(answer);
+      return new BrobInt(answerString);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
