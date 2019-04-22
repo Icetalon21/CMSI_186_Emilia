@@ -30,6 +30,7 @@
  *  1.3.3  2019-04-21  Emilia Huerta  Wrote multiply()
  *  1.3.4  2019-04-21  Emilia Huerta  Wrote divide()
  *  1.3.5  2019-04-22  Emilia Huerta  Fixed subtract()
+ *  1.3.6  2019-04-22  Emilia Huerta  Wrote remainder()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -117,17 +118,17 @@ public class BrobInt {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
-   public BrobInt changeSign(){
-      BrobInt oppositeSign;
-      String string = this.toString();
-      if(string.substring(0, 1).equals("+")){
-         string = "-" + string.substring(1);
-      }else if(string.substring(0, 1).equals("-")){
-         string = "+" + string.substring(1);
-      }
-      oppositeSign = new BrobInt(string);
-      return oppositeSign;
-   }
+   // public BrobInt changeSign(){
+   //    BrobInt oppositeSign;
+   //    String string = this.toString();
+   //    if(string.substring(0, 1).equals("+")){
+   //       string = "-" + string.substring(1);
+   //    }else if(string.substring(0, 1).equals("-")){
+   //       string = "+" + string.substring(1);
+   //    }
+   //    oppositeSign = new BrobInt(string);
+   //    return oppositeSign;
+   // }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to add the value of a BrobIntk passed as argument to this BrobInt
@@ -186,9 +187,9 @@ public class BrobInt {
       Integer answer = internalValue - passedArgument;
       String answerString = Integer.toString(answer);
       return new BrobInt(answerString);
-      
-      
-      
+      //
+      //
+      //
       // String answer = "";
       // String currentValue = internalValue;
       // String passedArgument = bint.internalValue;
@@ -260,7 +261,12 @@ public class BrobInt {
    *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt remainder( BrobInt bint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      Integer internalValue = Integer.valueOf(this.internalValue);
+      Integer passedArgument = Integer.valueOf(bint.internalValue);
+      Integer modulus = internalValue % passedArgument;
+      String modulusString = Integer.toString(modulus);
+      return new BrobInt(modulusString);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
