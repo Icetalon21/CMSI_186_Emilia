@@ -18,6 +18,7 @@
  *  1.0.0  2019-04-22  Emilia Huerta  Initial writing and begin coding
  *  1.0.1  2019-04-22  Emilia Huerta  Returns numbers yet incorrect
  *  1.0.2  2019-04-23  Emilia Huerta  First test works
+ *  1.0.3  2019-04-23  Emilia Huerta  Works for most
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -57,7 +58,8 @@ public class Collatz{
       System.out.println( "\n  Hello, world, from the Collatz program!!\n" );
       // Collatz collatz = new Collatz();
       int steps = 0;
-      int number = Integer.parseInt(args[0]);
+      // int number = Integer.parseInt(args[0]);
+      long number = Long.parseLong(args[0]);
       System.out.print("this is the number " + number);
       BrobInt b = new BrobInt(args[0]);
       // while(!b.equals(BrobInt.ONE)){
