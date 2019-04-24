@@ -31,6 +31,7 @@
  *  1.3.4  2019-04-21  Emilia Huerta  Wrote divide()
  *  1.3.5  2019-04-22  Emilia Huerta  Fixed subtract()
  *  1.3.6  2019-04-22  Emilia Huerta  Wrote remainder()
+ *  1.3.7  2019-04-23  Emilia Huerta  Added sign to constructor & fixed addition negatives
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -64,6 +65,7 @@ public class BrobInt {
    public  byte   sign          = 0;         // "0" is positive, "1" is negative
   /// You can use this or not, as you see fit.  The explanation was provided in class
    private String reversed      = "";        // the backwards version of the internal String representation
+   private boolean negative; //added by emilia
 
    private static BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
    private static final boolean DEBUG_ON = false;
@@ -76,7 +78,19 @@ public class BrobInt {
    *  @param  value  String value to make into a BrobInt
    */
    public BrobInt( String value ) {
-      internalValue = value;			// replace this with the appropriate code to accomplish what is in the javadoc text
+      internalValue = value;
+      if(value.charAt(0) == '-'){
+         sign = 1;
+         internalValue = internalValue.substring(1,internalValue.length());
+      }
+      		// replace this with the appropriate code to accomplish what is in the javadoc text
+      // if(internalValue.charAt(0) == '-'){ //added after by emilia on 4/23/2019
+      //    sign = 1;
+      //    internalValue = internalValue.substring(1, internalValue.length());
+      // }else if(internalValue.charAt(1) == '+'){
+      //    sign = 0;
+      //    internalValue = internalValue.substring(1, internalValue.length());
+      // }
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,17 +132,18 @@ public class BrobInt {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
-   // public BrobInt changeSign(){
-   //    BrobInt oppositeSign;
-   //    String string = this.toString();
-   //    if(string.substring(0, 1).equals("+")){
-   //       string = "-" + string.substring(1);
-   //    }else if(string.substring(0, 1).equals("-")){
-   //       string = "+" + string.substring(1);
-   //    }
-   //    oppositeSign = new BrobInt(string);
-   //    return oppositeSign;
-   // }
+   public BrobInt changeSign(){
+      BrobInt oppositeSign;
+      String string = this.toString();
+      if(string.substring(0, 1).equals("+")){
+         string = "-" + string.substring(1);
+      }else if(string.substring(0, 1).equals("-")){
+         string = "+" + string.substring(1);
+      }
+      oppositeSign = new BrobInt(string);
+      System.out.println("opposite sign is " + oppositeSign);
+      return oppositeSign;
+   }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to add the value of a BrobIntk passed as argument to this BrobInt
@@ -137,6 +152,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt bint ) {
       String answer = "";
+      String answer2 = "";
       String currentValue = internalValue; //a String representation of this BrobInt
       String passedArgument = bint.internalValue; //a String representation of the passed BrobIntk
       int temporary = 0;
@@ -163,6 +179,7 @@ public class BrobInt {
             }
          }
          answer = temporary + answer;
+       
          //Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
          if (currentValue.length() > 0){
             currentValue = currentValue.substring(0, currentValue.length() - 1);
@@ -170,8 +187,13 @@ public class BrobInt {
          if (passedArgument.length() > 0){
             passedArgument = passedArgument.substring(0, passedArgument.length() - 1);
          }
+         if (sign == 1){
+            answer2 =  "-" + answer;
+         }else{
+            answer2 = answer;
+         }
       }
-      return new BrobInt(answer);
+      return new BrobInt(answer2);
       //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
@@ -181,12 +203,13 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt bint ) { //opposite of add
-      // return new BrobInt(add(bint.changeSign()).toString());   //second try
-      Integer internalValue = Integer.valueOf(this.internalValue);
-      Integer passedArgument = Integer.valueOf(bint.internalValue);
-      Integer answer = internalValue - passedArgument;
-      String answerString = Integer.toString(answer);
-      return new BrobInt(answerString);
+      return new BrobInt(this.add(bint.changeSign()).toString());   //second try
+      //
+      // Integer internalValue = Integer.valueOf(this.internalValue);
+      // Integer passedArgument = Integer.valueOf(bint.internalValue);
+      // Integer answer = internalValue - passedArgument;
+      // String answerString = Integer.toString(answer);
+      // return new BrobInt(answerString);
       //
       //
       //
@@ -214,7 +237,7 @@ public class BrobInt {
       //       }
       //    }
       //    answer = temporary + answer;
-         //Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
+      //    // Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
       //    if (currentValue.length() > 0){
       //       currentValue = currentValue.substring(0, currentValue.length() - 1);
       //    }
@@ -341,6 +364,9 @@ public class BrobInt {
    *  @return String  which is the String representation of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public String toString() {
+      if(sign == 1){
+         return "-" + internalValue;
+      }
       return internalValue;
    }
 
