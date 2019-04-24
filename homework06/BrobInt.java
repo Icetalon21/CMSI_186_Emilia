@@ -33,6 +33,7 @@
  *  1.3.6  2019-04-22  Emilia Huerta  Wrote remainder()
  *  1.3.7  2019-04-23  Emilia Huerta  Added sign to constructor & fixed addtion negatives
  *  1.3.8  2019-04-24  Emilia Huerta  Fixed multiply() - did Russian Peasant Multiplication
+ *  1.3.9  2019-04-24  Emilia Huerta  Wrote multiply() my own way
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -180,7 +181,7 @@ public class BrobInt {
             }
          }
          answer = temporary + answer;
-       
+
          //Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
          if (currentValue.length() > 0){
             currentValue = currentValue.substring(0, currentValue.length() - 1);
@@ -264,20 +265,37 @@ public class BrobInt {
       //
       //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
       //https://www.geeksforgeeks.org/russian-peasant-multiply-two-numbers-using-bitwise-operators/
-      int sum = 0;
-      Integer a = Integer.valueOf(this.internalValue);
-      Integer b = Integer.valueOf(bint.internalValue);
-      while(a != 0) {
-         if((a & 1) == 1) {
-            sum += b;
+      // int sum = 0;
+      // Integer a = Integer.valueOf(this.internalValue);
+      // Integer b = Integer.valueOf(bint.internalValue);
+      // while(a != 0) {
+      //    if((a & 1) == 1) {
+      //       sum += b;
+      //    }
+      //    // >>> is an unsigned right shift operator which shifts a zero into the leftmost position
+      //    // >>> is logical shift right.
+      //    //The signed left shift operator << shifts a bit pattern to the left
+      //    a >>>= 1;
+      //    b <<= 1;
+      // }
+      // String answer = Integer.toString(sum);
+      // return new BrobInt(answer);
+      //
+      int total = 0;
+      int i = 0;
+      Integer A = Integer.valueOf(this.internalValue);
+      Integer B = Integer.valueOf(bint.internalValue);
+      i++;
+      while (B > 1) {
+            if (B%2 == 1) {
+               total += A;
          }
-         // >>> is an unsigned right shift operator which shifts a zero into the leftmost position
-         // >>> is logical shift right.
-         //The signed left shift operator << shifts a bit pattern to the left
-         a >>>= 1;
-         b <<= 1;
+         A = A * 2;
+         B = (B / 2);
+         i++;
       }
-      String answer = Integer.toString(sum);
+      total = total + A;
+      String answer = Integer.toString(total);
       return new BrobInt(answer);
    }
 
@@ -487,3 +505,4 @@ public class BrobInt {
 //while 20 larger than sum 0
 //0 + 10 compare
 //add one
+//start at 1
