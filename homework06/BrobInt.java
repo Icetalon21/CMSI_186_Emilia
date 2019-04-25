@@ -34,6 +34,7 @@
  *  1.3.7  2019-04-23  Emilia Huerta  Added sign to constructor & fixed addtion negatives
  *  1.3.8  2019-04-24  Emilia Huerta  Fixed multiply() - did Russian Peasant Multiplication
  *  1.3.9  2019-04-24  Emilia Huerta  Wrote multiply() my own way
+ *  1.4.0  2019-04-25  Emilia Huerta  Got divide() working
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -306,12 +307,40 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt bint ) {
-      Integer internalValue = Integer.valueOf(this.internalValue);
-      Integer passedArgument = Integer.valueOf(bint.internalValue);
-      Integer answer = internalValue / passedArgument;
+      // Integer internalValue = Integer.valueOf(this.internalValue);
+      // Integer passedArgument = Integer.valueOf(bint.internalValue);
+      // Integer answer = internalValue / passedArgument;
+      // String answerString = Integer.toString(answer);
+      // return new BrobInt(answerString);
+      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      //
+      //private static int binaryDivide(int dividend, int divisor) {
+      Integer dividend = Integer.valueOf(this.internalValue);
+      Integer divisor = Integer.valueOf(bint.internalValue);
+      int current = 1;
+      int denom = divisor;
+      // This step is required to find the biggest current number which can be
+      // divided with the number safely.
+      while (denom <= dividend) {
+         current <<= 1;
+         denom <<= 1;
+      }
+      // Since we may have increased the denomitor more than dividend
+      // thus we need to go back one shift, and same would apply for current.
+      denom >>= 1;
+      current >>= 1;
+      int answer = 0;
+      // Now deal with the smaller number.
+      while (current != 0) {
+         if (dividend >= denom) {
+            dividend -= denom;
+            answer |= current;
+         }
+         current >>= 1;
+         denom >>= 1;
+      }
       String answerString = Integer.toString(answer);
       return new BrobInt(answerString);
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
