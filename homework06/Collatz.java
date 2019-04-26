@@ -19,6 +19,7 @@
  *  1.0.1  2019-04-22  Emilia Huerta  Returns numbers yet incorrect
  *  1.0.2  2019-04-23  Emilia Huerta  First test works
  *  1.0.3  2019-04-23  Emilia Huerta  Works for most
+ *  1.0.4  2019-04-26  Emilia Huerta  Cleaned up code
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -30,37 +31,13 @@ public class Collatz{
 
    }
 
-//    public double GetCollatzSequenceSteps(double n) {
-//    double steps = 0;
-//    double n1 = Double.valueOf(n);
-//    while (n != 1) {
-//       double number = Math.floor((n1%2==0)?n1/2:3*n1+1);
-//       steps++;
-//    }
-//    System.out.println(steps + " steps were necessary");
-//    return steps;
-// }
-// public double GetCollatzSequenceSteps() {
-//    double steps = 0;
-//    // double n1 = Double.valueOf(n);
-//    while (n != 1) {
-//       double number = Math.floor((n%2==0)?n/2:3*n+1);
-//       steps++;
-//    }
-//    System.out.println(steps + " steps were necessary");
-//    return steps;
-// }
-
-   // public String toString() {
-   //    return steps;
-   // }
    public static void main( String[] args ){
       System.out.println( "\n  Hello, world, from the Collatz program!!\n" );
       // Collatz collatz = new Collatz();
       int steps = 0;
       // int number = Integer.parseInt(args[0]);
       long number = Long.parseLong(args[0]);
-      System.out.print("this is the number " + number);
+      // System.out.print("this is the number " + number);
       BrobInt b = new BrobInt(args[0]);
       // while(!b.equals(BrobInt.ONE)){
       while(number != 1){
@@ -71,21 +48,12 @@ public class Collatz{
             number = (3 * number) + 1;
          }
          // Math.floor((number%2==0)?number/2:3*number+1);
-         System.out.println("after math " + number);
+         // System.out.println("after math " + number);
          steps++;
-         System.out.println("Total number of steps is " + steps);
+         // System.out.println("Total number of steps is " + steps);
       }
-
-
-      // try{
-      //    number = Double.parseDouble(args[0]);
-      // }
-      // catch(NumberFormatException nfe){System.out.println("Bad input");}
-      // collatz.GetCollatzSequenceSteps(Double.parseDouble(args[0]));
+      System.out.println("Total number of steps is " + steps);
    }
 
 
 }
-
-//b.reainder(BrobInt.TWO).equals (BronInt.ONE)
-//multiply(BrobInt.THREE)
