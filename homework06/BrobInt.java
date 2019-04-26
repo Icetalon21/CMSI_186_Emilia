@@ -35,6 +35,7 @@
  *  1.3.8  2019-04-24  Emilia Huerta  Fixed multiply() - did Russian Peasant Multiplication
  *  1.3.9  2019-04-24  Emilia Huerta  Wrote multiply() my own way
  *  1.4.0  2019-04-25  Emilia Huerta  Got divide() working
+ *  1.4.1  2019-04-26  Emilia Huerta  Worked on subtract() & cleaned up code
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -68,7 +69,7 @@ public class BrobInt {
    public  byte   sign          = 0;         // "0" is positive, "1" is negative
   /// You can use this or not, as you see fit.  The explanation was provided in class
    private String reversed      = "";        // the backwards version of the internal String representation
-   private boolean negative; //added by emilia
+   // private boolean negative; //added by emilia
 
    private static BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
    private static final boolean DEBUG_ON = false;
@@ -86,14 +87,6 @@ public class BrobInt {
          sign = 1;
          internalValue = internalValue.substring(1,internalValue.length());
       }
-      		// replace this with the appropriate code to accomplish what is in the javadoc text
-      // if(internalValue.charAt(0) == '-'){ //added after by emilia on 4/23/2019
-      //    sign = 1;
-      //    internalValue = internalValue.substring(1, internalValue.length());
-      // }else if(internalValue.charAt(1) == '+'){
-      //    sign = 0;
-      //    internalValue = internalValue.substring(1, internalValue.length());
-      // }
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +103,6 @@ public class BrobInt {
          throw new IllegalArgumentException(" Sorry, that value is not valid");
       }
       return true;
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,14 +182,21 @@ public class BrobInt {
          if (passedArgument.length() > 0){
             passedArgument = passedArgument.substring(0, passedArgument.length() - 1);
          }
-         if (sign == 1){
+         if (sign == 1){ //negative
             answer2 =  "-" + answer;
          }else{
             answer2 = answer;
          }
       }
       return new BrobInt(answer2);
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+   }
+
+   private boolean isPositive(){
+      return sign == 0;
+   }
+
+   private boolean isBiggerThen(BrobInt bint){
+      return this.compareTo(bint) > 0;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -206,82 +205,55 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt bint ) { //opposite of add
-      return new BrobInt(this.add(bint.changeSign()).toString());   //second try
-      //
-      // Integer internalValue = Integer.valueOf(this.internalValue);
-      // Integer passedArgument = Integer.valueOf(bint.internalValue);
-      // Integer answer = internalValue - passedArgument;
-      // String answerString = Integer.toString(answer);
-      // return new BrobInt(answerString);
-      //
-      //
-      //
-      // String answer = "";
-      // String currentValue = internalValue;
-      // String passedArgument = bint.internalValue;
-      // int temporary = 0;
-      // boolean carryOver = false;
-      // while(currentValue.length() > 0 || passedArgument.length() > 0){
-      //    if(currentValue.length() !=0 && passedArgument.length() !=0){
-      //       temporary = (Character.getNumericValue(currentValue.charAt(currentValue.length() - 1)) + Character.getNumericValue(passedArgument.charAt(passedArgument.length() -1)));
-      //    } else if (currentValue.length() == 0) {
-      //       temporary = Character.getNumericValue(passedArgument.charAt(passedArgument.charAt(passedArgument.length() -1)));
-      //    } else {
-      //       temporary = Character.getNumericValue(currentValue.charAt(currentValue.length() - 1));
-      //    }
-      //    if (carryOver) {
-      //       temporary = temporary + 1;
-      //    }
-      //    carryOver = false;
-      //    if (temporary > 9) { //greater than 9
-      //       carryOver = true; //need a carry
-      //       if(!(currentValue.length() < 2 && passedArgument.length() < 2)) {
-      //          temporary = temporary - 10;
-      //       }
-      //    }
-      //    answer = temporary + answer;
-      //    // Substring - This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
-      //    if (currentValue.length() > 0){
-      //       currentValue = currentValue.substring(0, currentValue.length() - 1);
-      //    }
-      //    if (passedArgument.length() > 0){
-      //       passedArgument = passedArgument.substring(0, passedArgument.length() - 1);
-      //    }
-      // }
-      // return new BrobInt(answer);
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
+      // return new BrobInt(this.add(bint.changeSign()).toString());   //second try
 
+      // public static void main(String[] args) {
+         Integer a = Integer.valueOf(this.internalValue);
+         Integer b = Integer.valueOf(bint.internalValue);
+         String answer = "";
+         String answer2 = "";
+      // private static int subIterative(int a, int b) {
+         // iterate till second no becomes 0
+
+         // if(this.sign == 1){
+         //    if(bint.sign == 1){
+         //       if(this.compareTo(bint) == -1) return bint.add(this);
+         //       else return this.add(bint);
+         //    }
+         //}
+         // if(isPositive() && bint.isPositive()) {
+         //    if(this.isBiggerThen(bint)){
+         //       return this.add(bint);
+         //    }else{
+         //       return bint.add(this);
+         //    }
+         // }
+         while(b != 0){
+    
+                           // borrow contains common set bits of b and unset bits of a
+            int borrow = (~a) & b;
+            
+            // Subtraction of bits of 'a' and 'b' where at least one of the bits is not set
+            a = a ^ b;
+            
+            // Borrow is shifted by one so that subtracting it from 'a' gives the required sum
+            b = borrow << 1;
+         
+            answer = Integer.toString(a);
+            if (sign == 1){ //negative
+               answer2 =  "-" + answer;
+            }else{
+               answer2 = answer;
+            }
+         }
+         return new BrobInt(answer2);
+   }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to multiply the value of a BrobIntk passed as argument to this BrobInt
    *  @param  bint         BrobInt to multiply this by
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt bint ) {
-      // Integer internalValue = Integer.valueOf(this.internalValue);
-      // Integer passedArgument = Integer.valueOf(bint.internalValue);
-      // Integer answer = internalValue * passedArgument;
-      // String answerString = Integer.toString(answer);
-      // return new BrobInt(answerString);
-      //
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-      //https://www.geeksforgeeks.org/russian-peasant-multiply-two-numbers-using-bitwise-operators/
-      // int sum = 0;
-      // Integer a = Integer.valueOf(this.internalValue);
-      // Integer b = Integer.valueOf(bint.internalValue);
-      // while(a != 0) {
-      //    if((a & 1) == 1) {
-      //       sum += b;
-      //    }
-      //    // >>> is an unsigned right shift operator which shifts a zero into the leftmost position
-      //    // >>> is logical shift right.
-      //    //The signed left shift operator << shifts a bit pattern to the left
-      //    a >>>= 1;
-      //    b <<= 1;
-      // }
-      // String answer = Integer.toString(sum);
-      // return new BrobInt(answer);
-      //
       int total = 0;
       int i = 0;
       Integer A = Integer.valueOf(this.internalValue);
@@ -307,13 +279,7 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt bint ) {
-      // Integer internalValue = Integer.valueOf(this.internalValue);
-      // Integer passedArgument = Integer.valueOf(bint.internalValue);
-      // Integer answer = internalValue / passedArgument;
-      // String answerString = Integer.toString(answer);
-      // return new BrobInt(answerString);
-      //throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-      //
+      //https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html
       //private static int binaryDivide(int dividend, int divisor) {
       Integer dividend = Integer.valueOf(this.internalValue);
       Integer divisor = Integer.valueOf(bint.internalValue);
@@ -321,6 +287,9 @@ public class BrobInt {
       int denom = divisor;
       // This step is required to find the biggest current number which can be
       // divided with the number safely.
+      // >>> is an unsigned right shift operator which shifts a zero into the leftmost position
+      // >>> is logical shift right.
+      //The signed left shift operator << shifts a bit pattern to the left
       while (denom <= dividend) {
          current <<= 1;
          denom <<= 1;
@@ -530,8 +499,3 @@ public class BrobInt {
 
    }
 }
-//while loop
-//while 20 larger than sum 0
-//0 + 10 compare
-//add one
-//start at 1
