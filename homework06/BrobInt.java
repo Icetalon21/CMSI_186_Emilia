@@ -36,6 +36,7 @@
  *  1.3.9  2019-04-24  Emilia Huerta  Wrote multiply() my own way
  *  1.4.0  2019-04-25  Emilia Huerta  Got divide() working
  *  1.4.1  2019-04-26  Emilia Huerta  Worked on subtract() & cleaned up code
+ *  1.4.2  2019-04-26  Emilia Huerta  Fixed double negative signs
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
@@ -85,6 +86,10 @@ public class BrobInt {
       internalValue = value;
       if(value.charAt(0) == '-'){
          sign = 1;
+         internalValue = internalValue.substring(1,internalValue.length());
+      }
+      if(value.charAt(0) == '-' && value.charAt(1) == '-'){
+         sign = 0;
          internalValue = internalValue.substring(1,internalValue.length());
       }
    }
@@ -208,45 +213,42 @@ public class BrobInt {
       // return new BrobInt(this.add(bint.changeSign()).toString());   //second try
 
       // public static void main(String[] args) {
-         Integer a = Integer.valueOf(this.internalValue);
-         Integer b = Integer.valueOf(bint.internalValue);
-         String answer = "";
-         String answer2 = "";
-      // private static int subIterative(int a, int b) {
-         // iterate till second no becomes 0
+      Integer a = Integer.valueOf(this.internalValue);
+      Integer b = Integer.valueOf(bint.internalValue);
+      String answer = "";
+      String answer2 = "";
 
-         // if(this.sign == 1){
-         //    if(bint.sign == 1){
-         //       if(this.compareTo(bint) == -1) return bint.add(this);
-         //       else return this.add(bint);
-         //    }
-         //}
-         // if(isPositive() && bint.isPositive()) {
-         //    if(this.isBiggerThen(bint)){
-         //       return this.add(bint);
-         //    }else{
-         //       return bint.add(this);
-         //    }
-         // }
-         while(b != 0){
-    
-                           // borrow contains common set bits of b and unset bits of a
-            int borrow = (~a) & b;
-            
-            // Subtraction of bits of 'a' and 'b' where at least one of the bits is not set
-            a = a ^ b;
-            
-            // Borrow is shifted by one so that subtracting it from 'a' gives the required sum
-            b = borrow << 1;
-         
-            answer = Integer.toString(a);
-            if (sign == 1){ //negative
-               answer2 =  "-" + answer;
-            }else{
-               answer2 = answer;
-            }
+      // if(this.sign == 1){
+      //    if(bint.sign == 1){
+      //       if(this.compareTo(bint) == -1) return bint.add(this);
+      //       else return this.add(bint);
+      //    }
+      //}
+      // if(isPositive() && bint.isPositive()) {
+      //    if(this.isBiggerThen(bint)){
+      //       return this.add(bint);
+      //    }else{
+      //       return bint.add(this);
+      //    }
+      // }
+      while(b != 0){
+         // borrow contains common set bits of b and unset bits of a
+         int borrow = (~a) & b;
+
+         // Subtraction of bits of 'a' and 'b' where at least one of the bits is not set
+         a = a ^ b;
+
+         // Borrow is shifted by one so that subtracting it from 'a' gives the required sum
+         b = borrow << 1;
+
+         answer = Integer.toString(a);
+         if (sign == 1){ //negative
+            answer2 =  "-" + answer;
+         }else{
+            answer2 = answer;
          }
-         return new BrobInt(answer2);
+      }
+      return new BrobInt(answer2);
    }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to multiply the value of a BrobIntk passed as argument to this BrobInt
