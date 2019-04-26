@@ -37,6 +37,7 @@
  *  1.4.0  2019-04-25  Emilia Huerta  Got divide() working
  *  1.4.1  2019-04-26  Emilia Huerta  Worked on subtract() & cleaned up code
  *  1.4.2  2019-04-26  Emilia Huerta  Fixed double negative signs
+ *  1.4.3  2019-04-26  Emilia Huerta  Cleaned up code again
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
