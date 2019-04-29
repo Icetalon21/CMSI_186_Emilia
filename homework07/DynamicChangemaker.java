@@ -18,12 +18,20 @@
  *   Ver      Date     Modified by:  Reason for change or modification
  *  -----  ----------  ------------  ---------------------------------------------------------------------
  *  1.0.0  2019-04-29  Emilia Huerta Began writing class
+ *  1.0.1  2019-04-28  Emilia Huerta Started makeChangeWithDynamicProgramming()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 public class DynamicChangeMaker{
   public DynamicChangeMaker(){
+
+  }
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  takes two arguments
+   *  @param  args an integer array of denominations, and an integer containing the target amount of cents.
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  public void makeChangeWithDynamicProgramming(int array[], int amount){
 
   }
 }
