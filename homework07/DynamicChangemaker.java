@@ -19,6 +19,7 @@
  *  -----  ----------  ------------  ---------------------------------------------------------------------
  *  1.0.0  2019-04-29  Emilia Huerta Began writing class
  *  1.0.1  2019-04-28  Emilia Huerta Started makeChangeWithDynamicProgramming()
+ *  1.0.2  2019-05-01  Emilia Huerta Worked on validation
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -27,9 +28,25 @@ public class DynamicChangeMaker{
   public DynamicChangeMaker(){
 
   }
+  public void validate(String args){
+    Integer intArgs = Integer.parseInt(args);
+    if(intArgs.isNaN  || intArgs < 0){
+      System.out.println("Conversion impossible, monetary input not valid.");
+      System.exit(0);
+    }
+    // try{
+    //   Integer.parseInt(args);
+    //   System.out.println(args + " is a valid integer.");
+    // }
+    // catch (NumberFormatException e){
+    //   System.out.println(args + " is not a valid integer.");
+    // }
+  }
+
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  takes two arguments
-   *  @param  args an integer array of denominations, and an integer containing the target amount of cents.
+   *  @param  array[] an integer array of denominations.
+   *  @param  integer containing the target amount of cents.
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void makeChangeWithDynamicProgramming(int array[], int amount){
 
