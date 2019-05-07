@@ -19,7 +19,8 @@
  *  -----  ----------  ------------  ---------------------------------------------------------------------
  *  1.0.0  2019-04-29  Emilia Huerta Began writing class
  *  1.0.1  2019-04-28  Emilia Huerta Started makeChangeWithDynamicProgramming()
- *  1.0.2  2019-05-01  Emilia Huerta Worked on validation
+ *  1.0.2  2019-05-01  Emilia Huerta Worked on validation()
+ *  1.0.3  2019-05-07  Emilia Huerta Finished isValid() & started main()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -28,12 +29,31 @@ public class DynamicChangeMaker{
   public DynamicChangeMaker(){
 
   }
-  public void validate(String args){
-    Integer intArgs = Integer.parseInt(args);
-    if(intArgs.isNaN  || intArgs < 0){
-      System.out.println("Conversion impossible, monetary input not valid.");
+  public void isValid(String args[]){
+    if (args.length < 2) {
+      System.out.println("Invalid statement.");
       System.exit(0);
     }
+    for (int x = 0; x < args.length; x++) {
+      if (Integer.parseInt(args[x]) <= 0) {
+        System.out.println("No negative amounts allowed.");
+        System.exit(1);
+      }
+    }
+    for (int x = 0; x < args.length; x++) {
+      for (int y = x + 1; y < args.length - 1; y++) {
+        if (args[x].equals(args[y])) {
+          System.out.println("No duplicate denominations allowed.");
+          System.exit(2);
+        }
+      }
+    }
+  }
+  //   Integer intArgs = Integer.parseInt(args);
+  //   if(intArgs.isNaN  || intArgs < 0){
+  //     System.out.println("Conversion impossible, monetary input not valid.");
+  //     System.exit(0);
+  //   }
     // try{
     //   Integer.parseInt(args);
     //   System.out.println(args + " is a valid integer.");
@@ -41,7 +61,7 @@ public class DynamicChangeMaker{
     // catch (NumberFormatException e){
     //   System.out.println(args + " is not a valid integer.");
     // }
-  }
+  // }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  takes two arguments
@@ -50,5 +70,9 @@ public class DynamicChangeMaker{
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void makeChangeWithDynamicProgramming(int array[], int amount){
 
+  }
+  public static void main (String [] args) {
+    DynamicChangeMaker dynamicChangeMaker = new DynamicChangeMaker();
+    dynamicChangeMaker.isValid(args);
   }
 }
