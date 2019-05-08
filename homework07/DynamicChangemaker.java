@@ -21,6 +21,7 @@
  *  1.0.1  2019-04-28  Emilia Huerta Started makeChangeWithDynamicProgramming()
  *  1.0.2  2019-05-01  Emilia Huerta Worked on validation()
  *  1.0.3  2019-05-07  Emilia Huerta Finished isValid() & started main()
+ *  1.0.4  2019-05-08  Emilia Huerta Worked on makeChangeWithDynamicProgramming()
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -29,6 +30,13 @@ public class DynamicChangeMaker{
   public DynamicChangeMaker(){
 
   }
+
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to validate that all the characters in the value are valid demoninations
+   *  @param args[] The deminations and amount
+   *  Checks if there are negative or duplicate demonications
+   *  Exits the program if not valid
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void isValid(String args[]){
     if (args.length < 2) {
       System.out.println("Invalid statement.");
@@ -69,7 +77,25 @@ public class DynamicChangeMaker{
    *  @param  integer containing the target amount of cents.
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void makeChangeWithDynamicProgramming(int array[], int amount){
+    int rows = array.length;
+    int colums = amount + 1;
+    int denominations;
+    Tuple[][] table = new Tuple [rows][colums];
 
+    for(int i = 0; i < rowCount; i++){
+      denominations = array[i];
+      for(int j = 0; j < columCount; j++){
+        //special case for colum zero for all rows
+        if(j == 0){
+          if((j < denominations) || j % denominations !=0){
+            table[i][j] = Tuple.IMPOSSIBLE;
+          }
+
+        } else { //otherwise, this is NOT colum zero
+
+        }
+      }
+    }
   }
   public static void main (String [] args) {
     DynamicChangeMaker dynamicChangeMaker = new DynamicChangeMaker();
