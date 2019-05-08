@@ -25,6 +25,7 @@
  *  1.0.5  2019-05-08  Emilia Huerta Added pseudocode
  *  1.0.6  2019-05-08  Emilia Huerta Cont. makeChangeWithDynamicProgramming()
  *  1.0.7  2019-05-08  Emilia Huerta Changed names of values
+ *  1.0.8  2019-05-08  Emilia Huerta Fixed isValid - handles "," now
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -42,24 +43,53 @@ public class DynamicChangeMaker{
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void isValid(String args[]){
 
-    if (args.length < 2) {
-      System.out.println("Invalid statement.");
-      System.exit(0);
-    }
-    for (int x = 0; x < args.length; x++) {
-      if (Integer.parseInt(args[x]) <= 0) {
-        System.out.println("No negative amounts allowed.");
-        System.exit(1);
-      }
-    }
-    for (int x = 0; x < args.length; x++) {
-      for (int y = x + 1; y < args.length - 1; y++) {
-        if (args[x].equals(args[y])) {
-          System.out.println("No duplicate denominations allowed.");
-          System.exit(2);
+    // if (args.length < 2) {
+    //   System.out.println("Invalid statement.");
+    //   System.exit(0);
+    // }
+    // for (int x = 0; x < args.length; x++) {
+    //   if (Integer.parseInt(args[x]) <= 0) {
+    //     System.out.println("No negative amounts allowed.");
+    //     System.exit(1);
+    //   }
+    // }
+    // for (int x = 0; x < args.length; x++) {
+    //   for (int y = x + 1; y < args.length - 1; y++) {
+    //     if (args[x].equals(args[y])) {
+    //       System.out.println("No duplicate denominations allowed.");
+    //       System.exit(2);
+    //     }
+    //   }
+    // }
+    String[] strings = args[0].split(",");
+    int[] denominations = new int[strings.length];
+
+    for (int i = 0; i < denominations.length; i++) {
+        denominations[i] = Integer.parseInt(strings[i]);
+        if (denominations[i] <= 0) {
+            System.out.println("Denominations cannot be negative.\n");
+            System.exit(0);
         }
-      }
+
+        for (int j = 0; j < i; j++) {
+            if (denominations[j] == denominations[i]) {
+                System.out.println("No duplicate denominations allowed.\n");
+                System.exit(1);
+            }
+        }
+        if (denominations.length < 2) {
+          denominations[i] = Integer.parseInt(strings[i]);
+          System.out.println("Invalid statement.");
+          System.exit(3);
+        }
     }
+
+    int amount = Integer.parseInt(args[1]);
+    if (amount < 0) {
+        System.out.println("Change cannot be negative.\n");
+        System.exit(2);
+    }
+
   }
   //   Integer intArgs = Integer.parseInt(args);
   //   if(intArgs.isNaN  || intArgs < 0){
