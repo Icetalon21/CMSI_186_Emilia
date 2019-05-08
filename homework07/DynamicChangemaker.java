@@ -22,6 +22,7 @@
  *  1.0.2  2019-05-01  Emilia Huerta Worked on validation()
  *  1.0.3  2019-05-07  Emilia Huerta Finished isValid() & started main()
  *  1.0.4  2019-05-08  Emilia Huerta Worked on makeChangeWithDynamicProgramming()
+ *  1.0.5  2019-05-08  Emilia Huerta Added pseudocode
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -82,9 +83,9 @@ public class DynamicChangeMaker{
     int denominations;
     Tuple[][] table = new Tuple [rows][colums];
 
-    for(int i = 0; i < rowCount; i++){
+    for(int i = 0; i < rows; i++){
       denominations = array[i];
-      for(int j = 0; j < columCount; j++){
+      for(int j = 0; j < colums; j++){
         //special case for colum zero for all rows
         if(j == 0){
           if((j < denominations) || j % denominations !=0){
@@ -92,7 +93,45 @@ public class DynamicChangeMaker{
           }
 
         } else { //otherwise, this is NOT colum zero
+          //check if we CAN take ONE thing out of the current value;
+          //if we CAN'T take one of the demoninations out of the value "j"
+          //impossible, at leat temporarily
+          if(/*some check to see if er can take ONE thing out of the current value */){
+            //look backaward to see if there is a valid/impossible solution
+            //if there is, copu it over and add/replace the one that is there
+            if(/*some check to see if we are ABLE to loook backwards */){
+              //if the cell looking backwards is NOT an "IMPOSSIBLE", add it
+            }
+            //if this is NOT row zero we need to look aboce to see if there is
+            //a better non-impossible solution; if so, copy it down
+            if(i != 0){
+              //if the cell above is impossible, basically do nothing since
+              //this the current cell is already IMPOSSIBLE
 
+              //else if the cell above has a total that is less than the current
+              //cell, copy it down
+            }
+          }
+          //ELSE -- we *CAN* take one current denomination out
+        } else {
+          //make a new tuple with a one in the current demonination index
+
+          //look backward to see if there is a valid/impossible solution
+          if((j - denominations[i]) >= 0){
+            //if it's IMPOSSIBLE, mark the current cell IMPOSSIBLE, too
+
+            //else, add the previous cell to the current cell
+          }
+          //if this is NOT row zero we need to look above to see if there is
+          //a better non-impossible solutionl if so, copy it down
+          if(i != 0) {
+            //if the cell aboce is impossible, basically so nothing since
+            //this the current cell is already IMPOSSIBLE
+
+            //else if the cell above has a total that is less than the current
+            //cell, copy it down
+          }
+        }
         }
       }
     }
