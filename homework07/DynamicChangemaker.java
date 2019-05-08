@@ -24,6 +24,7 @@
  *  1.0.4  2019-05-08  Emilia Huerta Worked on makeChangeWithDynamicProgramming()
  *  1.0.5  2019-05-08  Emilia Huerta Added pseudocode
  *  1.0.6  2019-05-08  Emilia Huerta Cont. makeChangeWithDynamicProgramming()
+ *  1.0.7  2019-05-08  Emilia Huerta Changed names of values
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -40,6 +41,7 @@ public class DynamicChangeMaker{
    *  Exits the program if not valid
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void isValid(String args[]){
+
     if (args.length < 2) {
       System.out.println("Invalid statement.");
       System.exit(0);
@@ -85,24 +87,24 @@ public class DynamicChangeMaker{
     Tuple[][] table = new Tuple [rows][columns];
 
     for (int i = 0; i < rows; i++){
-      table[i][0] = new Tuple(rows);
+      table[i][0] = new Tuple(i);
     }
     for(int i = 0; i < rows; i++){
-      for(int j = 0; j < columns; j++){
+      for(int j = 1; j < columns; j++){
         if(j < array[i]){
-          table[rows][columns] = Tuple.IMPOSSIBLE;
+          table[i][j] = Tuple.IMPOSSIBLE;
         } else {
-          table[rows][columns] = new Tuple(rows);
-          table[rows][columns].setElement(rows, 1);
-          if(table[rows][columns - array[rows]].isImpossible()){
-            table[rows][columns] = Tuple.IMPOSSIBLE;
+          table[i][j] = new Tuple(rows);
+          table[i][j].setElement(i, 1);
+          if(table[i][j - array[i]].isImpossible()){
+            table[i][j] = Tuple.IMPOSSIBLE;
           } else {
-            table[rows][columns] = table[rows][columns].add(table[rows][columns - array[rows]]);
+            table[i][j] = table[i][j].add(table[i][j - array[i]]);
           }
         }
-        if(rows > 0 && (table[rows][columns].isImpossible() || (!table[rows - 1][columns].isImpossible()))
-          && table[rows][columns].total() > table[rows - 1][columns].total()){
-            table[rows][columns] = table[rows - 1][columns];
+        if(i > 0 && (table[i][j].isImpossible() || (!table[i - 1][j].isImpossible()))
+          && table[i][j].total() > table[i - 1][j].total()){
+            table[i][j] = table[i - 1][j];
           }
       }
     }
