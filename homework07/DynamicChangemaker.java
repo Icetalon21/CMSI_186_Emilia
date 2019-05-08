@@ -26,6 +26,7 @@
  *  1.0.6  2019-05-08  Emilia Huerta Cont. makeChangeWithDynamicProgramming()
  *  1.0.7  2019-05-08  Emilia Huerta Changed names of values
  *  1.0.8  2019-05-08  Emilia Huerta Fixed isValid - handles "," now
+ *  1.0.9  2019-05-08  Emilia Huerta Add does not work... unknown
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -38,7 +39,7 @@ public class DynamicChangeMaker{
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to validate that all the characters in the value are valid demoninations
    *  @param args[] The deminations and amount
-   *  Checks if there are negative or duplicate demonications
+   *  Checks if there are negative or duplicate demoninations or amounts
    *  Exits the program if not valid
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public void isValid(String args[]){
@@ -61,34 +62,35 @@ public class DynamicChangeMaker{
     //     }
     //   }
     // }
-    String[] strings = args[0].split(",");
-    int[] denominations = new int[strings.length];
+  
+    // String[] strings = args[0].split(",");
+    // int[] denominations = new int[strings.length];
 
-    for (int i = 0; i < denominations.length; i++) {
-        denominations[i] = Integer.parseInt(strings[i]);
-        if (denominations[i] <= 0) {
-            System.out.println("Denominations cannot be negative.\n");
-            System.exit(0);
-        }
+    // for (int i = 0; i < denominations.length; i++) {
+    //     denominations[i] = Integer.parseInt(strings[i]);
+    //     if (denominations[i] <= 0) {
+    //         System.out.println("Denominations cannot be negative.\n");
+    //         System.exit(0);
+    //     }
 
-        for (int j = 0; j < i; j++) {
-            if (denominations[j] == denominations[i]) {
-                System.out.println("No duplicate denominations allowed.\n");
-                System.exit(1);
-            }
-        }
-        if (denominations.length < 2) {
-          denominations[i] = Integer.parseInt(strings[i]);
-          System.out.println("Invalid statement.");
-          System.exit(3);
-        }
-    }
+    //     for (int j = 0; j < i; j++) {
+    //         if (denominations[j] == denominations[i]) {
+    //             System.out.println("No duplicate denominations allowed.\n");
+    //             System.exit(1);
+    //         }
+    //     }
+    //     if (denominations.length < 2) {
+    //       denominations[i] = Integer.parseInt(strings[i]);
+    //       System.out.println("Invalid statement.");
+    //       System.exit(3);
+    //     }
+    // }
 
-    int amount = Integer.parseInt(args[1]);
-    if (amount < 0) {
-        System.out.println("Change cannot be negative.\n");
-        System.exit(2);
-    }
+    // int amount = Integer.parseInt(args[1]);
+    // if (amount < 0) {
+    //     System.out.println("Change cannot be negative.\n");
+    //     System.exit(2);
+    // }
 
   }
   //   Integer intArgs = Integer.parseInt(args);
@@ -141,7 +143,51 @@ public class DynamicChangeMaker{
     return table[rows - 1][amount];
   }
   public static void main (String [] args) {
-    DynamicChangeMaker dynamicChangeMaker = new DynamicChangeMaker();
-    dynamicChangeMaker.isValid(args);
+    //DynamicChangeMaker dynamicChangeMaker = new DynamicChangeMaker();
+    //dynamicChangeMaker.isValid(args);
+    System.out.println(args[0]);
+    String[] strings = args[0].split(",");
+    System.out.println(strings);
+    int[] denominations = new int[strings.length]; //the coins
+
+    for (int i = 0; i < denominations.length; i++) {
+        denominations[i] = Integer.parseInt(strings[i]);
+        if (denominations[i] <= 0) {
+            System.out.println("Denominations cannot be negative.\n");
+            System.exit(0);
+        }
+
+        for (int j = 0; j < i; j++) {
+            if (denominations[j] == denominations[i]) {
+                System.out.println("No duplicate denominations allowed.\n");
+                System.exit(1);
+            }
+        }
+        if (denominations.length < 2) {
+          denominations[i] = Integer.parseInt(strings[i]);
+          System.out.println("Invalid statement.");
+          System.exit(3);
+        }
+    }
+
+    int amount = Integer.parseInt(args[1]);
+    if (amount < 0) {
+        System.out.println("Change cannot be negative.\n");
+        System.exit(2);
+    }
+
+    Tuple change = makeChangeWithDynamicProgramming(denominations, amount);
+    if(change.isImpossible()){
+      System.out.println("It is impossible to make change using those denominations.");
+      System.exit(4);
+    } else {
+      int total = change.total();
+      System.out.println(amount + " can be make with" + total);
+
+      for(int i = 0; i < denominations.length; i++){
+        int count = change.getElement(i);
+        System.out.println("- " + count + " " + denominations[i] + "-cent coin");
+      }
+    }
   }
 }
