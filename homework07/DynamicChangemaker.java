@@ -30,85 +30,10 @@ import java.lang.reflect.Array;
  *  1.0.8  2019-05-08  Emilia Huerta Fixed isValid - handles "," now
  *  1.0.9  2019-05-08  Emilia Huerta Add does not work... unknown
  *  1.1.0  2019-05-08  Emilia Huerta Fixed issue with add
+ *  1.1.1  2019-05-08  Emilia Huerta Cleaned up code
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-// public class DynamicChangeMaker{
-//   public DynamicChangeMaker(){
-
-//   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to validate that all the characters in the value are valid demoninations
-   *  @param args[] The deminations and amount
-   *  Checks if there are negative or duplicate demoninations or amounts
-   *  Exits the program if not valid
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-  //public void isValid(String args[]){
-
-    // if (args.length < 2) {
-    //   System.out.println("Invalid statement.");
-    //   System.exit(0);
-    // }
-    // for (int x = 0; x < args.length; x++) {
-    //   if (Integer.parseInt(args[x]) <= 0) {
-    //     System.out.println("No negative amounts allowed.");
-    //     System.exit(1);
-    //   }
-    // }
-    // for (int x = 0; x < args.length; x++) {
-    //   for (int y = x + 1; y < args.length - 1; y++) {
-    //     if (args[x].equals(args[y])) {
-    //       System.out.println("No duplicate denominations allowed.");
-    //       System.exit(2);
-    //     }
-    //   }
-    // }
-
-    // String[] strings = args[0].split(",");
-    // int[] denominations = new int[strings.length];
-
-    // for (int i = 0; i < denominations.length; i++) {
-    //     denominations[i] = Integer.parseInt(strings[i]);
-    //     if (denominations[i] <= 0) {
-    //         System.out.println("Denominations cannot be negative.\n");
-    //         System.exit(0);
-    //     }
-
-    //     for (int j = 0; j < i; j++) {
-    //         if (denominations[j] == denominations[i]) {
-    //             System.out.println("No duplicate denominations allowed.\n");
-    //             System.exit(1);
-    //         }
-    //     }
-    //     if (denominations.length < 2) {
-    //       denominations[i] = Integer.parseInt(strings[i]);
-    //       System.out.println("Invalid statement.");
-    //       System.exit(3);
-    //     }
-    // }
-
-    // int amount = Integer.parseInt(args[1]);
-    // if (amount < 0) {
-    //     System.out.println("Change cannot be negative.\n");
-    //     System.exit(2);
-    // }
-
-  //}
-  //   Integer intArgs = Integer.parseInt(args);
-  //   if(intArgs.isNaN  || intArgs < 0){
-  //     System.out.println("Conversion impossible, monetary input not valid.");
-  //     System.exit(0);
-  //   }
-    // try{
-    //   Integer.parseInt(args);
-    //   System.out.println(args + " is a valid integer.");
-    // }
-    // catch (NumberFormatException e){
-    //   System.out.println(args + " is not a valid integer.");
-    // }
-  // }
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  takes two arguments
@@ -147,6 +72,11 @@ public class DynamicChangeMaker {
     }
       return table[rows - 1][amount];
   }
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  this is the main
+ *  @param  args  String array which contains command line arguments
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public static void main(String[] args) {
     System.out.println(args[0] + " are the denominations.");
     System.out.println(args[1] + " is the amount we are looking for.");
@@ -154,6 +84,9 @@ public class DynamicChangeMaker {
     //https://www.tutorialspoint.com/java/java_string_split.htm
     //System.out.println(strings); - does not work - don't know why
     int[] denominations = new int[strings.length]; //the coins
+
+
+    //reference: https://github.com/Icetalon21/JavaScript_Projects/tree/master/changeMaker
 
     for (int i = 0; i < denominations.length; i++) {
       denominations[i] = Integer.parseInt(strings[i]);
